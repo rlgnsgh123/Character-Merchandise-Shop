@@ -1,4 +1,4 @@
-package com.itwill.shopping.dao.member;
+package com.itwill.shopping.dao;
 
 import java.util.Properties;
 
@@ -6,7 +6,7 @@ import javax.sql.DataSource;
 
 import org.apache.tomcat.dbcp.dbcp2.BasicDataSource;
 
-import com.itwill.shopping.dao.member.MemberDao;
+import com.itwill.shopping.dao.MemberDao;
 
 public class MemberDao {
 	private DataSource dataSource;
