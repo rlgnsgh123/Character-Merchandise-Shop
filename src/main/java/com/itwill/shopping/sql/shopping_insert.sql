@@ -18,25 +18,26 @@ insert into product(p_no,p_name,p_price,p_desc,p_stock,p_regdate,p_image) values
 insert into product(p_no,p_name,p_price,p_desc,p_stock,p_regdate,p_image) values(product_p_no_seq.nextval,'가카오',40000,'비싸요',100,sysdate,'사진3');
 
 /****************Bulletin Board Insert***********************/
+insert into bulletin_board(bb_no,bb_title,bb_content,bb_date,bb_vcount,m_id) values(qna_board_qb_no_seq.nextval,'타이틀 test','내용 test',sysdate,0,'admin1');
 
-insert into bulletin_board(bb_no,bb_title,bb_content,bb_date,bb_vcount,m_id) values(bulletin_board_bb_no_seq.nextval,'타이틀 test','내용 test',sysdate,0,'customer1');
 
 /****************QNA Board Insert***********************/
-insert into qna_board(qb_no,qb_title,qb_content,qb_date,qb_vcount,m_id) values(qna_board_qb_no_seq.nextval,'타이틀 test','내용 test',sysdate,0,'admin1');
+insert into qna_board(qb_no,qb_title,qb_content,qb_date,qb_vcount,m_id) values(bulletin_board_bb_no_seq.nextval,'타이틀 test','내용 test',sysdate,0,'customer1');
+
 /****************Cart Insert***********************/
 insert into cart(c_item_no,c_item_qty,m_id,p_no) values(CART_C_ITEM_NO_SEQ.nextval,2,'customer1',2);
 insert into cart(c_item_no,c_item_qty,m_id,p_no) values(CART_C_ITEM_NO_SEQ.nextval,1,'customer2',1);
 insert into cart(c_item_no,c_item_qty,m_id,p_no) values(CART_C_ITEM_NO_SEQ.nextval,3,'customer3',1);
 
 /****************Orders Insert***********************/
-insert into orders(o_no,o_name,o_phone,o_address,o_date,o_desc,o_price,o_method,m_id) values(orders_o_no_seq.nextval,'김기훈','010-0000-0000','인천시',sysdate,'펭슈','30000','test','customer1');
+insert into orders(o_no,o_date,o_desc,o_price,o_method,m_id) values(orders_o_no_seq.nextval,sysdate,'펭슈','30000','test','customer1');
     insert into order_item(oi_no,oi_amount,p_no,o_no) values(ORDER_ITEM_OI_NO_SEQ.nextval,1,1,ORDERS_O_NO_SEQ.currval);
-insert into orders(o_no,o_name,o_phone,o_address,o_date,o_desc,o_price,o_method,m_id) values(orders_o_no_seq.nextval,'심기훈','010-1111-0000','부천시',sysdate,'피카츄 외 1종','75000','test2','customer2');
+insert into orders(o_no,o_date,o_desc,o_price,o_method,m_id) values(orders_o_no_seq.nextval,sysdate,'피카츄 외 1종','75000','test2','customer2');
     insert into order_item(oi_no,oi_amount,p_no,o_no) values(ORDER_ITEM_OI_NO_SEQ.nextval,1,2,ORDERS_O_NO_SEQ.currval);
     insert into order_item(oi_no,oi_amount,p_no,o_no) values(ORDER_ITEM_OI_NO_SEQ.nextval,1,3,ORDERS_O_NO_SEQ.currval);
-insert into orders(o_no,o_name,o_phone,o_address,o_date,o_desc,o_price,o_method,m_id) values(orders_o_no_seq.nextval,'팀기훈','010-0000-2222','전라도',sysdate,'가카오','80000','test3','customer3');
+insert into orders(o_no,o_date,o_desc,o_price,o_method,m_id) values(orders_o_no_seq.nextval,sysdate,'가카오','80000','test3','customer3');
     insert into order_item(oi_no,oi_amount,p_no,o_no) values(ORDER_ITEM_OI_NO_SEQ.nextval,2,3,ORDERS_O_NO_SEQ.currval);
-insert into orders(o_no,o_name,o_phone,o_address,o_date,o_desc,o_price,o_method,m_id) values(orders_o_no_seq.nextval,'핌기훈','010-0000-3333','경상도',sysdate,'펭슈 외 2종','105000','test4','customer4');
+insert into orders(o_no,o_date,o_desc,o_price,o_method,m_id) values(orders_o_no_seq.nextval,sysdate,'펭슈 외 2종','105000','test4','customer4');
     insert into order_item(oi_no,oi_amount,p_no,o_no) values(ORDER_ITEM_OI_NO_SEQ.nextval,1,1,ORDERS_O_NO_SEQ.currval);
     insert into order_item(oi_no,oi_amount,p_no,o_no) values(ORDER_ITEM_OI_NO_SEQ.nextval,1,2,ORDERS_O_NO_SEQ.currval);
     insert into order_item(oi_no,oi_amount,p_no,o_no) values(ORDER_ITEM_OI_NO_SEQ.nextval,1,3,ORDERS_O_NO_SEQ.currval);

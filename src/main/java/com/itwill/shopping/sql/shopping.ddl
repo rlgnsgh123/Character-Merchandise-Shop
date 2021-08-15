@@ -14,7 +14,6 @@ CREATE TABLE member(
 		m_address                     		VARCHAR2(100)		 NULL 
 );
 
-
 CREATE TABLE qna_board(
 		qb_no                         		NUMBER(10)		 NULL ,
 		qb_title                      		VARCHAR2(100)		 NULL ,
@@ -41,7 +40,6 @@ CREATE TABLE bulletin_board(
 DROP SEQUENCE bulletin_board_bb_no_SEQ;
 
 CREATE SEQUENCE bulletin_board_bb_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
-
 
 
 CREATE TABLE product(
@@ -81,12 +79,8 @@ DROP SEQUENCE cart_c_item_no_SEQ;
 CREATE SEQUENCE cart_c_item_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
 
 
-
 CREATE TABLE orders(
 		o_no                          		NUMBER(10)		 NULL ,
-		o_name                        		VARCHAR2(10)		 NULL ,
-		o_phone                       		VARCHAR2(20)		 NULL ,
-		o_address                     		VARCHAR2(50)		 NULL ,
 		o_date                        		DATE		 DEFAULT sysdate		 NULL ,
 		o_desc                        		VARCHAR2(100)		 NULL ,
 		o_price                       		NUMBER(10)		 NULL ,
@@ -111,28 +105,26 @@ DROP SEQUENCE order_item_oi_no_SEQ;
 CREATE SEQUENCE order_item_oi_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
 
 
-
 ALTER TABLE member ADD CONSTRAINT IDX_member_PK PRIMARY KEY (m_id);
 
 ALTER TABLE qna_board ADD CONSTRAINT IDX_qna_board_PK PRIMARY KEY (qb_no);
-ALTER TABLE qna_board ADD CONSTRAINT IDX_qna_board_FK0 FOREIGN KEY (m_id) REFERENCES member (m_id);
+ALTER TABLE qna_board ADD CONSTRAINT IDX_qna_board_FK0 FOREIGN KEY (m_id) REFERENCES member (m_id) ON DELETE CASCADE;
 
 ALTER TABLE bulletin_board ADD CONSTRAINT IDX_bulletin_board_PK PRIMARY KEY (bb_no);
-ALTER TABLE bulletin_board ADD CONSTRAINT IDX_bulletin_board_FK0 FOREIGN KEY (m_id) REFERENCES member (m_id);
+ALTER TABLE bulletin_board ADD CONSTRAINT IDX_bulletin_board_FK0 FOREIGN KEY (m_id) REFERENCES member (m_id) ON DELETE CASCADE;
 
 ALTER TABLE product ADD CONSTRAINT IDX_product_PK PRIMARY KEY (p_no);
 
 ALTER TABLE member_detail ADD CONSTRAINT IDX_member_detail_PK PRIMARY KEY (m_id);
-ALTER TABLE member_detail ADD CONSTRAINT IDX_member_detail_FK0 FOREIGN KEY (m_id) REFERENCES member (m_id);
+ALTER TABLE member_detail ADD CONSTRAINT IDX_member_detail_FK0 FOREIGN KEY (m_id) REFERENCES member (m_id) ON DELETE CASCADE;
 
 ALTER TABLE cart ADD CONSTRAINT IDX_cart_PK PRIMARY KEY (c_item_no);
 ALTER TABLE cart ADD CONSTRAINT IDX_cart_FK0 FOREIGN KEY (p_no) REFERENCES product (p_no);
-ALTER TABLE cart ADD CONSTRAINT IDX_cart_FK1 FOREIGN KEY (m_id) REFERENCES member (m_id);
+ALTER TABLE cart ADD CONSTRAINT IDX_cart_FK1 FOREIGN KEY (m_id) REFERENCES member (m_id) ON DELETE CASCADE;
 
 ALTER TABLE orders ADD CONSTRAINT IDX_orders_PK PRIMARY KEY (o_no);
-ALTER TABLE orders ADD CONSTRAINT IDX_orders_FK0 FOREIGN KEY (m_id) REFERENCES member (m_id);
+ALTER TABLE orders ADD CONSTRAINT IDX_orders_FK0 FOREIGN KEY (m_id) REFERENCES member (m_id) ON DELETE CASCADE;
 
 ALTER TABLE order_item ADD CONSTRAINT IDX_order_item_PK PRIMARY KEY (oi_no);
-ALTER TABLE order_item ADD CONSTRAINT IDX_order_item_FK0 FOREIGN KEY (o_no) REFERENCES orders (o_no);
+ALTER TABLE order_item ADD CONSTRAINT IDX_order_item_FK0 FOREIGN KEY (o_no) REFERENCES orders (o_no) ON DELETE CASCADE;
 ALTER TABLE order_item ADD CONSTRAINT IDX_order_item_FK1 FOREIGN KEY (p_no) REFERENCES product (p_no);
-
