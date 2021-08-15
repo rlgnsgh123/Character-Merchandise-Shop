@@ -30,14 +30,16 @@ insert into cart(c_item_no,c_item_qty,m_id,p_no) values(CART_C_ITEM_NO_SEQ.nextv
 insert into cart(c_item_no,c_item_qty,m_id,p_no) values(CART_C_ITEM_NO_SEQ.nextval,3,'customer3',1);
 
 /****************Orders Insert***********************/
-insert into orders(o_no,o_date,o_desc,o_price,o_method,m_id) values(orders_o_no_seq.nextval,sysdate,'펭슈','30000','test','customer1');
+insert into orders(o_no,o_date,o_desc,o_price,o_method,m_id) values(orders_o_no_seq.nextval,sysdate,'펭슈','30000','카드','customer1');
     insert into order_item(oi_no,oi_amount,p_no,o_no) values(ORDER_ITEM_OI_NO_SEQ.nextval,1,1,ORDERS_O_NO_SEQ.currval);
-insert into orders(o_no,o_date,o_desc,o_price,o_method,m_id) values(orders_o_no_seq.nextval,sysdate,'피카츄 외 1종','75000','test2','customer2');
+insert into orders(o_no,o_date,o_desc,o_price,o_method,m_id) values(orders_o_no_seq.nextval,sysdate,'피카츄 외 1종','75000','카드','customer2');
     insert into order_item(oi_no,oi_amount,p_no,o_no) values(ORDER_ITEM_OI_NO_SEQ.nextval,1,2,ORDERS_O_NO_SEQ.currval);
     insert into order_item(oi_no,oi_amount,p_no,o_no) values(ORDER_ITEM_OI_NO_SEQ.nextval,1,3,ORDERS_O_NO_SEQ.currval);
-insert into orders(o_no,o_date,o_desc,o_price,o_method,m_id) values(orders_o_no_seq.nextval,sysdate,'가카오','80000','test3','customer3');
+insert into orders(o_no,o_date,o_desc,o_price,o_method,m_id) values(orders_o_no_seq.nextval,sysdate,'가카오','80000','카드','customer3');
     insert into order_item(oi_no,oi_amount,p_no,o_no) values(ORDER_ITEM_OI_NO_SEQ.nextval,2,3,ORDERS_O_NO_SEQ.currval);
-insert into orders(o_no,o_date,o_desc,o_price,o_method,m_id) values(orders_o_no_seq.nextval,sysdate,'펭슈 외 2종','105000','test4','customer4');
+insert into orders(o_no,o_date,o_desc,o_price,o_method,m_id) values(orders_o_no_seq.nextval,sysdate,'펭슈 외 2종','105000','카드','customer4');
     insert into order_item(oi_no,oi_amount,p_no,o_no) values(ORDER_ITEM_OI_NO_SEQ.nextval,1,1,ORDERS_O_NO_SEQ.currval);
     insert into order_item(oi_no,oi_amount,p_no,o_no) values(ORDER_ITEM_OI_NO_SEQ.nextval,1,2,ORDERS_O_NO_SEQ.currval);
     insert into order_item(oi_no,oi_amount,p_no,o_no) values(ORDER_ITEM_OI_NO_SEQ.nextval,1,3,ORDERS_O_NO_SEQ.currval);
+insert into orders(o_no,o_date,o_desc,o_price,o_method,m_id) values(orders_o_no_seq.nextval,sysdate-1,'가카오','80000','무통장입금','customer4');
+    insert into order_item(oi_no,oi_amount,p_no,o_no) values(ORDER_ITEM_OI_NO_SEQ.nextval,2,3,ORDERS_O_NO_SEQ.currval);

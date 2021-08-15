@@ -18,5 +18,7 @@ delete member where m_id='customer1';
 rollback;
 
 commit;
+select count(*) from cart c join member m on c.m_id= m.m_id
+where m.m_id='customer1';
 
 

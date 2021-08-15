@@ -84,7 +84,7 @@ CREATE TABLE orders(
 		o_date                        		DATE		 DEFAULT sysdate		 NULL ,
 		o_desc                        		VARCHAR2(100)		 NULL ,
 		o_price                       		NUMBER(10)		 NULL ,
-		o_method                      		VARCHAR2(10)		 NULL ,
+		o_method                      		VARCHAR2(20)		 NULL ,
 		m_id                          		VARCHAR2(10)		 NULL 
 );
 
