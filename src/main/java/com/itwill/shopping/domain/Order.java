@@ -12,8 +12,7 @@ O_PHONE            VARCHAR2(20)
 O_ADDRESS          VARCHAR2(50)  
 O_DATE             DATE          
 O_DESC             VARCHAR2(100) 
-O_PRICE            NUMBER(10)    
-O_METHOD           VARCHAR2(10)  
+O_PRICE            NUMBER(10)     
 M_ID               VARCHAR2(10)  
  */
 public class Order {
@@ -21,7 +20,6 @@ public class Order {
 	private Date o_date;
 	private String o_desc;
 	private int o_price;
-	private String o_method;
 	private Member member;
 	private ArrayList<OrderItem> orderItemList;
 	
@@ -29,14 +27,12 @@ public class Order {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Order(int o_no, Date o_date, String o_desc, int o_price, String o_method, Member member,
-			ArrayList<OrderItem> orderItemList) {
+	public Order(int o_no, Date o_date, String o_desc, int o_price, Member member, ArrayList<OrderItem> orderItemList) {
 		super();
 		this.o_no = o_no;
 		this.o_date = o_date;
 		this.o_desc = o_desc;
 		this.o_price = o_price;
-		this.o_method = o_method;
 		this.member = member;
 		this.orderItemList = orderItemList;
 	}
@@ -73,14 +69,6 @@ public class Order {
 		this.o_price = o_price;
 	}
 
-	public String getO_method() {
-		return o_method;
-	}
-
-	public void setO_method(String o_method) {
-		this.o_method = o_method;
-	}
-
 	public Member getMember() {
 		return member;
 	}
@@ -100,7 +88,8 @@ public class Order {
 	@Override
 	public String toString() {
 		return "Order [o_no=" + o_no + ", o_date=" + o_date + ", o_desc=" + o_desc + ", o_price=" + o_price
-				+ ", o_method=" + o_method + ", member=" + member + ", orderItemList=" + orderItemList + "]";
+				+ ", member=" + member + ", orderItemList=" + orderItemList + "]";
 	}
+	
 	
 }
