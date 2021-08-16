@@ -14,11 +14,3 @@ update member_detail set md_birthday=to_date('1992/09/24','YYYY/MM/DD'), md_gend
 --회원 한명 삭제(on delete cacscade)
 delete member where m_id='customer1';
 
---------------------------------------
-rollback;
-
-commit;
-select count(*) from cart c join member m on c.m_id= m.m_id
-where m.m_id='customer1';
-
-
