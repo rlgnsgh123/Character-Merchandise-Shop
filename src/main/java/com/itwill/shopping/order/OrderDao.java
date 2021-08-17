@@ -11,9 +11,9 @@ import javax.sql.DataSource;
 import org.apache.tomcat.dbcp.dbcp2.BasicDataSource;
 
 import com.itwill.shopping.order.Order;
+import com.itwill.shopping.orderItem.OrderItem;
 import com.itwill.shopping.member.Member;
 import com.itwill.shopping.member.MemberDao;
-import com.itwill.shopping.orderItem.OrderItem;
 import com.itwill.shopping.product.Product;
 
 public class OrderDao {
@@ -35,9 +35,43 @@ public class OrderDao {
 	 * insert into orders(o_no,o_date,o_desc,o_price,m_id) values(orders_o_no_seq.nextval,sysdate,'펭슈','30000','customer1');
        insert into order_item(oi_no,oi_amount,p_no,o_no) values(ORDER_ITEM_OI_NO_SEQ.nextval,1,1,ORDERS_O_NO_SEQ.currval);
 	 */
-	
-	
-	
+	public int create(Order order) throws Exception {
+		Connection con=null;
+		PreparedStatement pstmt1=null;
+		PreparedStatement pstmt2=null;
+		int insertRowCount=0;
+		String insertOrder=
+				"insert into orders(o_no,o_date,o_desc,o_price,m_id) values(orders_o_no_seq.nextval,sysdate,?,?,?)";
+		String insertOrderItem=
+				"insert into order_item(oi_no,oi_amount,p_no,o_no) values(ORDER_ITEM_OI_NO_SEQ.nextval,?,?,ORDERS_O_NO_SEQ.currval)";		
+		try {
+			con=dataSource.getConnection();
+			pstmt1=con.prepareStatement(insertOrder);
+			pstmt1.setString(1, order.getO_desc());
+			pstmt1.setInt(2, order.getO_price());
+			pstmt1.setString(3, order.getM_id());
+			insertRowCount=pstmt1.executeUpdate();
+			
+			pstmt2=con.prepareStatement(insertOrderItem);
+			for(OrderItem orderItem:order.getOrderItemList()) {
+				pstmt2.setInt(1, orderItem.getOi_amount());
+				pstmt2.setInt(2, orderItem.getProduct().getP_no());
+				pstmt2.executeUpdate();				
+			}
+			con.commit();			
+		} catch (Exception e) {
+			e.printStackTrace();
+			con.rollback();
+		} finally {
+			if(pstmt2!=null)
+				pstmt2.close();
+			if(pstmt1!=null)
+				pstmt1.close();
+			if(con!=null)
+				con.close();
+		}	
+		return insertRowCount;		
+	}
 	
 	
 	//2. 멤버 한 사람의 주문전체목록
@@ -207,16 +241,27 @@ public class OrderDao {
 	in(select o_no from orders where m_id='customer4');
 	delete from orders where m_id='customer4';
 	 */
-	
-	
-	
-	
-	
-	
-
-	
-	
-	
-	
+	public int deleteOrderById(String m_id) throws Exception {
+		String deleteSql="select * from orders where m_id=?";
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		int deleteRowCount = 0;
+		try {
+			con=dataSource.getConnection();
+			pstmt=con.prepareStatement(deleteSql);
+			pstmt.setString(1, m_id);
+			deleteRowCount = pstmt.executeUpdate();
+			con.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+			con.rollback();
+		} finally {
+			if(pstmt!=null)
+				pstmt.close();
+			if(con!=null)
+				con.close();
+		}
+		return deleteRowCount;		
+	}
 	
 }
