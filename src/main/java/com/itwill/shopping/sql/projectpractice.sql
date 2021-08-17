@@ -66,7 +66,7 @@ rollback;
 
 select * from product;
 --35000원 이상인 제품 보여주기
-select * from product where p_price > 35000;
+select * from product where p_price >= 35000;
 
 
 
