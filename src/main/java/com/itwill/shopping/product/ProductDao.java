@@ -31,10 +31,9 @@ public class ProductDao {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String selectQuery = "select * from product order by p_price desc";
 		try {
 			con = dataSource.getConnection();
-			pstmt = con.prepareStatement(selectQuery);
+			pstmt = con.prepareStatement(ProductSQL.PRODUCT_SELECT_DESC);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				productList.add(new Product(rs.getInt("p_no"), rs.getString("p_name"), rs.getInt("p_price"), null, 0,
@@ -54,10 +53,9 @@ public class ProductDao {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String selectQuery = "select * from product order by p_price asc";
 		try {
 			con = dataSource.getConnection();
-			pstmt = con.prepareStatement(selectQuery);
+			pstmt = con.prepareStatement(ProductSQL.PRODUCT_SELECT_ASC);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				productList.add(new Product(rs.getInt("p_no"), rs.getString("p_name"), rs.getInt("p_price"), null, 0,
@@ -77,10 +75,9 @@ public class ProductDao {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String selectDetailProduct = "select * from product where p_no =?";
 		try {
 			con= dataSource.getConnection();
-			pstmt= con.prepareStatement(selectDetailProduct);
+			pstmt= con.prepareStatement(ProductSQL.PRODUCT_DETAIL);
 			pstmt.setInt(1, p_no);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
@@ -99,6 +96,8 @@ public class ProductDao {
 		}
 		return product;
 	}
+	
+	
 	
 	
 	
