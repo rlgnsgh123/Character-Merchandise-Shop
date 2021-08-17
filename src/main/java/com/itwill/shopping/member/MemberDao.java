@@ -132,20 +132,20 @@ public class MemberDao {
 		
 	}
 	
-	public boolean selectByIdCount(String m_id) throws Exception {
+	public boolean idCheckCount(String m_id) throws Exception {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		boolean idCheck = false;
 		try {
 			con = dataSource.getConnection();
-			pstmt = con.prepareStatement(MemberSQL.MEMBER_SELECT_BY_ID_COUNT);
+			pstmt = con.prepareStatement(MemberSQL.MEMBER_ID_CHECK_COUNT);
 			pstmt.setString(1, m_id);
 			rs = pstmt.executeQuery();
 			rs.next();
 			int count = rs.getInt("cnt");
 			if(count==1) 
-				idCheck = true;
+				idCheck = true; //아이디 중복 -> 에러메시지
 			
 		} finally {
 			if(rs!=null)
