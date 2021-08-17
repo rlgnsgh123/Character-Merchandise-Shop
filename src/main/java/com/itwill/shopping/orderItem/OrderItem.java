@@ -15,56 +15,69 @@ public class OrderItem {
 	private int oi_no;
 	private int oi_amount;
 	private Product product;
-	private Order order;
+	private int o_no;
 	
+
 	public OrderItem() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public OrderItem(int oi_no, int oi_amount, Product product, Order order) {
+
+	public OrderItem(int oi_no, int oi_amount, Product product, int o_no) {
 		super();
 		this.oi_no = oi_no;
 		this.oi_amount = oi_amount;
 		this.product = product;
-		this.order = order;
+		this.o_no = o_no;
 	}
+
 
 	public int getOi_no() {
 		return oi_no;
 	}
 
+
 	public void setOi_no(int oi_no) {
 		this.oi_no = oi_no;
 	}
+
 
 	public int getOi_amount() {
 		return oi_amount;
 	}
 
+
 	public void setOi_amount(int oi_amount) {
 		this.oi_amount = oi_amount;
 	}
+
 
 	public Product getProduct() {
 		return product;
 	}
 
+
 	public void setProduct(Product product) {
 		this.product = product;
 	}
 
-	public Order getOrder() {
-		return order;
+
+	public int getO_no() {
+		return o_no;
 	}
 
-	public void setOrder(Order order) {
-		this.order = order;
+
+	public void setO_no(int o_no) {
+		this.o_no = o_no;
 	}
+
 
 	@Override
 	public String toString() {
-		return "OrderItem [oi_no=" + oi_no + ", oi_amount=" + oi_amount + ", product=" + product + ", order=" + order
+		return "OrderItem [oi_no=" + oi_no + ", oi_amount=" + oi_amount + ", product=" + product + ", o_no=" + o_no
 				+ "]";
 	}
+	
+	
 	
 }
