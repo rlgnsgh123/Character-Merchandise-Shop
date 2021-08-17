@@ -65,7 +65,7 @@ public class MemberDao {
 			updateRowCount = pstmt.executeUpdate();
 			//MEMBER_UPDATE="update member set m_password=?,m_name=?,m_address=?,m_phone=? where m_id=?";
 			//1.수정할 정보들을 pstmt에 저장하기(5가지 정보)
-			//2.pstmt에 받은 정보를 리턴할 값에 넣기
+			//2.pstmt에 받은 정보를 리턴할 값에 넣기.
 			
 			
 			
