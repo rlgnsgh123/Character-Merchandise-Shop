@@ -1,7 +1,7 @@
 /****************Member Select***********************/
 
 -- 회원정보 리스트 보기
-select * from member m join member_detail md on m.m_id=md.m_id;
+select * from member;
 -- 회원 아이디로 회원 찾기
 select * from member where m_id = 'customer1';
 -- 회원 존재여부 체크(회원가입시)
@@ -16,7 +16,7 @@ select * from product;
 select * from product where p_name='펭슈';
 /****************Bulletin Select***********************/
 -- 공지사항 게시글 전체 보기
-select * from bulletin_board;
+select * from notice_board;
 
 
 /****************QNA Board Select***********************/

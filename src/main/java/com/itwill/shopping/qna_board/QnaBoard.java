@@ -12,7 +12,7 @@ QB_DATE             DATE
 QB_VCOUNT           NUMBER(10)     
 M_ID                VARCHAR2(10)   
  */
-public class qna_board {
+public class QnaBoard {
 	private int qb_no;
 	private String qb_title;
 	private String qb_content;
@@ -20,11 +20,11 @@ public class qna_board {
 	private int qb_vcount;
 	private String m_id;
 	
-	public qna_board() {
+	public QnaBoard() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public qna_board(int qb_no, String qb_title, String qb_content, Date qb_date, int qb_vcount, String m_id) {
+	public QnaBoard(int qb_no, String qb_title, String qb_content, Date qb_date, int qb_vcount, String m_id) {
 		super();
 		this.qb_no = qb_no;
 		this.qb_title = qb_title;

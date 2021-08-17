@@ -4,8 +4,7 @@ select * from member;
 select * from order_item;
 select * from orders;
 select * from qna_board;
-select * from bulletin_board;
-select * from member_detail;
+select * from notice_board;
 
 --customer1의 카트확인 (멤버 한사람의 카트에 제품존재여부)
 select count(*) from cart c join member m on c.m_id= m.m_id
@@ -29,14 +28,14 @@ select * from member;
 update member set m_password = '6666', m_name='kkk' where m_id ='customer1'; 
 
 --고객센터 게시글 전체글 확인
-select * from bulletin_board order by bb_date;
+select * from notice_board order by bb_date;
 
 --고객센터 customer1이 쓴 글 확인
-select * from bulletin_board where m_id = 'customer1';
+select * from notice_board where m_id = 'customer1';
 
 --고객센터 글쓰기
-insert into bulletin_board 
-values(bulletin_board_bb_no_seq.nextval,'제목목','내용용',sysdate,0,'customer1');
+insert into notice_board 
+values(notice_board_bb_no_seq.nextval,'제목목','내용용',sysdate,0,'customer1');
 
 --카트아이템 1개 제품정보(customer1꺼)
 select * from cart c join product p on c.p_no =p.p_no 
