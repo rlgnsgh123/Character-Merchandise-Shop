@@ -4,11 +4,11 @@ public class MemberSQL {
 	public final static String MEMBER_INSERT=
 			"insert into member(m_id,m_password,m_name,m_address,m_phone) values(?,?,?,?,?)";
 	public final static String MEMBER_UPDATE=
-			"update member set m_password=?, m_name=?, m_address=?, md_phone=? where m_id=?";
+			"update member set m_password=?,m_name=?,m_address=?,m_phone=? where m_id=?";
 	public final static String MEMBER_SELECT_BY_ID=
-			"select * from member where m_id=?";
+			"select m_id,m_password,m_name,m_address,m_phone from member where m_id=?";
 	public final static String MEMBER_SELECT_ALL=
-			"select * from member";
+			"select m_id,m_password,m_name,m_address,m_phone from member";
 	public final static String MEMBER_SELECT_BY_ID_COUNT=
 			"select count(*) cnt from member where m_id=?";
 	public final static String MEMBER_DLELTE=
