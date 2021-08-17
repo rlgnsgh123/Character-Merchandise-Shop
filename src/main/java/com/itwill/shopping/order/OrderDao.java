@@ -157,7 +157,7 @@ public class OrderDao {
 		ResultSet rs = null;
 		String selectQuery = "select * from orders o join order_item oi on o.o_no=oi.o_no  join  product p on oi.p_no=p.p_no where o.m_id=? and o.o_no = ?";
 	
-		try {
+		
 			con=dataSource.getConnection();
 			pstmt=con.prepareStatement(selectQuery);
 			pstmt.setString(1,m_id);
@@ -169,37 +169,27 @@ public class OrderDao {
 								rs.getDate("o_date"),
 								rs.getString("o_desc"),
 								rs.getInt("o_price"),
-								rs.getString("m_id"),
-								null);
-			
-				
-		ArrayList<OrderItem> orderItemList = new ArrayList<OrderItem>();
-		
-			do {
-				
-				orderItemList.add(new OrderItem(rs.getInt("oi_no"),
-												rs.getInt("oi_amount"),
-												new Product(rs.getInt("p_no"),
-															rs.getString("p_name"),
-															rs.getInt("p_price"),
-															rs.getString("p_desc"),
-															rs.getInt("p_stock"),
-															rs.getDate("p_regdate"),
-															rs.getString("p_image")),
-															null));
-				
-			}while(rs.next());
-			
-			order.setOrderItemList(orderItemList);
-		
+								rs.getString("m_id"));
+				do {
+					order.getOrderItemList().add(new OrderItem(rs.getInt("oi_no"),
+																rs.getInt("oi_amount"),
+																new Product(rs.getInt("p_no"),
+																		rs.getString("p_name"),
+																		rs.getInt("p_price"),
+																		rs.getString("p_desc"),
+																		rs.getInt("p_stock"),
+																		rs.getDate("p_regdate"),
+																		rs.getString("p_image")),
+																rs.getInt("o_no"))
+									);
+																
+				}while(rs.next());
 			}
-		}finally {
-			if(con!=null) {
-				con.close();
-			}
+			
+			
+			return order;
 		}
-		return order;
-	}
+		
 	
 	
 	//5. 주문 한 개 삭제(주문 아이템 1개 삭제, 주문 삭제)

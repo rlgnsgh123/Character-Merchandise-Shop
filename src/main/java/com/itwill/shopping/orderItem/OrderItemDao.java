@@ -49,7 +49,7 @@ public class OrderItemDao {
 				orderItem = new OrderItem(rs.getInt("oi_no"),
 									rs.getInt("oi_amount"),
 									null,
-									null);	
+									rs.getInt("o_no"));	
 		}
 		
 		
