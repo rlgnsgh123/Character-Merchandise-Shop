@@ -39,6 +39,7 @@ CREATE TABLE notice_board(
 		nb_content                    		VARCHAR2(2000)		 NULL ,
 		nb_date                       		DATE		 DEFAULT sysdate		 NULL ,
 		nb_vcount                     		NUMBER(10)		 DEFAULT 0		 NULL ,
+		nb_groupno                    		NUMBER(10)		 NULL ,
 		m_id                          		VARCHAR2(10)		 NULL 
 );
 
