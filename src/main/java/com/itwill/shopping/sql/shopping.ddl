@@ -1,17 +1,18 @@
 DROP TABLE order_item CASCADE CONSTRAINTS;
 DROP TABLE orders CASCADE CONSTRAINTS;
 DROP TABLE cart CASCADE CONSTRAINTS;
-DROP TABLE member_detail CASCADE CONSTRAINTS;
 DROP TABLE product CASCADE CONSTRAINTS;
-DROP TABLE bulletin_board CASCADE CONSTRAINTS;
+DROP TABLE notice_board CASCADE CONSTRAINTS;
 DROP TABLE qna_board CASCADE CONSTRAINTS;
 DROP TABLE member CASCADE CONSTRAINTS;
+
 
 CREATE TABLE member(
 		m_id                          		VARCHAR2(10)		 NULL ,
 		m_password                    		VARCHAR2(16)		 NULL ,
 		m_name                        		VARCHAR2(20)		 NULL ,
-		m_address                     		VARCHAR2(100)		 NULL 
+		m_address                     		VARCHAR2(100)		 NULL ,
+		m_phone                     		VARCHAR2(20)		 NULL
 );
 
 CREATE TABLE qna_board(
@@ -28,18 +29,18 @@ DROP SEQUENCE qna_board_qb_no_SEQ;
 CREATE SEQUENCE qna_board_qb_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
 
 
-CREATE TABLE bulletin_board(
-		bb_no                         		NUMBER(10)		 NULL ,
-		bb_title                      		VARCHAR2(100)		 NULL ,
-		bb_content                    		VARCHAR2(2000)		 NULL ,
-		bb_date                       		DATE		 DEFAULT sysdate		 NULL ,
-		bb_vcount                     		NUMBER(10)		 DEFAULT 0		 NULL ,
+CREATE TABLE notice_board(
+		nb_no                         		NUMBER(10)		 NULL ,
+		nb_title                      		VARCHAR2(100)		 NULL ,
+		nb_content                    		VARCHAR2(2000)		 NULL ,
+		nb_date                       		DATE		 DEFAULT sysdate		 NULL ,
+		nb_vcount                     		NUMBER(10)		 DEFAULT 0		 NULL ,
 		m_id                          		VARCHAR2(10)		 NULL 
 );
 
-DROP SEQUENCE bulletin_board_bb_no_SEQ;
+DROP SEQUENCE notice_board_nb_no_SEQ;
 
-CREATE SEQUENCE bulletin_board_bb_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
+CREATE SEQUENCE notice_board_nb_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
 
 
 CREATE TABLE product(
@@ -55,16 +56,6 @@ CREATE TABLE product(
 DROP SEQUENCE product_p_no_SEQ;
 
 CREATE SEQUENCE product_p_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
-
-
-CREATE TABLE member_detail(
-		m_id                          		VARCHAR2(10)		 NULL ,
-		md_birthday                   		DATE		 NULL ,
-		md_gender                     		VARCHAR2(1)		 NULL ,
-		md_phone                      		VARCHAR2(20)		 NULL ,
-		md_email                      		VARCHAR2(50)		 NULL ,
-		md_join_date                  		DATE		 DEFAULT sysdate		 NULL 
-);
 
 
 CREATE TABLE cart(
@@ -109,13 +100,10 @@ ALTER TABLE member ADD CONSTRAINT IDX_member_PK PRIMARY KEY (m_id);
 ALTER TABLE qna_board ADD CONSTRAINT IDX_qna_board_PK PRIMARY KEY (qb_no);
 ALTER TABLE qna_board ADD CONSTRAINT IDX_qna_board_FK0 FOREIGN KEY (m_id) REFERENCES member (m_id) ON DELETE CASCADE;
 
-ALTER TABLE bulletin_board ADD CONSTRAINT IDX_bulletin_board_PK PRIMARY KEY (bb_no);
-ALTER TABLE bulletin_board ADD CONSTRAINT IDX_bulletin_board_FK0 FOREIGN KEY (m_id) REFERENCES member (m_id) ON DELETE CASCADE;
+ALTER TABLE notice_board ADD CONSTRAINT IDX_notice_board_PK PRIMARY KEY (nb_no);
+ALTER TABLE notice_board ADD CONSTRAINT IDX_notice_board_FK0 FOREIGN KEY (m_id) REFERENCES member (m_id) ON DELETE CASCADE;
 
 ALTER TABLE product ADD CONSTRAINT IDX_product_PK PRIMARY KEY (p_no);
-
-ALTER TABLE member_detail ADD CONSTRAINT IDX_member_detail_PK PRIMARY KEY (m_id);
-ALTER TABLE member_detail ADD CONSTRAINT IDX_member_detail_FK0 FOREIGN KEY (m_id) REFERENCES member (m_id) ON DELETE CASCADE;
 
 ALTER TABLE cart ADD CONSTRAINT IDX_cart_PK PRIMARY KEY (c_item_no);
 ALTER TABLE cart ADD CONSTRAINT IDX_cart_FK0 FOREIGN KEY (p_no) REFERENCES product (p_no);

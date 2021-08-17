@@ -1,4 +1,4 @@
-package com.itwill.shopping.domain;
+package com.itwill.shopping.product;
 
 import java.util.Date;
 

@@ -1,4 +1,4 @@
-package com.itwill.shopping.domain;
+package com.itwill.shopping.qna_board;
 
 import java.util.Date;
 

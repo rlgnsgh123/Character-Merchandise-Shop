@@ -1,9 +1,9 @@
-package com.itwill.shopping.domain;
+package com.itwill.shopping.member;
 
 import java.util.ArrayList;
 
-import com.itwill.shopping.domain.CartItem;
-import com.itwill.shopping.domain.Order;
+import com.itwill.shopping.cartItem.CartItem;
+import com.itwill.shopping.order.Order;
 
 /*
 이름         널?       유형            
@@ -11,13 +11,15 @@ import com.itwill.shopping.domain.Order;
 M_ID       NOT NULL VARCHAR2(10)  
 M_PASSWORD          VARCHAR2(16)  
 M_NAME              VARCHAR2(20)  
-M_ADDRESS           VARCHAR2(100) 
+M_ADDRESS           VARCHAR2(100)
+M_PHONE             VARCHAR2(20)   
 */
 public class Member {
 	private String m_id;
 	private String m_password;
 	private String m_name;
 	private String m_address;
+	private String m_phone;
 	private ArrayList<Order> orderList;
 	private ArrayList<CartItem> cartItemList;
 	
@@ -25,13 +27,14 @@ public class Member {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Member(String m_id, String m_password, String m_name, String m_address, ArrayList<Order> orderList,
-			ArrayList<CartItem> cartItemList) {
+	public Member(String m_id, String m_password, String m_name, String m_address, String m_phone,
+			ArrayList<Order> orderList, ArrayList<CartItem> cartItemList) {
 		super();
 		this.m_id = m_id;
 		this.m_password = m_password;
 		this.m_name = m_name;
 		this.m_address = m_address;
+		this.m_phone = m_phone;
 		this.orderList = orderList;
 		this.cartItemList = cartItemList;
 	}
@@ -68,6 +71,14 @@ public class Member {
 		this.m_address = m_address;
 	}
 
+	public String getM_phone() {
+		return m_phone;
+	}
+
+	public void setM_phone(String m_phone) {
+		this.m_phone = m_phone;
+	}
+
 	public ArrayList<Order> getOrderList() {
 		return orderList;
 	}
@@ -87,7 +98,8 @@ public class Member {
 	@Override
 	public String toString() {
 		return "Member [m_id=" + m_id + ", m_password=" + m_password + ", m_name=" + m_name + ", m_address=" + m_address
-				+ ", orderList=" + orderList + ", cartItemList=" + cartItemList + "]";
+				+ ", m_phone=" + m_phone + ", orderList=" + orderList + ", cartItemList=" + cartItemList + "]";
 	}
+	
 	
 }

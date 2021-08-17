@@ -1,4 +1,8 @@
-package com.itwill.shopping.domain;
+package com.itwill.shopping.orderItem;
+
+import com.itwill.shopping.order.Order;
+import com.itwill.shopping.product.Product;
+
 /*
  이름        널?       유형         
 --------- -------- ---------- 

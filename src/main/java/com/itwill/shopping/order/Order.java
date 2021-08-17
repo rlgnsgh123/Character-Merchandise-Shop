@@ -1,7 +1,10 @@
-package com.itwill.shopping.domain;
+package com.itwill.shopping.order;
 
 import java.util.ArrayList;
 import java.util.Date;
+
+import com.itwill.shopping.member.Member;
+import com.itwill.shopping.orderItem.OrderItem;
 
 /*
  이름        널?       유형            

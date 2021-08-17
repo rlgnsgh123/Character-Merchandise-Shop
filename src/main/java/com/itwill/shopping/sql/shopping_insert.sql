@@ -1,28 +1,25 @@
 /****************Member Insert***********************/
 ---- 고객
-insert into member(m_id,m_password,m_name,m_address) values('customer1','1111','김기훈','인천시');
-    insert into member_detail(m_id,md_birthday,md_gender,md_phone,md_email,md_join_date) values('customer1','1993/11/12','M','010-0000-0000','k@naver.com',sysdate);
-insert into member(m_id,m_password,m_name,m_address) values('customer2','2222','심기훈','서울시');
-    insert into member_detail(m_id,md_birthday,md_gender,md_phone,md_email,md_join_date) values('customer2','1990/01/12','F','010-1111-0000','h@naver.com',sysdate);
-insert into member(m_id,m_password,m_name,m_address) values('customer3','3333','팀기훈','경기도');
-    insert into member_detail(m_id,md_birthday,md_gender,md_phone,md_email,md_join_date) values('customer3','1980/02/20','M','010-0000-2222','k@naver.com',sysdate);
-insert into member(m_id,m_password,m_name,m_address) values('customer4','4444','핌기훈','부산시');
-    insert into member_detail(m_id,md_birthday,md_gender,md_phone,md_email,md_join_date) values('customer4','2003/11/20','M','010-0000-3333','k@naver.com',sysdate);
+insert into member(m_id,m_password,m_name,m_address,m_phone) values('customer1','1111','김기훈','인천시','010-0000-0000');
+insert into member(m_id,m_password,m_name,m_address,m_phone) values('customer2','2222','심기훈','서울시','010-1111-0000');
+insert into member(m_id,m_password,m_name,m_address,m_phone) values('customer3','3333','팀기훈','경기도','010-0000-2222');
+insert into member(m_id,m_password,m_name,m_address,m_phone) values('customer4','4444','핌기훈','부산시','010-0000-3333');
+ 
 
 ----- 관리자
-insert into member(m_id,m_password,m_name,m_address) values('admin1','1111','admin','admin');
+insert into member(m_id,m_password,m_name,m_address,m_phone) values('admin1','1111','admin','admin','010-1111-1111');
 
 /****************Product Insert***********************/
 insert into product(p_no,p_name,p_price,p_desc,p_stock,p_regdate,p_image) values(product_p_no_seq.nextval,'펭슈',30000,'귀여워요',100,sysdate,'사진1');
 insert into product(p_no,p_name,p_price,p_desc,p_stock,p_regdate,p_image) values(product_p_no_seq.nextval,'피가츄',35000,'따끔해요',100,sysdate,'사진2');
 insert into product(p_no,p_name,p_price,p_desc,p_stock,p_regdate,p_image) values(product_p_no_seq.nextval,'가카오',40000,'비싸요',100,sysdate,'사진3');
 
-/****************Bulletin Board Insert***********************/
-insert into bulletin_board(bb_no,bb_title,bb_content,bb_date,bb_vcount,m_id) values(qna_board_qb_no_seq.nextval,'타이틀 test','내용 test',sysdate,0,'admin1');
+/****************Notice Board Insert***********************/
+insert into notice_board(nb_no,nb_title,nb_content,nb_date,nb_vcount,m_id) values(qna_board_qb_no_seq.nextval,'타이틀 test','내용 test',sysdate,0,'admin1');
 
 
 /****************QNA Board Insert***********************/
-insert into qna_board(qb_no,qb_title,qb_content,qb_date,qb_vcount,m_id) values(bulletin_board_bb_no_seq.nextval,'타이틀 test','내용 test',sysdate,0,'customer1');
+insert into qna_board(qb_no,qb_title,qb_content,qb_date,qb_vcount,m_id) values(notice_board_nb_no_seq.nextval,'타이틀 test','내용 test',sysdate,0,'customer1');
 
 /****************Cart Insert***********************/
 insert into cart(c_item_no,c_item_qty,m_id,p_no) values(CART_C_ITEM_NO_SEQ.nextval,2,'customer1',2);
