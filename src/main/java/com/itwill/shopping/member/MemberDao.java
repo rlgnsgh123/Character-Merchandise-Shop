@@ -64,7 +64,7 @@ public class MemberDao {
 			pstmt.setString(5, member.getM_phone());
 			updateRowCount = pstmt.executeUpdate();
 			//MEMBER_UPDATE="update member set m_password=?,m_name=?,m_address=?,m_phone=? where m_id=?";
-			//1.수정할 정보들을 pstmt에 저장하기(4가지 정보)
+			//1.수정할 정보들을 pstmt에 저장하기(5가지 정보)
 			//2.pstmt에 받은 정보를 리턴할 값에 넣기
 			
 			
@@ -89,9 +89,20 @@ public class MemberDao {
 			pstmt = con.prepareStatement(MemberSQL.MEMBER_SELECT_BY_ID);
 			pstmt.setString(1, m_id);
 			rs = pstmt.executeQuery();
-			
+			if(rs.next()) {
+				member = new Member(rs.getString("m_id"),
+						    		rs.getString("m_password"),
+						    		rs.getString("m_name"),
+						    		rs.getString("m_address"),
+						    		rs.getString("m_phone"));
+			}
 		} finally {
-			
+			if(rs!=null)
+				rs.close();
+			if(pstmt!=null)
+				pstmt.close();
+			if(con!=null)
+				con.close();
 		}
 		return member;
 		
@@ -101,8 +112,28 @@ public class MemberDao {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
+		ArrayList<Member> selectAll = new ArrayList<Member>();
 		
-		return null;
+		try {
+			con = dataSource.getConnection();
+			pstmt = con.prepareStatement(MemberSQL.MEMBER_SELECT_ALL);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				selectAll.add(new Member(rs.getString("m_id"),
+										 rs.getString("m_password"),
+										 rs.getString("m_name"),
+										 rs.getString("m_address"),
+										 rs.getString("m_phone")));
+			}
+		} finally {
+			if(rs!=null)
+				rs.close();
+			if(pstmt!=null)
+				pstmt.close();
+			if(con!=null)
+				con.close();
+		}
+		return selectAll;
 		
 	}
 	
