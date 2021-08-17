@@ -22,6 +22,10 @@ public class NoticeBoardSQL {
 																+ "( select rownum idx, s.* from "
 																+ "( select * from notice_board order by nb_groupno DESC, nb_step ASC ) s )"
 																+ " where idx >= ? AND idx <= ?";
+	//게시글 번호로 찾기 (완료)
+	public final static String NOTICE_BOARD_SELECTNO ="select nb_no,nb_title,nb_content,nb_date,nb_vcount,nb_groupno,nb_step,nb_depth,m_id "
+			+ "											from notice_board "
+			+ "											where nb_no = ?";
 	//게시글 아이디로 찾기 (완료)
 	public final static String NOTICE_BOARD_SELECTID ="select nb_no,nb_title,nb_content,nb_date,nb_vcount,nb_groupno,nb_step,nb_depth,m_id "
 			+ "											from notice_board "
