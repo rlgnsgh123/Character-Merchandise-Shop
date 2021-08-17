@@ -12,7 +12,7 @@ nb_DATE             DATE
 nb_VCOUNT           NUMBER(10)     
 M_ID                VARCHAR2(10)  
  */
-public class Notice_board {
+public class NoticeBoard {
 	private int nb_no;
 	private String nb_title;
 	private String nb_content;
@@ -20,11 +20,11 @@ public class Notice_board {
 	private int nb_vcount;
 	private String m_id;
 	
-	public Notice_board() {
+	public NoticeBoard() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Notice_board(int nb_no, String nb_title, String nb_content, Date nb_date, int nb_vcount, String m_id) {
+	public NoticeBoard(int nb_no, String nb_title, String nb_content, Date nb_date, int nb_vcount, String m_id) {
 		super();
 		this.nb_no = nb_no;
 		this.nb_title = nb_title;
