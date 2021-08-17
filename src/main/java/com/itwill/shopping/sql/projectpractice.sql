@@ -4,7 +4,7 @@ select * from member;
 select * from order_item;
 select * from orders;
 select * from qna_board;
-select * from bulletin_board;
+select * from notice_board;
 
 --customer1의 카트확인 (멤버 한사람의 카트에 제품존재여부)
 select count(*) from cart c join member m on c.m_id= m.m_id
