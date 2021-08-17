@@ -23,20 +23,29 @@ public class Order {
 	private Date o_date;
 	private String o_desc;
 	private int o_price;
-	private Member member;
+	private String m_id;
 	private ArrayList<OrderItem> orderItemList;
 	
 	public Order() {
 		// TODO Auto-generated constructor stub
 	}
-
-	public Order(int o_no, Date o_date, String o_desc, int o_price, Member member, ArrayList<OrderItem> orderItemList) {
+	
+	public Order(int o_no, Date o_date, String o_desc, int o_price, String m_id) {
 		super();
 		this.o_no = o_no;
 		this.o_date = o_date;
 		this.o_desc = o_desc;
 		this.o_price = o_price;
-		this.member = member;
+		this.m_id = m_id;
+	}
+
+	public Order(int o_no, Date o_date, String o_desc, int o_price, String m_id, ArrayList<OrderItem> orderItemList) {
+		super();
+		this.o_no = o_no;
+		this.o_date = o_date;
+		this.o_desc = o_desc;
+		this.o_price = o_price;
+		this.m_id = m_id;
 		this.orderItemList = orderItemList;
 	}
 
@@ -72,12 +81,12 @@ public class Order {
 		this.o_price = o_price;
 	}
 
-	public Member getMember() {
-		return member;
+	public String getM_id() {
+		return m_id;
 	}
 
-	public void setMember(Member member) {
-		this.member = member;
+	public void setM_id(String m_id) {
+		this.m_id = m_id;
 	}
 
 	public ArrayList<OrderItem> getOrderItemList() {
@@ -90,9 +99,8 @@ public class Order {
 
 	@Override
 	public String toString() {
-		return "Order [o_no=" + o_no + ", o_date=" + o_date + ", o_desc=" + o_desc + ", o_price=" + o_price
-				+ ", member=" + member + ", orderItemList=" + orderItemList + "]";
+		return "Order [o_no=" + o_no + ", o_date=" + o_date + ", o_desc=" + o_desc + ", o_price=" + o_price + ", m_id="
+				+ m_id + ", orderItemList=" + orderItemList + "]";
 	}
-	
 	
 }
