@@ -40,6 +40,8 @@ CREATE TABLE notice_board(
 		nb_date                       		DATE		 DEFAULT sysdate		 NULL ,
 		nb_vcount                     		NUMBER(10)		 DEFAULT 0		 NULL ,
 		nb_groupno                    		NUMBER(10)		 NULL ,
+		nb_step                       		NUMBER(10)		 NULL ,
+		nb_depth                      		NUMBER(10)		 NULL ,
 		m_id                          		VARCHAR2(10)		 NULL 
 );
 
@@ -62,6 +64,7 @@ CREATE TABLE product(
 DROP SEQUENCE product_p_no_SEQ;
 
 CREATE SEQUENCE product_p_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
+
 
 
 CREATE TABLE cart(
@@ -101,6 +104,7 @@ CREATE TABLE order_item(
 DROP SEQUENCE order_item_oi_no_SEQ;
 
 CREATE SEQUENCE order_item_oi_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
+
 
 
 

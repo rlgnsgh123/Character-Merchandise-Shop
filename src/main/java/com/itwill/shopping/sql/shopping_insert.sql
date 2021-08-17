@@ -15,7 +15,7 @@ insert into product(p_no,p_name,p_price,p_desc,p_stock,p_regdate,p_image) values
 insert into product(p_no,p_name,p_price,p_desc,p_stock,p_regdate,p_image) values(product_p_no_seq.nextval,'가카오',40000,'비싸요',100,sysdate,'사진3');
 
 /****************Notice Board Insert***********************/
-insert into notice_board(nb_no,nb_title,nb_content,nb_date,nb_vcount,m_id) values(qna_board_qb_no_seq.nextval,'타이틀 test','내용 test',sysdate,0,'admin1');
+insert into notice_board(nb_no,nb_title,nb_content,nb_date,nb_vcount,,m_id) values(qna_board_qb_no_seq.nextval,'타이틀 test','내용 test',sysdate,0,'admin1');
 
 
 /****************QNA Board Insert***********************/
