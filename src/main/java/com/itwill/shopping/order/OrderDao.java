@@ -42,7 +42,7 @@ public class OrderDao {
 	
 	//2. 멤버 한 사람의 주문전체목록
 	
-	public ArrayList<Order> list(String sUserId) throws Exception{
+	public ArrayList<Order> list(String m_id) throws Exception{
 		ArrayList<Order> orderList = new ArrayList<Order>(); 
 		Connection con = null; 
 		PreparedStatement pstmt = null; 
@@ -52,14 +52,14 @@ public class OrderDao {
 		try {
 			con=dataSource.getConnection(); 
 			pstmt= con.prepareStatement(selectQuery); 
-			pstmt.setString(1, sUserId);
+			pstmt.setString(1, m_id);
 			rs=pstmt.executeQuery();
 			while(rs.next()) { //주문이 있다면 주문리스트객체에 정보 추가
 				orderList.add(new Order(rs.getInt("o_no"),
 										rs.getDate("o_date"),
 										rs.getString("o_desc"),
 										rs.getInt("o_price"),
-										new Member(sUserId, null, null, null, null),
+										rs.getString("m_id"),
 										null));
 			}
 			
@@ -94,7 +94,7 @@ public class OrderDao {
 									rs.getDate("o_date"),
 									rs.getString("o_desc"),
 									rs.getInt("o_price"),
-									null,
+									rs.getString("m_id"),
 									null);
 			}
 			
@@ -115,7 +115,7 @@ public class OrderDao {
 		where o.m_id='customer1' and o.o_no = 1;
 	 */
 
-	public Order detail(String sUserId,int o_no) throws Exception{
+	public Order detail(String m_id,int o_no) throws Exception{
 		
 		Order order = null;
 		Connection con = null;
@@ -126,7 +126,7 @@ public class OrderDao {
 		try {
 			con=dataSource.getConnection();
 			pstmt=con.prepareStatement(selectQuery);
-			pstmt.setString(1,sUserId);
+			pstmt.setString(1,m_id);
 			pstmt.setInt(2,o_no);
 			rs=pstmt.executeQuery();
 			
@@ -135,7 +135,7 @@ public class OrderDao {
 								rs.getDate("o_date"),
 								rs.getString("o_desc"),
 								rs.getInt("o_price"),
-								new Member(sUserId, null, null, null, null),
+								rs.getString("m_id"),
 								null);
 			
 				
