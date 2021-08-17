@@ -22,4 +22,9 @@ public class ProductService {
 		Product product = productDao.getProduct(p_no);
 		return product;
 	}
+	
+	public int insertProduct(Product product) throws Exception{
+		int insertCount = productDao.insertProduct(product);
+		return insertCount;
+	}
 }
