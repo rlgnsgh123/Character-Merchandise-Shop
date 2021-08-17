@@ -10,6 +10,8 @@ import javax.sql.DataSource;
 
 import org.apache.tomcat.dbcp.dbcp2.BasicDataSource;
 
+import com.itwill.shopping.member.MemberDao;
+
 public class MemberDao {
 	private DataSource dataSource;
 	public MemberDao() throws Exception{
@@ -55,19 +57,8 @@ public class MemberDao {
 		try {
 			con = dataSource.getConnection();
 			pstmt = con.prepareStatement(MemberSQL.MEMBER_UPDATE);
-<<<<<<< HEAD
-			pstmt.setString(1, member.getM_id());
-			pstmt.setString(2, member.getM_password());
-			pstmt.setString(3, member.getM_name());
-			pstmt.setString(4, member.getM_address());
-			pstmt.setString(5, member.getM_phone());
-			updateRowCount = pstmt.executeUpdate();
-			//MEMBER_UPDATE="update member set m_password=?,m_name=?,m_address=?,m_phone=? where m_id=?";
-			//1.수정할 정보들을 pstmt에 저장하기(5가지 정보)
-//=======
 			//MEMBER_UPDATE="update member set m_password=?,m_name=?,m_address=?,m_phone=? where m_id=?";
 			//1.수정할 정보들을 pstmt에 저장하기(4가지 정보)
-//>>>>>>> branch 'master' of https://github.com/2021-05-JAVA-DEVELOPER/web-project-team2-shopping.git
 			//2.pstmt에 받은 정보를 리턴할 값에 넣기
 			
 		} finally {
@@ -150,26 +141,6 @@ public class MemberDao {
 				con.close();
 		}
 		return deleteRowCount;
-	
+	}
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> branch 'master' of https://github.com/2021-05-JAVA-DEVELOPER/web-project-team2-shopping.git
