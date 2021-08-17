@@ -15,7 +15,7 @@ insert into product(p_no,p_name,p_price,p_desc,p_stock,p_regdate,p_image) values
 insert into product(p_no,p_name,p_price,p_desc,p_stock,p_regdate,p_image) values(product_p_no_seq.nextval,'가카오',40000,'비싸요',100,sysdate,'사진3');
 
 /****************Notice Board Insert***********************/
-insert into notice_board(nb_no,nb_title,nb_content,nb_date,nb_vcount,,m_id) values(qna_board_qb_no_seq.nextval,'타이틀 test','내용 test',sysdate,0,'admin1');
+insert into notice_board(nb_no,nb_title,nb_content,nb_date,nb_vcount,m_id) values(qna_board_qb_no_seq.nextval,'타이틀 test','내용 test',sysdate,0,'admin1');
 
 
 /****************QNA Board Insert***********************/
@@ -40,3 +40,5 @@ insert into orders(o_no,o_date,o_desc,o_price,m_id) values(orders_o_no_seq.nextv
     insert into order_item(oi_no,oi_amount,p_no,o_no) values(ORDER_ITEM_OI_NO_SEQ.nextval,1,3,ORDERS_O_NO_SEQ.currval);
 insert into orders(o_no,o_date,o_desc,o_price,m_id) values(orders_o_no_seq.nextval,sysdate-1,'가카오','80000','customer4');
     insert into order_item(oi_no,oi_amount,p_no,o_no) values(ORDER_ITEM_OI_NO_SEQ.nextval,2,3,ORDERS_O_NO_SEQ.currval);
+    
+commit;    

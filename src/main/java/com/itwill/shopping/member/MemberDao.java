@@ -16,7 +16,7 @@ public class MemberDao {
 	private DataSource dataSource;
 	public MemberDao() throws Exception{
 		Properties properties=new Properties();
-		properties.load(MemberDao.class.getResourceAsStream("jdbc.properties"));
+		properties.load(this.getClass().getResourceAsStream("/com/itwill/shopping/jdbc.properties"));
 		/*****Apache DataSource[commons-dbcp2]***/
 		BasicDataSource basicDataSource=new BasicDataSource();
 		basicDataSource.setDriverClassName(properties.getProperty("driverClassName"));
