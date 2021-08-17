@@ -97,7 +97,26 @@ public class ProductDao {
 		return product;
 	}
 	
-	
+	public int insertProduct(Product product) throws Exception{
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		int insertCount = 0;
+		try {
+			con = dataSource.getConnection();
+			pstmt = con.prepareStatement(ProductSQL.PRODUCT_INSERT);
+			pstmt.setString(1, product.getP_name());
+			pstmt.setInt(2, product.getP_price());
+			pstmt.setString(3, product.getP_desc());
+			pstmt.setInt(4, product.getP_stock());
+			pstmt.setString(5, product.getP_image());
+			insertCount = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if(con != null) con.close();
+		}
+		return insertCount;
+	}
 	
 	
 	
