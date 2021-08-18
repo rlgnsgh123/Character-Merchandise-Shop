@@ -6,7 +6,9 @@
     pageEncoding="UTF-8"%>
 <%
 	MemberService memberService = new MemberService();
-	ArrayList<Member> memberList = memberService.findMemberList();
+	Member member = memberService.findMember("customer1");
+	//ArrayList<Member> memberList = memberService.findMemberList();
+	
 %>    
     
 <!DOCTYPE html>
@@ -18,9 +20,8 @@
 <body>
 <h1>memberService.findMemberList();</h1>
 <ol>
-	<%for(Member member:memberList) {%>
 	<li><%=member %></li>
-	<%} %>
+
 	
 </ol>
 </body>
