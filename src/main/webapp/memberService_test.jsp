@@ -7,7 +7,7 @@
 <%
 	MemberService memberService = new MemberService();
 	Member member = memberService.findMember("customer1");
-	//ArrayList<Member> memberList = memberService.findMemberList();
+	ArrayList<Member> memberList = memberService.findMemberList();
 	
 %>    
     
@@ -20,7 +20,16 @@
 <body>
 <h1>memberService.findMemberList();</h1>
 <ol>
-	<li><%=member %></li>
+	<li>
+		<oi>
+		<%for(Member memberAll:memberList) {%>
+		<%=memberAll %>
+		<%} %>
+		</oi>
+		<oi>
+		<%=member %>
+		</oi>
+	</li>
 
 	
 </ol>

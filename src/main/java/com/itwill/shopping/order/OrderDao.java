@@ -231,6 +231,7 @@ public class OrderDao {
 		Connection con = null;
 		//PreparedStatement pstmt1 = null;
 		PreparedStatement pstmt = null;
+		int deleteRowCount = 0;
 		try {
 			con=dataSource.getConnection();
 			con.setAutoCommit(false);
@@ -239,7 +240,7 @@ public class OrderDao {
 			//pstmt1.setString(1, m_id);
 			pstmt.setString(1, m_id);
 			//int deleteRowCount1 = pstmt1.executeUpdate();
-			int deleteRowCount = pstmt.executeUpdate();
+			deleteRowCount = pstmt.executeUpdate();
 			con.commit();
 		} catch (Exception e) {
 			con.rollback();
