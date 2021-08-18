@@ -157,7 +157,6 @@ public class OrderDao {
 		ResultSet rs = null;
 		String selectQuery = "select * from orders o join order_item oi on o.o_no=oi.o_no  join  product p on oi.p_no=p.p_no where o.m_id=? and o.o_no = ?";
 	
-		
 			con=dataSource.getConnection();
 			pstmt=con.prepareStatement(selectQuery);
 			pstmt.setString(1,m_id);
@@ -232,26 +231,34 @@ public class OrderDao {
 	delete from orders where m_id='customer4';
 	 */
 	public int deleteOrderById(String m_id) throws Exception {
-		String deleteSql="select * from orders where m_id=?";
+		String deleteSql1="delete from order_item where o_no in(select o_no from orders where m_id=?)";
+		String deleteSql2="delete from orders where m_id=?";
 		Connection con = null;
-		PreparedStatement pstmt = null;
-		int deleteRowCount = 0;
+		PreparedStatement pstmt1 = null;
+		PreparedStatement pstmt2 = null;
 		try {
 			con=dataSource.getConnection();
-			pstmt=con.prepareStatement(deleteSql);
-			pstmt.setString(1, m_id);
-			deleteRowCount = pstmt.executeUpdate();
+			con.setAutoCommit(false);
+			pstmt1=con.prepareStatement(deleteSql1);
+			pstmt2=con.prepareStatement(deleteSql2);
+			pstmt1.setString(1, m_id);
+			pstmt2.setString(1, m_id);
+			int deleteRowCount1 = pstmt1.executeUpdate();
+			int deleteRowCount2 = pstmt2.executeUpdate();
 			con.commit();
 		} catch (Exception e) {
-			e.printStackTrace();
 			con.rollback();
+			e.printStackTrace();
+			throw e;
 		} finally {
-			if(pstmt!=null)
-				pstmt.close();
+			if(pstmt1!=null)
+				pstmt1.close();
+			if(pstmt2!=null)
+				pstmt2.close();
 			if(con!=null)
 				con.close();
 		}
-		return deleteRowCount;		
+		return 0;		
 	}
 	
 }
