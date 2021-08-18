@@ -79,8 +79,8 @@ private static NoticeBoardService _getinstance;
 		}
 		
 		// 조회수 증가
-		public void updateViewCount(int boardNo) throws Exception {
-			noticeBoardDao.updateViewCount(boardNo);
+		public int updateViewCount(int boardNo) throws Exception {
+			return noticeBoardDao.updateViewCount(boardNo);
 		}
 		
 		

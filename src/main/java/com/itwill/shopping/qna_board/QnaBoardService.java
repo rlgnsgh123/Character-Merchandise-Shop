@@ -77,8 +77,8 @@ public class QnaBoardService {
 	}
 	
 	// 조회수 증가
-	public void updateViewCount(int boardNo) throws Exception {
-		qnaBoardDao.updateViewCount(boardNo);
+	public int updateViewCount(int boardNo) throws Exception {
+		return qnaBoardDao.updateViewCount(boardNo);
 	}
 	
 		
