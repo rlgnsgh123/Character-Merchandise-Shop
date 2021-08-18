@@ -99,7 +99,9 @@ public class OrderDao {
 			
 			
 		} finally {
-			
+			if(con!=null) {
+				con.close();
+			}
 		}
 	
 		return orderList;
@@ -173,8 +175,7 @@ public class OrderDao {
 					order.getOrderItemList().add(new OrderItem(rs.getInt("oi_no"),
 																rs.getInt("oi_amount"),
 																rs.getInt("p_no"),
-																rs.getInt("o_no"),
-																null));
+																rs.getInt("o_no")));
 																
 				}while(rs.next());
 			}
@@ -225,34 +226,32 @@ public class OrderDao {
 	delete from orders where m_id='customer4';
 	 */
 	public int deleteOrderById(String m_id) throws Exception {
-		String deleteSql1="delete from order_item where o_no in(select o_no from orders where m_id=?)";
-		String deleteSql2="delete from orders where m_id=?";
+		//String deleteSql1="delete from order_item where o_no in(select o_no from orders where m_id=?)";
+		String deleteSql="delete from orders where m_id=?";
 		Connection con = null;
-		PreparedStatement pstmt1 = null;
-		PreparedStatement pstmt2 = null;
+		//PreparedStatement pstmt1 = null;
+		PreparedStatement pstmt = null;
 		try {
 			con=dataSource.getConnection();
 			con.setAutoCommit(false);
-			pstmt1=con.prepareStatement(deleteSql1);
-			pstmt2=con.prepareStatement(deleteSql2);
-			pstmt1.setString(1, m_id);
-			pstmt2.setString(1, m_id);
-			int deleteRowCount1 = pstmt1.executeUpdate();
-			int deleteRowCount2 = pstmt2.executeUpdate();
+			//pstmt1=con.prepareStatement(deleteSql);
+			pstmt=con.prepareStatement(deleteSql);
+			//pstmt1.setString(1, m_id);
+			pstmt.setString(1, m_id);
+			//int deleteRowCount1 = pstmt1.executeUpdate();
+			int deleteRowCount = pstmt.executeUpdate();
 			con.commit();
 		} catch (Exception e) {
 			con.rollback();
 			e.printStackTrace();
 			throw e;
 		} finally {
-			if(pstmt1!=null)
-				pstmt1.close();
-			if(pstmt2!=null)
-				pstmt2.close();
+			if(pstmt!=null)
+				pstmt.close();
 			if(con!=null)
 				con.close();
 		}
-		return 0;		
+		return deleteRowCount;		
 	}
 	
 }
