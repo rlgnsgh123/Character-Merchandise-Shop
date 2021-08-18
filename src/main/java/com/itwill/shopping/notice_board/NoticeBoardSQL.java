@@ -8,10 +8,10 @@ public class NoticeBoardSQL {
 	// 답글 쓰기
 	public final static String NOTICE_BOARD_REPLY_INSERT ="insert into notice_board "
 																	+ "	(nb_no, nb_title, nb_content, nb_vcount, nb_groupno, nb_step,nb_depth,m_id) "
-																	+ "values(NOTICE_BOARD_NB_NO_SEQ.nextval, ?, ?,0,NOTICE_BOARD_NB_NO_SEQ.currval,?,?,?)";
+																	+ "values(NOTICE_BOARD_NB_NO_SEQ.nextval, ?, ?,0,?,?,?,?)";
 	// 게시글 수정 (완료)
 	public final static String NOTICE_BOARD_UPDATE ="update notice_board set nb_title = ?, nb_content = ? where nb_no = ?";
-	// 답글 step 수정 
+	// 답글 step 수정 (완료)
 	public final static String NOTICE_BOARD_STEP_UPDATE ="update notice_board set nb_step = nb_step + 1 where nb_step > ? and nb_groupno = ?";
 	// 게시글 조회수 1증가 (완료)
 	public final static String NOTICE_BOARD_VCOUNT_UPDATE ="update notice_board set nb_vcount = nb_vcount + 1 where nb_no=?";
@@ -32,8 +32,8 @@ public class NoticeBoardSQL {
 			+ "											where m_id = ?";
 	// 게시물 총수 (완료)
 	public final static String NOTICE_BOARD_TOTALCOUNT ="select count(*) from notice_board";
-	// 답글 존재여부 확인
-	public final static String NOTICE_BOARD_COUNTREPLY ="select count(*) cnt from notice_board where nb_groupno = ?  and nb_step >= ? order by nb_step,nb_depth asc";
+	// 답글 존재여부 확인 (미완 )---> 잘모르겠음...
+	public final static String NOTICE_BOARD_COUNTREPLY ="select count(*) cnt from notice_board where nb_groupno = ? and nb_depth >= ?  and nb_step >= ? order by nb_step,nb_depth asc";
 
 
 

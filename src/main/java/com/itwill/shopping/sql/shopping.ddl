@@ -21,9 +21,9 @@ CREATE TABLE qna_board(
 		qb_content                    		VARCHAR2(2000)		 NULL ,
 		qb_date                       		DATE		 DEFAULT sysdate		 NULL ,
 		qb_vcount                     		NUMBER(10)		 DEFAULT 0		 NULL ,
-		qb_groupno                    		NUMBER(10)		 NULL ,
-		qb_step                       		NUMBER(10)		 NULL ,
-		qb_depth                      		NUMBER(10)		 NULL ,
+		qb_groupno                    		NUMBER(10)		 NOT NULL,
+		qb_step                       		NUMBER(10)		 NOT NULL,
+		qb_depth                      		NUMBER(10)		 DEFAULT 0		 NULL ,
 		m_id                          		VARCHAR2(10)		 NULL 
 );
 
@@ -39,16 +39,15 @@ CREATE TABLE notice_board(
 		nb_content                    		VARCHAR2(2000)		 NULL ,
 		nb_date                       		DATE		 DEFAULT sysdate		 NULL ,
 		nb_vcount                     		NUMBER(10)		 DEFAULT 0		 NULL ,
-		nb_groupno                    		NUMBER(10)		 NULL ,
-		nb_step                       		NUMBER(10)		 NULL ,
-		nb_depth                      		NUMBER(10)		 NULL ,
+		nb_groupno                    		NUMBER(10)		 NOT NULL,
+		nb_step                       		NUMBER(10)		 NOT NULL,
+		nb_depth                      		NUMBER(10)		 DEFAULT 0		 NULL ,
 		m_id                          		VARCHAR2(10)		 NULL 
 );
 
 DROP SEQUENCE notice_board_nb_no_SEQ;
 
 CREATE SEQUENCE notice_board_nb_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
-
 
 
 CREATE TABLE product(
