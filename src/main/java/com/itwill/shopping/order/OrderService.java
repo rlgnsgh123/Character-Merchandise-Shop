@@ -4,6 +4,7 @@ package com.itwill.shopping.order;
 import java.util.ArrayList;
 
 import com.itwill.shopping.cartItem.CartDao;
+import com.itwill.shopping.cartItem.CartItem;
 import com.itwill.shopping.orderItem.OrderItem;
 import com.itwill.shopping.product.Product;
 import com.itwill.shopping.product.ProductDao;
@@ -12,6 +13,13 @@ public class OrderService {
 	private OrderDao orderDao;
 	private ProductDao productDao;
 	private CartDao cartDao;
+	
+	private OrderService() throws Exception{
+		orderDao=new OrderDao();
+		productDao=new ProductDao();
+		cartDao=new CartDao();
+	}
+	
 	
 	//주문 1개삭제
 	public int delete(int o_no) throws Exception{
@@ -44,13 +52,27 @@ public class OrderService {
 	
 
 	//상품에서 주문
-	
+	public int create(String m_id, int p_no, int oi_amount) throws Exception{
+		Product product = productDao.getProduct(p_no);
+		OrderItem orderItem = new OrderItem(0, oi_amount, p_no, product);
+		ArrayList<OrderItem> orderItemList = new ArrayList<OrderItem>();
+		orderItemList.add(orderItem);
+		Order newOrder = new Order(0,
+									null,
+									orderItemList.get(0).getProduct().getP_name(),
+									orderItemList.get(0).getOi_amount()*orderItemList.get(0).getProduct().getP_price(),
+									m_id,
+									orderItemList);
+		return orderDao.create(newOrder);
+	}
 	
 	//카트에서 주문
 	
-	
+
+		
 	//카트에서 선택 주문
 	
+
 	
 	
 	
