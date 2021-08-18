@@ -23,12 +23,20 @@ public class OrderItem {
 		// TODO Auto-generated constructor stub
 	}
 
-
-	public OrderItem(int oi_no, int oi_amount, int p_no, int o_no, Product product) {
+	public OrderItem(int oi_no, int oi_amount, int p_no, int o_no) {
 		super();
 		this.oi_no = oi_no;
 		this.oi_amount = oi_amount;
 		this.p_no = p_no;
+		this.o_no = o_no;
+	}
+	
+	
+
+	public OrderItem(int oi_no, int oi_amount, int o_no, Product product) {
+		super();
+		this.oi_no = oi_no;
+		this.oi_amount = oi_amount;
 		this.o_no = o_no;
 		this.product = product;
 	}
@@ -94,3 +102,7 @@ public class OrderItem {
 	
 	
 }
+	
+	
+	
+	

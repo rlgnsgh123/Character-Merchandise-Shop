@@ -12,6 +12,7 @@ import org.apache.tomcat.dbcp.dbcp2.BasicDataSource;
 import com.itwill.shopping.member.MemberDao;
 import com.itwill.shopping.order.Order;
 import com.itwill.shopping.product.Product;
+import com.itwill.shopping.orderItem.OrderItem;
 
 public class OrderItemDao {
 	private DataSource dataSource;
@@ -49,8 +50,7 @@ public class OrderItemDao {
 				orderItem = new OrderItem(rs.getInt("oi_no"),
 									rs.getInt("oi_amount"),
 									rs.getInt("p_no"),
-									rs.getInt("o_no"),
-									null);	
+									rs.getInt("o_no"));	
 		}
 		
 		

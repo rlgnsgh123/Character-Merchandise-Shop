@@ -192,20 +192,16 @@ public class OrderDao {
 	*/
 	
 	public int delete(int j_no)throws Exception{
-		String deleteSql1="delete from order_item where o_no=?";
-		String deleteSql2="delete from orders where o_no=?";
+		String deleteSql="delete from orders where o_no=?";
 		Connection con=null;
-		PreparedStatement pstmt1=null;
-		PreparedStatement pstmt2=null;
+		PreparedStatement pstmt=null;
+		int deleteRowCount = 0;
 		try {
 			con=dataSource.getConnection();
 			con.setAutoCommit(false);
-			pstmt1=con.prepareStatement(deleteSql1);
-			pstmt2=con.prepareStatement(deleteSql2);
-			pstmt1.setInt(1, j_no);
-			pstmt2.setInt(1, j_no);
-			int rowCount1 = pstmt1.executeUpdate();
-			int rowCount2 = pstmt2.executeUpdate();
+			pstmt=con.prepareStatement(deleteSql);
+			pstmt.setInt(1, j_no);
+			deleteRowCount = pstmt.executeUpdate();
 			con.commit();
 		}catch (Exception e) {
 			con.rollback();
@@ -214,7 +210,7 @@ public class OrderDao {
 		}finally {
 			if(con!=null)con.close();
 		}
-		return 0;
+		return deleteRowCount;
 	}
 	
 	
