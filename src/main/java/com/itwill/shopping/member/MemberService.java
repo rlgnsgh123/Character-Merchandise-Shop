@@ -13,8 +13,8 @@ public class MemberService {
 	 * 회원가입(아이디 중복 체크)
 	 */
 	public int create(Member member) throws Exception {
-		if(memberDao.idCheckCount(member.getM_id())==true) {
-			//이미 존재하는 아이디입니다.
+		if(memberDao.idCheckCount(member.getM_id())) {
+			throw new Exception(member.getM_id()+"는 이미 존재하는 아이디입니다.");
 		}
 		return memberDao.create(member);	
 	}
@@ -25,10 +25,10 @@ public class MemberService {
 	public Member login(String m_id,String m_password) throws Exception {
 		Member member = memberDao.selectById(m_id);
 		if(member==null) {
-			//존재하지 않는 아이디입니다.
+			throw new Exception(m_id+"는 존재하지 않는 아이디 입니다.");	
 		}
 		if(!member.getM_password().equals(m_password)) {
-			//패스워드가 일치하지 않습니다.
+			throw new Exception("패스워드가 일치하지 않습니다.");
 		}
 		return member;
 	}

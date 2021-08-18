@@ -14,21 +14,23 @@ O_NO               NUMBER(10)
 public class OrderItem {
 	private int oi_no;
 	private int oi_amount;
-	private Product product;
+	private int p_no;
 	private int o_no;
+	private Product product;
 	
-
+	
 	public OrderItem() {
 		// TODO Auto-generated constructor stub
 	}
 
 
-	public OrderItem(int oi_no, int oi_amount, Product product, int o_no) {
+	public OrderItem(int oi_no, int oi_amount, int p_no, int o_no, Product product) {
 		super();
 		this.oi_no = oi_no;
 		this.oi_amount = oi_amount;
-		this.product = product;
+		this.p_no = p_no;
 		this.o_no = o_no;
+		this.product = product;
 	}
 
 
@@ -52,13 +54,13 @@ public class OrderItem {
 	}
 
 
-	public Product getProduct() {
-		return product;
+	public int getP_no() {
+		return p_no;
 	}
 
 
-	public void setProduct(Product product) {
-		this.product = product;
+	public void setP_no(int p_no) {
+		this.p_no = p_no;
 	}
 
 
@@ -72,11 +74,22 @@ public class OrderItem {
 	}
 
 
+	public Product getProduct() {
+		return product;
+	}
+
+
+	public void setProduct(Product product) {
+		this.product = product;
+	}
+
+
 	@Override
 	public String toString() {
-		return "OrderItem [oi_no=" + oi_no + ", oi_amount=" + oi_amount + ", product=" + product + ", o_no=" + o_no
-				+ "]";
+		return "OrderItem [oi_no=" + oi_no + ", oi_amount=" + oi_amount + ", p_no=" + p_no + ", o_no=" + o_no
+				+ ", product=" + product + "]";
 	}
+	
 	
 	
 	

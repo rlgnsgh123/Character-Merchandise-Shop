@@ -7,7 +7,8 @@ public class ProductDaoTestMain {
 //		System.out.println(productDao.getProduct(3)); 
 //		System.out.println(productDao.getProductListAsc()); 
 //		System.out.println(productDao.getProductListDesc()); 
-		System.out.println(productDao.insertProduct(new Product(0, "dd", 333, "qwer", 3, null, "aaaa")));
+//		System.out.println(productDao.insertProduct(new Product(0, "dd", 333, "qwer", 3, null, "aaaa")));
+		System.out.println(productDao.getProductCount());
 	}
 
 }
