@@ -24,7 +24,7 @@ public class Order {
 	private String o_desc;
 	private int o_price;
 	private String m_id;
-	private ArrayList<OrderItem> orderItemList;
+	private ArrayList<OrderItem> orderItemList=new ArrayList<OrderItem>();
 	
 	public Order() {
 		// TODO Auto-generated constructor stub
