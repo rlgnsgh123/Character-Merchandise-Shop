@@ -1,16 +1,14 @@
 /*
-배고프다...
-☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆
-						<< 할 일 >>
-- SQL 좀 더 깔끔하게 정리하기... 쓰레기 프로그램!
-- "/**\/" 추가하기! 쓰레기같은 SQL!
-- Select 완성 시키기! SQL 으으!
+<< 할 일 >>
+- SQL 
+- "/**\/" 추가
+- Select 완성
 - 간지나는 CartService.java 만들기
-☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆
-					<< 참고 링크 >>
+
+<< 참고 링크 >>
 - https://github.com/2021-05-JAVA-DEVELOPER/eclipse-workspace-ee/blob/master/projectShop/src/main/webapp/ERD/shop_select_update_delete.sql
 - https://github.com/2021-05-JAVA-DEVELOPER/eclipse-workspace-ee/blob/master/projectShop/src/main/java/com/itwill/shop/cart/CartDao.java
-☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆
+
 */
 
 package com.itwill.shopping.cartItem;
@@ -130,7 +128,7 @@ public class CartDao {
 		return count;
 	}
 	
-	// SelectByMember :: 장바구니 상품 (멤버 번호 기준) 출력 -- 얘 자고 일어나서 해도 될까요.......................
+	// SelectByMember :: 장바구니 상품 (멤버 번호 기준) 출력
 	public ArrayList<CartItem> selectCart() throws Exception {
 		ArrayList<CartItem> cartList = new ArrayList();
 		Connection con = null;
