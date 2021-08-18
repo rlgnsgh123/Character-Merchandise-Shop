@@ -8,6 +8,8 @@ insert into cart(c_item_no, c_item_qty, m_id, p_no) values(CART_C_ITEM_NO_SEQ.ne
 -- c_item_no로 정보 수정
 -- 이거 헷갈린다.. 왜 카트 번호가 담은 사람(m_id)에 관계 없이 부여될까? 사용자가 볼 때 그냥 출력하면서 번호만 새로 부여하면 되나? 흠,,
 -- update cart set p_no = ?, c_item_qty = ? where c_item_no = ? ;
+-- update cart set p_no = ?, c_item_qty = ? where m_id = ? ;
+update cart set p_no = 3, c_item_qty = 10 where m_id = 'customer2';
 update cart set p_no = 2, c_item_qty = 10 where c_item_no = 4;
 
 -- << delete >>
