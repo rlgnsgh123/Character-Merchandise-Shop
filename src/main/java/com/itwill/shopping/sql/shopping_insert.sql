@@ -42,5 +42,5 @@ insert into orders(o_no,o_date,o_desc,o_price,m_id) values(orders_o_no_seq.nextv
     insert into order_item(oi_no,oi_amount,p_no,o_no) values(ORDER_ITEM_OI_NO_SEQ.nextval,1,3,ORDERS_O_NO_SEQ.currval);
 insert into orders(o_no,o_date,o_desc,o_price,m_id) values(orders_o_no_seq.nextval,sysdate-1,'가카오','80000','customer4');
     insert into order_item(oi_no,oi_amount,p_no,o_no) values(ORDER_ITEM_OI_NO_SEQ.nextval,2,3,ORDERS_O_NO_SEQ.currval);
-    
+
 commit;    
