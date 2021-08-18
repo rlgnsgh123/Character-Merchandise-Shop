@@ -24,6 +24,27 @@ public class ProductDao {
 		basicDataSource.setPassword(properties.getProperty("password"));
 		dataSource = basicDataSource;
 	}
+	
+	public int getProductCount() throws Exception{
+		//총 제품의 갯수
+		int productCount =0;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			con = dataSource.getConnection();
+			pstmt = con.prepareStatement(ProductSQL.PRODUCT_COUNT);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				productCount = rs.getInt("count");
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(con!=null) con.close();
+		}
+		return productCount;
+	}
 
 	public ArrayList<Product> getProductListDesc() throws Exception {
 		// 전체상품이 있는 페이지볼때 비싼가격순
