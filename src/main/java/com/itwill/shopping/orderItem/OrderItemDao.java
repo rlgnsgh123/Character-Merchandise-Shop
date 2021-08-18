@@ -48,8 +48,9 @@ public class OrderItemDao {
 			while(rs.next()){
 				orderItem = new OrderItem(rs.getInt("oi_no"),
 									rs.getInt("oi_amount"),
-									null,
-									rs.getInt("o_no"));	
+									rs.getInt("p_no"),
+									rs.getInt("o_no"),
+									null);	
 		}
 		
 		

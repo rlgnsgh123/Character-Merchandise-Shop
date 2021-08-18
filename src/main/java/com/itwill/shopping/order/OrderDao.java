@@ -172,15 +172,9 @@ public class OrderDao {
 				do {
 					order.getOrderItemList().add(new OrderItem(rs.getInt("oi_no"),
 																rs.getInt("oi_amount"),
-																new Product(rs.getInt("p_no"),
-																		rs.getString("p_name"),
-																		rs.getInt("p_price"),
-																		rs.getString("p_desc"),
-																		rs.getInt("p_stock"),
-																		rs.getDate("p_regdate"),
-																		rs.getString("p_image")),
-																rs.getInt("o_no"))
-									);
+																rs.getInt("p_no"),
+																rs.getInt("o_no"),
+																null));
 																
 				}while(rs.next());
 			}
