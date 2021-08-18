@@ -15,11 +15,13 @@ insert into product(p_no,p_name,p_price,p_desc,p_stock,p_regdate,p_image) values
 insert into product(p_no,p_name,p_price,p_desc,p_stock,p_regdate,p_image) values(product_p_no_seq.nextval,'가카오',40000,'비싸요',100,sysdate,'사진3');
 
 /****************Notice Board Insert***********************/
-insert into notice_board(nb_no,nb_title,nb_content,nb_date,nb_vcount,m_id) values(qna_board_qb_no_seq.nextval,'타이틀 test','내용 test',sysdate,0,'admin1');
+insert into notice_board(nb_no,nb_title,nb_content,nb_groupno,nb_step,m_id) values(notice_board_nb_no_seq.nextval,'타이틀 test','내용 test',notice_board_nb_no_seq.currval,1,'admin1');
+
 
 
 /****************QNA Board Insert***********************/
-insert into qna_board(qb_no,qb_title,qb_content,qb_date,qb_vcount,m_id) values(notice_board_nb_no_seq.nextval,'타이틀 test','내용 test',sysdate,0,'customer1');
+insert into qna_board(qb_no,qb_title,qb_content,qb_date,qb_vcount,qb_groupno,qb_step,qb_depth,m_id) values(qna_board_qb_no_seq.nextval,'타이틀 test','내용 test',sysdate,0,qna_board_qb_no_seq.currval,1,null,'customer1');
+
 
 /****************Cart Insert***********************/
 insert into cart(c_item_no,c_item_qty,m_id,p_no) values(CART_C_ITEM_NO_SEQ.nextval,2,'customer1',2);
