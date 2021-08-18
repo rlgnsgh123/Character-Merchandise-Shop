@@ -6,8 +6,10 @@
     pageEncoding="UTF-8"%>
 <%
 	MemberService memberService = new MemberService();
-	Member member = memberService.findMember("customer1");
-	ArrayList<Member> memberList = memberService.findMemberList();
+	
+	Member member = memberService.findMember("customer1");	
+	ArrayList<Member> memberList = memberService.findMemberList();	
+	Member member2 = memberService.login("customer1", "1111");
 	
 %>    
     
@@ -20,18 +22,19 @@
 <body>
 <h1>memberService.findMemberList();</h1>
 <ol>
-	<li>
-		<oi>
-		<%for(Member memberAll:memberList) {%>
-		<%=memberAll %>
-		<%} %>
-		</oi>
-		<oi>
-		<%=member %>
-		</oi>
-	</li>
-
+	<li>멤버 한명 찾기(ById) : 
+	<%=member %>
+	</li>	
 	
+	<li>멤버 전체 리스트 :
+	<%for(Member memberAll:memberList) {%>
+	<%=memberAll %>
+	<%} %>
+	</li>
+	
+	<li>아이디 존재 여부, 패스워드 일치 여부(일치 시 멤버정보 출력) :
+	<%=member2 %>
+	</li>
 </ol>
 </body>
 </html>
