@@ -11,7 +11,7 @@ public class QnaBoardTestMain {
 	System.out.println(boardDao.insert(new QnaBoard(0, "Dao테스트으", "Dao테스트으", null, 0, 0, 1, 0, "customer1")));
 	*/
 	System.out.println("2.---------Insert  답글 게시물------------");
-	System.out.println(boardDao.insertReply(new QnaBoard(12, "답글", "답글내용", null, 0,12, 0, 0,"admin1")));
+	System.out.println(boardDao.insertReply(new QnaBoard(20, "답글23", "답글내용23", null, 0,13, 0, 0,"admin1")));
 	/*
 	System.out.println("3.---------Delete 게시물------------");
 	System.out.println(boardDao.delete(11));

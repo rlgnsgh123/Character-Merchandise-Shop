@@ -69,7 +69,7 @@ public class QnaBoardDao {
 					}
 			}
 		}
-		// 작성자로 게시물 찾기
+		// 게시물번호로 게시물 찾기
 		public QnaBoard selectNo(int no) throws Exception {
 			Connection con = null;
 			PreparedStatement pstmt = null;
@@ -144,6 +144,7 @@ public class QnaBoardDao {
 				}
 			}
 		}
+		// 답글 존재여부 확인
 		public boolean countReply(QnaBoard board) throws SQLException {
 			Connection con = null;
 			PreparedStatement pstmt = null;
