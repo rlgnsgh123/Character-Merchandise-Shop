@@ -45,7 +45,7 @@
 </head>
 <body>
 <script type="text/javascript">
-// 수정 메쏘드
+//수정 메쏘드
 	function qbUpdate() {
 		document.b.action = "qna_board_modify.jsp";
 		document.b.submit();
@@ -94,10 +94,10 @@
 			<%if(isEqual) { %>
 			<input type="button"  value="수정" onclick= "qbUpdate()">
 			<input type="button"  value="삭제" onclick= "qbRemove()"> 
-			<input type="button"  value="돌아가기" onclick= "qbList()"> 
+			<input type="button"  value="목록" onclick= "qbList()"> 
 			<input type="button"  value="답장" onclick="qbInsert()">
 			<% }else{ %>
-			<input type="button"  value="돌아가기" onclick= "qbList()"> 
+			<input type="button"  value="목록" onclick= "qbList()"> 
 			<input type="button"  value="답장" onclick="qbInsert()">
 			<%} %> 
 			</td>
