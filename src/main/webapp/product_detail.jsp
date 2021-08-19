@@ -42,9 +42,9 @@ if (product == null) {
 				alert('로그인후 이용가능합니다');
 				location.href = 'member_login_form.jsp';
 			}else{
-				var win = window.open('about:blank','cc','width=300,height=150,top=150,left=150 ')
+				var win = window.open('cart_add_pop_action.jsp','popup','width=300,height=150,top=150,left=150 ')
 				document.product_detail_form.method = 'POST';
-				document.product_detail_form.action = 'cart_add_action.jsp';
+				document.product_detail_form.action = 'cart_add_pop_action.jsp';
 				document.product_detail_form.submit();
 			}
 		}
@@ -82,7 +82,7 @@ if (product == null) {
 				src='image/<%=product.getP_image()%>' width=120 height=200></td>
 			<td width=90% height=200 class=t1>
 				<ol type="disc">
-					<li><b>제품명 : <%=product.getP_name()%>&nbsp;&nbsp;&nbsp;
+					<li><b>제품명 : <%=product.getP_name()%>
 					</b></li>
 					<li><font color=blue>가격 : <%=product.getP_price()%>&nbsp;&nbsp;&nbsp;
 					</font></li>
