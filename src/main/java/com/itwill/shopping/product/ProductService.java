@@ -11,13 +11,13 @@ public class ProductService {
 	}
 	
 	// 전체상품이 있는 페이지볼때 비싼 가격순
-	public ArrayList<Product> getProductListAsc() throws Exception {
+	public ArrayList<Product> getProductListDesc() throws Exception {
 		ArrayList<Product> productList = productDao.getProductListDesc();
 		return productList;
 	}
 	
 	// 전체상품이 있는 페이지볼때 저렴한 가격순
-	public ArrayList<Product> getProductListDesc() throws Exception {
+	public ArrayList<Product> getProductListAsc() throws Exception {
 		ArrayList<Product> productList = productDao.getProductListAsc();
 		return productList;
 	}
