@@ -10,7 +10,7 @@ if (p_no == null || p_no.equals("")) {
 }
 
 boolean login = false;
-if (session.getAttribute("sUserId") != null) {
+if (session.getAttribute("sM_id") != null) {
 	//sUserId인 이유??
 	login = true;
 }
@@ -40,10 +40,11 @@ if (product == null) {
 	<%=!login%>
 		) {
 				alert('로그인후 이용가능합니다');
-				location.href = 'user_login_form.jsp';
+				location.href = 'member_login_form.jsp';
 			}else{
+				var win = window.open('about:blank','cc','width=300,height=150,top=150,left=150 ')
 				document.product_detail_form.method = 'POST';
-				document.product_detail_form.action = 'order_create_form.jsp';
+				document.product_detail_form.action = 'cart_add_action.jsp';
 				document.product_detail_form.submit();
 			}
 		}
@@ -83,7 +84,7 @@ if (product == null) {
 				<ol type="disc">
 					<li><b>제품명 : <%=product.getP_name()%>&nbsp;&nbsp;&nbsp;
 					</b></li>
-					<li><font color=yellow>가격 : <%=product.getP_price()%>&nbsp;&nbsp;&nbsp;
+					<li><font color=blue>가격 : <%=product.getP_price()%>&nbsp;&nbsp;&nbsp;
 					</font></li>
 					<li><font color=black>제품 상세정보 : <%=product.getP_desc()%></font></li>
 				</ol>
