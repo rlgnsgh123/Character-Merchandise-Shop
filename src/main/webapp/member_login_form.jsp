@@ -12,7 +12,8 @@
 <head>
 <meta charset="UTF-8">
 <title>로그인</title>
-<script type="text/javascript" src="js/member.js"></script>
+<script type="text/javascript" src="js/member.js">
+</script>
 </head>
 <body>
 	<div id="container">
@@ -40,7 +41,7 @@
 					<tr>
 						<td align="center">
 						<input type="button" value="로그인" onclick="login();">
-						<input type="button" value="회원가입" onclick="memberInsert()">
+						<input type="button" value="회원가입" onclick="memberInsertPage();">
 						</td>
 					</tr>
 				</table>
@@ -50,14 +51,5 @@
 			<jsp:include page="common_bottom.jsp"/>
 		</div>
 	</div>
-
 </body>
 </html>
-
-
-
-
-
-
-
-

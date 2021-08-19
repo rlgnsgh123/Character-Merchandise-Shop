@@ -10,7 +10,7 @@
 	Member member = memberService.findMember("customer1");	
 	ArrayList<Member> memberList = memberService.findMemberList();	
 	Member member2 = memberService.login("customer1", "1111");
-	int create = memberService.create(new Member("customer1","11","강","서울","010"));
+	int create = memberService.create(new Member("실험용","11","강","서울","010"));
 %>    
     
 <!DOCTYPE html>

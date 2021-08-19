@@ -1,12 +1,11 @@
+<%@page import="com.itwill.shopping.member.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
-</html>
+<%
+	String sM_id=(String)session.getAttribute("sM_id");
+	Member sMember=(Member)session.getAttribute("sMember");
+	if(sM_id==null){
+		response.sendRedirect("shop_main.jsp");
+		return;
+	}
+%>  
