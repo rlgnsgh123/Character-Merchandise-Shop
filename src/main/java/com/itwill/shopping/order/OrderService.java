@@ -88,16 +88,24 @@ public class OrderService {
 
 		
 	//카트에서 선택 주문
-	
-	/*
-	public int create(String m_id, String[] cart_item_noStr_array) throws Exception{
+	public int create(String m_id,String[] cart_item_noStr_array) throws Exception{
 		ArrayList<OrderItem> orderItemList = new ArrayList<OrderItem>();
 		int o_tot_price=0;
+		int oi_tot_count=0;
 		for(int i=0; i<cart_item_noStr_array.length;i++) {
-			
+			CartItem cartItem = cartDao.selectCartItemByNo(Integer.parseInt(cart_item_noStr_array[i]));
+			OrderItem orderItem = new OrderItem(0, cartItem.getC_item_qty(), 0, cartItem.getProduct());
+			orderItemList.add(orderItem);
+			o_tot_price+=orderItem.getOi_amount()*orderItem.getProduct().getP_price();
+			oi_tot_count+=orderItem.getOi_amount();
 		}
+		String o_desc = orderItemList.get(0).getProduct().getP_name()+"외 "+(oi_tot_count-1)+ " 개";
+		Order newOrder = new Order(0, null, o_desc, o_tot_price, m_id, orderItemList);
+		orderDao.create(newOrder);
+		for(int i=0; i<cart_item_noStr_array.length;i++) {
+			cartDao.deleteCart(Integer.parseInt(cart_item_noStr_array[i]));
+		}
+		return 0;
 	}
-	
-	*/
 	
 }
