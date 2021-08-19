@@ -26,7 +26,7 @@
 	<%} %>
 		<li><a href="product_list.jsp">상품 리스트</a></li>
 		<li><a href="qna_board_list.jsp">QnA 게시판리스트</a></li>	
-		<li><a href="qna_board_write_form.jsp">QnA 게시판쓰기</a></li>
+		<li><a href="qna_board_write.jsp">QnA 게시판쓰기</a></li>
 		<li><a href="notice_board_list.jsp">공지사항</a></li>
 		
 </ul>
