@@ -10,7 +10,7 @@
 	Member member = memberService.findMember("customer1");	
 	ArrayList<Member> memberList = memberService.findMemberList();	
 	Member member2 = memberService.login("customer1", "1111");
-	
+	int create = memberService.create(new Member("customer1","11","강","서울","010"));
 %>    
     
 <!DOCTYPE html>
@@ -35,6 +35,9 @@
 	<li>아이디 존재 여부, 패스워드 일치 여부(일치 시 멤버정보 출력) :
 	<%=member2 %>
 	</li>
+	
+	<li>회원가입 1 : 성공
+	<%=create %></li>
 </ol>
 </body>
 </html>
