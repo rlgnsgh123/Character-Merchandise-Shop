@@ -53,12 +53,12 @@
 			f.password.select();
 			return false;
 		}
-		f.action = "member_insert_action.jsp";
+		f.action = "member_login_form.jsp";
 		f.method='POST';
 		f.submit();
 	}
 	
-	function main(){
+	function shopping_main(){
 		f.action = "shopping_main.jsp"
 		f.submit();
 	}
@@ -67,15 +67,15 @@
 <body>
 	<div id="container">
 		<div id="header">
-			<jsp:include page="include_common_top.jsp"/>
+			<jsp:include page="common_top.jsp"/>
 		</div>	
 		
 		<div id="navigation">
-				<jsp:include page="include_common_left.jsp"/>
+				<jsp:include page="common_left.jsp"/>
 		</div>	
 		<div id="wrapper">
 			<div id="content">
-				<table width=0 border=0 cellpadding=0 cellspacing=0>
+				<table width=000 border=000 cellpadding=0 cellspacing=0>
 					<form name="f" action="member_insert_action.jsp">
 						아이디 : <input type="text" name="id" value="<%=member.getM_id() %>"><br>
 						비밀번호 : <input type="password" name="password" value="<%=member.getM_password() %>"><br>
@@ -88,17 +88,15 @@
 						<tr>
 							<td align=center>
 							<input type="button" value="회원 가입" onclick="memberInsert();"> &nbsp; 
-							<input type="button" value="메인화면" onClick="main()"></td>
+							<input type="button" value="메인 화면" onClick="shopping_main()"></td>
 						</tr>
 					</table>	
 				</table>
 			</div>	
 		</div>
 		<div id="footer">
-			<jsp:include page="include_common_bottom.jsp"/>
+			<jsp:include page="common_bottom.jsp"/>
 		</div>
 	</div>
-	
-	
 </body>
 </html>
