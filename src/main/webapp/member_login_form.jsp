@@ -16,22 +16,21 @@
 <script type="text/javascript">
 	function memberInsert() {
 		f.action = "member_insert_form.jsp"
-		f.method = "POST";
 		f.submit();
 	}
-
+	
 	function login() {
-		if(f.id.value==""){
+		if(f.m_id.value==""){
 			alert("아이디를 입력하세요.");
-			f.id.focus();
+			f.m_id.focus();
 			return false;
 		}
-		if(f.password.value==""){
+		if(f.m_password.value==""){
 			alert("비밀번호를 입력하세요.");
-			f.password.focus();
+			f.m_password.focus();
 			return false;
 		}
-		f.method = "POST";
+	
 		f.action = "member_login_action.jsp"
 		f.submit();
 	}
@@ -51,12 +50,12 @@
 					<tr>
 						<td width="100" height="25" align="center">아이디</td>
 						<td width="500" align="left" bgcolor='ffffff'>
-						<input type="text" name="id" value=""><%=msg1 %></td>
+						<input type="text" name="m_id" value=""><%=msg1 %></td>
 					</tr>	
 					<tr>
 						<td width="100" height="25" align="center">비밀번호</td>
 						<td width="500" align="left" >
-						<input type="password" name="password" value=""><%=msg2 %></td>	
+						<input type="password" name="m_password" value=""><%=msg2 %></td>	
 					</tr>	
 				</table><br/>
 				<table>
