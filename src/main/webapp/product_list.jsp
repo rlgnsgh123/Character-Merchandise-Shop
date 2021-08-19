@@ -16,9 +16,9 @@ ArrayList<Product> productList = productService.getProductListDesc();
 <title>전체 상품 리스트</title>
 </head>
 <body>
-<jsp:include page="include_common_top.jsp" />
-<jsp:include page="include_common_left.jsp" />
-<jsp:include page="include_common_bottom.jsp" />
+<jsp:include page="common_top.jsp" />
+<jsp:include page="common_left.jsp" />
+<jsp:include page="common_bottom.jsp" />
 
 상품 리스트<br>
 <%
