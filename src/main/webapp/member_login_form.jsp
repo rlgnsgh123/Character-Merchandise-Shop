@@ -7,34 +7,12 @@
 	if(msg1==null) msg1="";
 	if(msg2==null) msg2="";
 %>    
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>로그인</title>
-<script type="text/javascript">
-	function memberInsert() {
-		f.action = "member_insert_form.jsp"
-		f.submit();
-	}
-	
-	function login() {
-		if(f.m_id.value==""){
-			alert("아이디를 입력하세요.");
-			f.m_id.focus();
-			return false;
-		}
-		if(f.m_password.value==""){
-			alert("비밀번호를 입력하세요.");
-			f.m_password.focus();
-			return false;
-		}
-	
-		f.action = "member_login_action.jsp"
-		f.submit();
-	}
-</script>
+<script type="text/javascript" src="js/member.js"></script>
 </head>
 <body>
 	<div id="container">
@@ -72,6 +50,7 @@
 			<jsp:include page="common_bottom.jsp"/>
 		</div>
 	</div>
+
 </body>
 </html>
 
