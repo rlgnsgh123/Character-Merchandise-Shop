@@ -3,6 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
+request.setCharacterEncoding("UTF-8");
 QnaBoard board = new QnaBoard();
 
 board.setM_id(request.getParameter("id"));
@@ -10,6 +11,7 @@ board.setQb_title(request.getParameter("title"));
 board.setQb_content(request.getParameter("content"));
 
 QnaBoardService.getInstance().insert(board);
+response.sendRedirect("qna_board_list.jsp");
 
 
 %>

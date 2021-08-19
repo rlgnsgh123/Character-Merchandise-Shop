@@ -25,7 +25,8 @@ public String getTitleString(QnaBoard board) {
 		
 		return title.toString();
 }
-%>  
+%>
+
 <%
 	
 	
@@ -45,11 +46,17 @@ public String getTitleString(QnaBoard board) {
 	QnaBoardService qnaBoardService = QnaBoardService.getInstance();
 	BoardListPageDto boardListPage = qnaBoardService.selectAll(pageInputDto);
 %>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+	function nbWrite() {
+		location.href = "qna_board_write.jsp";
+	}
+</script>
 </head>
 <body>
 <ol>
@@ -114,6 +121,11 @@ for (QnaBoard board : boardListPage.getList()) {
 			<%}%>
 	</td>
 </tr>
+</table>
+<table>
+	<tr>
+		<td><input type="button" value="글쓰기" onclick="nbWrite();"/> </td>
+	</tr>
 </table>
 							
 
