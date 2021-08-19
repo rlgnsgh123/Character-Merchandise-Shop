@@ -167,11 +167,76 @@ public class CartDao {
 	}
 	
 	// SelectByProduct :: 장바구니 상품 (상품 기준) 출력 -- 관리자 메뉴?
-	/*
-	public Product selectByProduct() throws Exception {
-		Product product = new Product();
-		return product;
+	public CartItem selectCartItemByNo(int c_item_no) throws Exception {
+		CartItem cartItem = null;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String selectSQL = "select * from cart c join product p on c.p_no = p.p_no where c.c_item_no = ?";
+		try {
+			con = dataSource.getConnection();
+			pstmt = con.prepareStatement(selectSQL);
+			pstmt.setInt(1, c_item_no);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				cartItem = new CartItem(
+												rs.getInt(c_item_no),
+												rs.getInt("c_item_qty"),
+												new Member(),
+												new Product(
+															rs.getInt("p_no"),
+															rs.getString("p_name"),
+															rs.getInt("p_price"),
+															rs.getString("p_desc"),
+															rs.getInt("p_stock"),
+															rs.getDate("p_regdate"),
+															rs.getString("p_image"))
+												);
+			} // try - if end
+		} finally {
+			if (con != null) {
+				con.close();
+			} // finally - if end
+		} // finally end
+		
+		return cartItem;
 	}
-	*/
+	
+	
+	
+	// 상품 존재 여부!
+	public boolean cartExist(String m_id, int p_no) throws Exception {
+		boolean isExist = false;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		String selectSQL = "select count(*) as p_count from cart c join member m on c.m_id = m.m_id where m.m_id = ? and c.p_no = ?";
+		
+		try {
+			con = dataSource.getConnection();
+			pstmt = con.prepareStatement(selectSQL);
+			pstmt.setString(1, m_id);
+			pstmt.setInt(2, p_no);
+			rs = pstmt.executeQuery();
+			int count = 0;
+			
+			if(rs.next()) {
+				count = rs.getInt(1);
+			} // 헷갈림..
+			
+			if (count == 0) {
+				isExist = false;
+			} else {
+				isExist = true;
+			}
+		} finally {
+			if (con != null) {
+				con.close();
+			}
+		}
+		return isExist;
+	}
 	
 }
