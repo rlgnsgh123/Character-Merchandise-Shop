@@ -2,6 +2,7 @@ package com.itwill.shopping.order;
 
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import com.itwill.shopping.cartItem.CartDao;
 import com.itwill.shopping.cartItem.CartItem;
@@ -14,7 +15,7 @@ public class OrderService {
 	private ProductDao productDao;
 	private CartDao cartDao;
 	
-	private OrderService() throws Exception{
+	public OrderService() throws Exception{
 		orderDao=new OrderDao();
 		productDao=new ProductDao();
 		cartDao=new CartDao();
@@ -67,13 +68,36 @@ public class OrderService {
 	}
 	
 	//카트에서 주문
+	public int create(String m_id) throws Exception{
+		ArrayList<CartItem> cartList = cartDao.selectCart(m_id);
+		ArrayList<OrderItem> orderItemList = new ArrayList<OrderItem>();
+		int o_tot_price = 0;
+		for(CartItem cart: cartList) {
+			OrderItem orderItem = new OrderItem(0,cart.getC_item_qty(), 0, cart.getProduct());
+			orderItemList.add(orderItem);
+			o_tot_price+=orderItem.getOi_amount()*orderItem.getProduct().getP_price();
+		}
+		
+		String o_desc = orderItemList.get(0).getProduct().getP_name()+"외"+orderItemList.size()+" 건";
+		Order newOrder = new Order(0, null, o_desc, o_tot_price, m_id, orderItemList);
+		orderDao.create(newOrder);
+		cartDao.deleteCartAll(m_id);
+		return 0;
 	
+	}
 
 		
 	//카트에서 선택 주문
 	
-
+	/*
+	public int create(String m_id, String[] cart_item_noStr_array) throws Exception{
+		ArrayList<OrderItem> orderItemList = new ArrayList<OrderItem>();
+		int o_tot_price=0;
+		for(int i=0; i<cart_item_noStr_array.length;i++) {
+			
+		}
+	}
 	
-	
+	*/
 	
 }
