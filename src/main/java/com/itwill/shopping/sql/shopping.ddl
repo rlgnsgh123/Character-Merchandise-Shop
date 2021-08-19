@@ -22,7 +22,7 @@ CREATE TABLE qna_board(
 		qb_date                       		DATE		 DEFAULT sysdate		 NULL ,
 		qb_vcount                     		NUMBER(10)		 DEFAULT 0		 NULL ,
 		qb_groupno                    		NUMBER(10)		 NOT NULL,
-		qb_step                       		NUMBER(10)		 NOT NULL,
+		qb_step                       		NUMBER(10)		 DEFAULT 1		 NOT NULL,
 		qb_depth                      		NUMBER(10)		 DEFAULT 0		 NULL ,
 		m_id                          		VARCHAR2(10)		 NULL 
 );
@@ -40,7 +40,7 @@ CREATE TABLE notice_board(
 		nb_date                       		DATE		 DEFAULT sysdate		 NULL ,
 		nb_vcount                     		NUMBER(10)		 DEFAULT 0		 NULL ,
 		nb_groupno                    		NUMBER(10)		 NOT NULL,
-		nb_step                       		NUMBER(10)		 NOT NULL,
+		nb_step                       		NUMBER(10)		 DEFAULT 1		 NOT NULL,
 		nb_depth                      		NUMBER(10)		 DEFAULT 0		 NULL ,
 		m_id                          		VARCHAR2(10)		 NULL 
 );

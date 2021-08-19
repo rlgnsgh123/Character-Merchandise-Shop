@@ -74,3 +74,14 @@
 	</div>
 </body>
 </html>
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+
+
+>>>>>>> branch 'master' of https://github.com/2021-05-JAVA-DEVELOPER/web-project-team2-shopping.git
