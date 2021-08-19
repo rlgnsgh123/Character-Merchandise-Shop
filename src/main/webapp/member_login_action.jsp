@@ -2,9 +2,6 @@
 <%@page import="com.itwill.shopping.member.Member"%>
 <%@page import="com.itwill.shopping.member.MemberService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-<<<<<<< HEAD
-    pageEncoding="UTF-8"%>
-=======
     pageEncoding="UTF-8"%>
 <%
 	if(request.getMethod().equalsIgnoreCase("GET")){
@@ -25,4 +22,3 @@
 		response.sendRedirect("member_login_form.jsp?msg1="+URLEncoder.encode(e.getMessage(),"UTF-8"));
 	}
 %>
->>>>>>> branch 'master' of https://github.com/2021-05-JAVA-DEVELOPER/web-project-team2-shopping.git
