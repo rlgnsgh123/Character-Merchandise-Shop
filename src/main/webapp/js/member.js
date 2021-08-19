@@ -1,4 +1,4 @@
-// login , memberInsertPage , memberCreate , shopping_main
+// login , memberInsertPage , memberInsert , shopping_main , memberModify , memberDelete
 
 function login() {
 	if(f.m_id.value==""){
@@ -66,3 +66,26 @@ function shopping_main() {
 	f.action = "shopping_main.jsp"
 	f.submit();
 }
+
+function memberModify() {
+	f.action = "member_modify_form.jsp"
+	f.method = "POST";
+	f.submit();
+}
+
+function memberDelete() {
+	if(confirm("정말 삭제하시겠습니까?")){
+		f.action = "member_delete_action.jsp";
+		f.method = "POST";
+		f.submit();
+	}
+}
+
+function memberModifyAction() {
+	document.f.action = "member_modify_action.jsp";
+	document.f.method='POST';
+	document.f.submit();
+}
+
+
+
