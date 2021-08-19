@@ -75,10 +75,9 @@ Member member = memberService.findMember(sM_id);
 							</form> <br>
 							<table width=200 border=15 cellpadding=5 cellspacing=5>
 								<tr>
-									<td align=center><input type="button" value="정보수정"
-										onClick="memberModifyAction()"></td>
-									<td align=center><input type="button" value="돌아가기"
-										onclick="shopping_main()"></td>
+									<td align=center><input type="button" value="정보수정" onClick="memberModifyAction()"></td>
+									<td align=center><input type="button" value="돌아가기" onclick="shopping_main()"></td>
+										
 								</tr>
 							</table>
 						</td>

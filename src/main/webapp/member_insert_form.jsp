@@ -30,7 +30,7 @@
 		<div id="wrapper">
 			<div id="content">
 				<table width=000 border=000 cellpadding=0 cellspacing=0>
-					<form name="f" action="member_insert_action.jsp">
+					<form name="f" method="post">
 						아이디 : <input type="text" name="m_id" value="<%=member.getM_id() %>"><br>
 						비밀번호 : <input type="password" name="m_password" value="<%=member.getM_password() %>"><br>
 						비밀번호 확인 : <input type="password" name="m_password2" value="<%=member.getM_password() %>"><br>
