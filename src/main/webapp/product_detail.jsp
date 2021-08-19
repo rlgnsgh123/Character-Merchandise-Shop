@@ -10,9 +10,9 @@ String p_no = request.getParameter("p_no");
 <title>제품 상세 페이지</title>
 </head>
 <body>
-<jsp:include page="include_common_top.jsp" />
-<jsp:include page="include_common_left.jsp" />
-<jsp:include page="include_common_bottom.jsp" />
+<jsp:include page="common_top.jsp" />
+<jsp:include page="common_left.jsp" />
+<jsp:include page="common_bottom.jsp" />
 dfffffffffffffff
 </body>
 </html>
