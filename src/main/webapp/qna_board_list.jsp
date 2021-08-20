@@ -34,7 +34,7 @@ public String getTitleString(QnaBoard board) {
 		}
 		
 		if (board.getQb_depth() > 0) {
-			title.append("<img border='0' src='image/re.gif'/>");
+			title.append("\t\t\t");
 		}
 		
 		title.append(t.replace(" ", "&nbsp;"));
