@@ -28,6 +28,7 @@ if (product == null) {
 <head>
 <meta charset="UTF-8">
 <title>제품 상세 페이지</title>
+<script type="text/javascript" src="js/product.js">
 </head>
 <body>
 	<jsp:include page="common_top.jsp" />
@@ -48,9 +49,7 @@ if (product == null) {
 			}
 		}
 		
-		function goList(){
-			location.href="product_list.jsp";
-		}
+		
 		
 		function buyNow() {
 			if(<%= !login %>){
