@@ -4,6 +4,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
+
+request.setCharacterEncoding("UTF-8");
+
+
 NoticeBoard board = new NoticeBoard();
 board.setNb_no(Integer.parseInt(request.getParameter("boardno")));
 board.setNb_title(request.getParameter("title"));

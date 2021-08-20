@@ -46,7 +46,7 @@ String userId =(String)session.getAttribute("sM_id");
 
                     <li class="active"><a href="" data-toggle="tab">커뮤니티</a></li>
 
-                    <li><a href="#" data-toggle="tab">문의하기</a></li>
+                    <li><a href="#" data-toggle="tab">공지사항작성</a></li>
 
                     
 

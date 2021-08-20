@@ -59,7 +59,14 @@ public String getTitleString(NoticeBoard board) {
 	
 	PageInputDto pageInputDto = new PageInputDto(rowCountPerPage,pageCountPerPage,pageno,"","");
 
-%>	
+%>
+<%
+	boolean isEqual = false;
+	String userId =(String)session.getAttribute("sM_id");
+	if(userId.equals("admin1")) {
+		isEqual = true;
+}
+%>
 
 	
 <% 
@@ -192,7 +199,9 @@ public String getTitleString(NoticeBoard board) {
 	</div>
 		<table border="0" cellpadding="0" cellspacing="1" width="1100">
 			<tr>
+			<%if(isEqual) { %>
 				<td align ="right"><input type="button" value="글쓰기" onclick="listWrite();"/> </td>
+			<% } %>
 			</tr>
 		</table>
 	
