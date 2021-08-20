@@ -23,11 +23,7 @@
 
               <ul class="nav navbar-nav navbar-right">
 
-                <li><a href="member_login_form.jsp"> 로그인</a></li>
-
-                <li><a href="member_insert_form.jsp"> 회원가입</a></li>
-
-               <li><a href="cart_view.jsp"> 장바구니</a></li>
+                 <li><a href="cart_view.jsp"> 장바구니</a></li>
 
                  <li><a href="notice_board_list.jsp"> 게시판</a></li>
 
