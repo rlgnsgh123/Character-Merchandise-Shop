@@ -2,6 +2,7 @@
 <%@page import="com.itwill.shopping.notice_board.NoticeBoardService"%>
 <%@page import="com.itwill.shopping.notice_board.util.PageInputDto"%>
 <%@page import="com.itwill.shopping.notice_board.NoticeBoard"%>
+<%@ include file="login_check.jspf" %> 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
  <%!
@@ -45,11 +46,17 @@ public String getTitleString(NoticeBoard board) {
 	NoticeBoardService noticeBoardService = NoticeBoardService.getInstance();
 	BoardListPageDto boardListPage = noticeBoardService.selectAll(pageInputDto);
 %>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+	function nbWrite() {
+		location.href = "notice_board_write.jsp";
+	}
+</script>
 </head>
 <body>
 <ol>
@@ -101,7 +108,7 @@ for (NoticeBoard board : boardListPage.getList()) {
 		<%}%>
 		<%for (int i = boardListPage.getStartPageNo(); i <= boardListPage.getEndPageNo(); i++) {
 			if (boardListPage.getSelectPageNo() == i) {%>
-			<font color='red'><strong><%=i%></strong></font>&nbsp;
+			<font color='blue'><strong><%=i%></strong></font>&nbsp;
 			<%} else {%>
 			<a href="./notice_board_list.jsp?pageno=<%=i%>"><strong><%=i%></strong></a>&nbsp;
 				<% }
@@ -114,6 +121,11 @@ for (NoticeBoard board : boardListPage.getList()) {
 			<%}%>
 	</td>
 </tr>
+</table>
+<table>
+	<tr>
+		<td><input type="button" value="글쓰기" onclick="nbWrite();"/> </td>
+	</tr>
 </table>
 							
 

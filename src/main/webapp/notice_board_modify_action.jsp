@@ -1,5 +1,6 @@
 <%@page import="com.itwill.shopping.notice_board.NoticeBoardService"%>
 <%@page import="com.itwill.shopping.notice_board.NoticeBoard"%>
+<%@ include file="login_check.jspf" %> 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%

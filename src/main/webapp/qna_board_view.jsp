@@ -1,6 +1,7 @@
 <%@page import="org.apache.jasper.tagplugins.jstl.core.If"%>
 <%@page import="com.itwill.shopping.qna_board.QnaBoardService"%>
 <%@page import="com.itwill.shopping.qna_board.QnaBoard"%>
+<%@ include file="login_check.jspf" %> 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     

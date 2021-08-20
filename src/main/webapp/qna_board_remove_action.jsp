@@ -1,5 +1,6 @@
 <%@page import="com.itwill.shopping.qna_board.util.BoardException"%>
 <%@page import="com.itwill.shopping.qna_board.QnaBoardService"%>
+<%@ include file="login_check.jspf" %> 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <% 
