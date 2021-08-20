@@ -53,7 +53,7 @@
 							<div id ='f'>
 								<table align = center width = 80% border = 0 cellpadding = 0 cellspacing = 1 bgcorlor = "BBBBBB">
 									<tr>
-										<td width=60 height=25  align="center" bgcolor="E6ECDE" class=t1><fon >선택</font></td>
+										<td width=60 height=25  align="center" bgcolor="E6ECDE" class=t1><font>선택</font></td>
 										<td width=40 height=25 align="center" bgcolor="E6ECDE" class=t1><font>이미지</font></td>
 										<td width=210 height=25 align="center" bgcolor="E6ECDE" class=t1><font>강아지 이름</font></td>
 										<td width=112 height=25 align="center" bgcolor="E6ECDE" class=t1><font>수 량</font></td>
