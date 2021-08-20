@@ -35,7 +35,7 @@ public class CartDao {
 		BasicDataSource basicDataSource = new BasicDataSource();
 		basicDataSource.setDriverClassName(properties.getProperty("driverClassName"));
 		basicDataSource.setUrl(properties.getProperty("url"));
-		basicDataSource.setUsername(properties.getProperty("usetname"));
+		basicDataSource.setUsername(properties.getProperty("username"));
 		basicDataSource.setPassword(properties.getProperty("password"));
 		this.dataSource = basicDataSource;
 		
