@@ -27,7 +27,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>게시판 리스트</title>
+<title>게시판 수정</title>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
@@ -64,7 +64,7 @@
 
                     <li class="active"><a href="" data-toggle="tab">고객센터</a></li>
 
-                    <li><a href="#" data-toggle="tab">Q&A 수정</a></li>
+                    <li><a href="#" data-toggle="tab">공지사항 수정</a></li>
 
                     
 

@@ -10,7 +10,7 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="product_list.jsp"> 상품리스트</a></li>
 					<li><a>&nbsp;</a>				
-					<li><a href="qna_board_list.jsp"> 게시판</a></li>
+					<li><a href="qna_board_list.jsp"> Q&A</a></li>
 					<li><a href="notice_board_list.jsp"> 공지사항</a></li>
 					<li><a>&nbsp;</a> 
 					<li><a href="order_list.jsp">주문목록</a></li><li>
