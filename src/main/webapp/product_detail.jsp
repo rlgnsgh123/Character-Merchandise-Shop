@@ -28,28 +28,23 @@ if (product == null) {
 <head>
 <meta charset="UTF-8">
 <title>제품 상세 페이지</title>
-<script type="text/javascript" src="js/product.js">
-</head>
-<body>
+
+
 	<jsp:include page="common_top.jsp" />
 	<jsp:include page="common_left.jsp" />
 	<script type="text/javascript">
 		function addCart() {
-			if (
-	<%=!login%>
-		) {
+			if (<%=!login%>) {
 				alert('로그인후 이용가능합니다');
 				location.href = 'member_login_form.jsp';
 			}else{
 				var win = window.open('cart_add_pop.jsp','popup','width=300,height=150,top=150,left=150 ')
-				document.add_cart_form.method = 'POST';
 				document.add_cart_form.action = 'cart_add_pop.jsp';
 				document.add_cart_form.target = 'popup';
+				document.add_cart_form.method = 'POST';
 				document.add_cart_form.submit();
 			}
 		}
-		
-		
 		
 		function buyNow() {
 			if(<%= !login %>){
@@ -61,8 +56,13 @@ if (product == null) {
 				document.product_detail_form.submit();
 			}
 		}
+		function goList(){
+			location.href="product_list.jsp";
+		}
 	</script>
 
+</head>
+<body>
 	
 	<div>제품상세보기</div>
 	<table style="margin-left: 10px" border=0 width=80% height=376
