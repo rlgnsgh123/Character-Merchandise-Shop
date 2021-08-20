@@ -35,11 +35,11 @@
 <body>
 
 	<!-- top bar start -->
-	include : <jsp:include page="common_top.jsp"/>
+	<jsp:include page="common_top.jsp"/>
 	<!-- top bar end -->
 
     <!-- nav_bar start -->
-	<jsp:include page="common_nav_bar.jsp"/>
+	<jsp:include page="common_left.jsp"/>
  	<!-- nav_bar end -->
 
     <div class="slider">
@@ -1588,7 +1588,7 @@
 
     </div>
 	<!-- common_bottom start -->
-	include : <jsp:include page="common_bottom.jsp"/>
+	<jsp:include page="common_bottom.jsp"/>
 	<!-- common_bottom end -->
 
 	<!-- jQuery Library -->
