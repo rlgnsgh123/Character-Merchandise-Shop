@@ -12,7 +12,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Orani E-Shop</title>
+	<title>shopping</title>
 
 	<!-- Latest compiled and minified CSS -->
 
@@ -34,13 +34,13 @@
 
 <body>
 
-	<!-- top bar start -->
+	<!-- top_bar start -->
 	<jsp:include page="common_top.jsp"/>
-	<!-- top bar end -->
+	<!-- top_bar end -->
 
-    <!-- nav_bar start -->
+    <!-- left(nav_bar) start -->
 	<jsp:include page="common_left.jsp"/>
- 	<!-- nav_bar end -->
+ 	<!-- left(nav_bar) end -->
 
     <div class="slider">
 
@@ -61,8 +61,6 @@
                             <li data-target="#featured" data-slide-to="0" class="active"></li>
 
                           </ol>
-
-
 
                           <!-- Wrapper for slides -->
 
@@ -229,8 +227,7 @@
 
                         <h3>Choose a Product</h3>
 
-                    
-
+                 
                     </div>
 
                 </div>
@@ -244,7 +241,6 @@
                         <h3>Add to Cart</h3>
 
                    
-
                     </div>
 
                 </div>
@@ -256,7 +252,6 @@
                         <i class="fa fa-money"></i>
 
                         <h3>Make Order</h3>
-
                   
 
                     </div>
@@ -270,8 +265,7 @@
                         <i class="fa fa-dashcube"></i>
 
                         <h3>Deliver For Free</h3>
-
-                  
+            
                     </div>
 
                 </div>
