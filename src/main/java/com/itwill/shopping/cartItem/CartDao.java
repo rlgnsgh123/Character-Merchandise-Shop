@@ -24,7 +24,6 @@ import com.itwill.shopping.member.Member;
 import com.itwill.shopping.product.Product;
 
 public class CartDao {
-		
 	private DataSource dataSource;
 	
 	// DAO 객체 생성
@@ -37,12 +36,12 @@ public class CartDao {
 		basicDataSource.setUrl(properties.getProperty("url"));
 		basicDataSource.setUsername(properties.getProperty("username"));
 		basicDataSource.setPassword(properties.getProperty("password"));
-		this.dataSource = basicDataSource;
+		dataSource = basicDataSource;
 		
 	}
 	
 	
-	// INSERT :: 장바구니에 상품 추가하기
+	// INSERT :: 장바구니에 상품 추가하기.
 	public int addCart(String m_id, int p_no, int p_cart_qty) throws Exception {
 		// insert SQL
 		String insertSQL = "insert into cart(c_item_no, c_item_qty, m_id, p_no) values(CART_C_ITEM_NO_SEQ.nextval, ?, ?, ?)";
@@ -70,9 +69,9 @@ public class CartDao {
 		return count; // success - 1 , fail - 0;
 	} // add end
 	
-	// UPDATE :; 장바구니 상품 수정
+	// UPDATE :; 장바구니 상품 수정.
 	public int updateCart(String m_id, int p_no, int p_cart_qty) throws Exception{
-		String updateSQL = "update cart set p_no = ?, c_item_qty = ? where m_id = ?";
+		String updateSQL = "update cart set p_no = ?, c_item_qty = ? where m_id = '?'";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		int count = 0;
@@ -91,7 +90,7 @@ public class CartDao {
 		return count;
 	}
 	
-	// DELETE :: 장바구니 상품 선택 삭제 /**/
+	// DELETE :: 장바구니 상품 선택 삭제 /**/.
 	public int deleteCart(int c_item_no) throws Exception{
 		String deleteSQL = "delete from cart where c_item_no = ?";
 		Connection con = null;
@@ -110,7 +109,7 @@ public class CartDao {
 		return count;
 	}
 	
-	// DELETE ALL :: 장바구니 상품 전체 삭제
+	// DELETE ALL :: 장바구니 상품 전체 삭제.
 	public int deleteCartAll(String m_id) throws Exception {
 		String deleteAllSQL = "delete from cart where m_id = '?'";
 		Connection con = null;
@@ -129,13 +128,13 @@ public class CartDao {
 		return count;
 	}
 	
-	// SELECT BY MEMBER :: 장바구니 상품 (m_id 기준) 출력
+	// SELECT BY MEMBER :: 장바구니 상품 (m_id 기준) 출력.
 	public ArrayList<CartItem> selectCart(String m_id) throws Exception {
 		ArrayList<CartItem> cartList = new ArrayList<CartItem>();
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String selectSQL = "select * from cart c join member m on c.m_id = m.m_id join product p on p.p_no = c.p_no where m.m_id = '?'";
+		String selectSQL = "select * from cart c join member m on c.m_id = m.m_id join product p on p.p_no = c.p_no where m.m_id = ?";
 		try {
 			con = dataSource.getConnection();
 			pstmt = con.prepareStatement(selectSQL);
@@ -166,7 +165,7 @@ public class CartDao {
 		return cartList;
 	}
 	
-	// SelectByProduct :: 장바구니 상품 (상품 기준) 출력 -- 관리자 메뉴?
+	// SelectByProduct :: 장바구니 상품 (상품 기준) 출력 -- 관리자 메뉴?.
 	public CartItem selectCartItemByNo(int c_item_no) throws Exception {
 		CartItem cartItem = null;
 		Connection con = null;
@@ -203,9 +202,7 @@ public class CartDao {
 		return cartItem;
 	}
 	
-	
-	
-	// 상품 존재 여부!
+	// 상품 존재 여부!.
 	public boolean cartExist(String m_id, int p_no) throws Exception {
 		boolean isExist = false;
 		Connection con = null;
