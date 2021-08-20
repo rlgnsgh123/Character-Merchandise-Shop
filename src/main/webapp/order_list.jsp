@@ -14,11 +14,21 @@
 
 %>
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>orderList</title>
 <script type="text/javascript" src="js/order.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<!-- Google Font -->
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Raleway:400,300,500,700,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" type="text/css">
+    <!-- Theme Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 	<div id="container">
@@ -32,36 +42,39 @@
 		<!-- content start -->
 
 			<!-- include_content.jsp start-->
-			<div id="content">
+			<div id="content" style="width:60%; margin: 0 auto">
 				<table border=0 cellpadding=0 cellspacing=0>
 					<tr>
 						<td><br />
-							<table style="padding-left: 10px" border=0 cellpadding=0
-								cellspacing=0>
+							<table style="padding-left: 10px" border=0 cellpadding=0 cellspacing=0>
 								<tr>
-									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>쇼핑몰 -주문 목록</b></td>
+							<td height="22">&nbsp;&nbsp;<h3>주문 목록</h3></td>
+									
 								</tr>
 							</table> <!--form-->
 							<form name="f" method="post">
-								<table align=center width=80% \border="0" cellpadding="0" cellspacing="1" bgcolor="BBBBBB">
+								<table align="left" width=80% \border="0" cellpadding="0" cellspacing="1" bgcolor="BBBBBB">
 									<tr>
-										<td width=145 height=25 bgcolor="E6ECDE" align=center class=t1><font>주문번호</font></td>
-										<td width=145 height=25 bgcolor="E6ECDE" align=center class=t1><font>주문이름</font></td>
-										<td width=112 height=25 bgcolor="E6ECDE" align=center class=t1><font>주문날짜</font></td>
-										<td width=136 height=25 bgcolor="E6ECDE" align=center class=t1><font>주문가격</font></td>
-										<td width=80 height=25 bgcolor="E6ECDE" align=center class=t1><font></font></td>
+										<td width=200 bgcolor="E6ECDE" align=center ><font>주문번호</font></td>
+										<td width=150 bgcolor="E6ECDE" align=center ><font>주문이름</font></td>
+										<td width=150 bgcolor="E6ECDE" align=center ><font>주문날짜</font></td>
+										<td width=140 bgcolor="E6ECDE" align=center ><font>주문가격</font></td>
+										<td width=100 bgcolor="E6ECDE" align=center ><font>비고</font></td>
 									</tr>
+													</table>		
+			</form><br/>
+			<table align="left" width=80% \border="0" cellpadding="0" cellspacing="1" bgcolor="BBBBBB">
 		
 			<!-- order start -->
 			<%
 			for (Order order : orderList) {
 			%>
 			<tr>
-			<td width=145 height=26 align=center bgcolor="ffffff" class=t1><%=order.getO_no()%></td>
-			<td width=112 height=26 align=center bgcolor="ffffff" class=t1><%=new SimpleDateFormat("yyyy/MM/dd").format(order.getO_date())%></td>
-			<td width=145 height=26 align=center bgcolor="ffffff" class=t1><%=order.getO_desc()%></td>
-			<td width=136 height=26 align=center bgcolor="ffffff" class=t1><%=new DecimalFormat("#,###").format(order.getO_price())%></td>
-			<td width=80 height=26 align=center bgcolor="ffffff" class=t1>
+			<td width=200 height=26 align= "center" bgcolor="ffffff" class=t1><%=order.getO_no()%></td>
+			<td width=112 height=26 align="center" bgcolor="ffffff" class=t1><%=new SimpleDateFormat("yyyy/MM/dd").format(order.getO_date())%></td>
+			<td width=145 height=26 align="center" bgcolor="ffffff" class=t1><%=order.getO_desc()%></td>
+			<td width=136 height=26 align= "center" bgcolor="ffffff" class=t1><%=new DecimalFormat("#,###").format(order.getO_price())%></td>
+			<td width=80 height=26 align="center" bgcolor="ffffff" class=t1>
 			<a href="order_detail.jsp?o_no=<%=order.getO_no()%>" class=m1>주문상세</a></td>
 			</tr>
 			<%
@@ -69,8 +82,8 @@
 			%>
 		<!-- order end -->
 								</table>
-							</form> <br />
-							<table border="0" cellpadding="0" cellspacing="1" width="590">
+							</form> <br/><br/><br/>
+							<table border="0" cellpadding="0" cellspacing="1" width="590" >
 								<tr>
 									<td align=center>
 									<input type ="button" value="계속 구경하기" onclick ="product_search_action()"> &nbsp;
@@ -79,7 +92,7 @@
 							</table></td>
 					</tr>
 				</table>
-			</div>
+			</div><br/><br/><br/><br/>
 			<!-- include_content.jsp end-->
 			<!-- content end -->
 		</div>
