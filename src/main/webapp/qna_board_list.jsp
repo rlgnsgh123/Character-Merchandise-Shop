@@ -68,11 +68,8 @@ public String getTitleString(QnaBoard board) {
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript">
-	function qbWrite() {
-		location.href = "qna_board_write.jsp";
-	}
-</script>
+<script type="text/javascript" src="js/qna.js"></script>
+
 </head>
 <body>
 <ol>
@@ -140,7 +137,7 @@ for (QnaBoard board : boardListPage.getList()) {
 </table>
 <table>
 	<tr>
-		<td><input type="button" value="글쓰기" onclick="qbWrite();"/> </td>
+		<td><input type="button" value="글쓰기" onclick="listWrite();"/> </td>
 	</tr>
 </table>
 							

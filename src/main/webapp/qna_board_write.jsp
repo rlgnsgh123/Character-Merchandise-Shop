@@ -10,29 +10,7 @@ String userId =(String)session.getAttribute("sM_id");
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript">
-	
-	function qbCreate() {
-		if (b.title.value=="") {
-			alert("제목을 입력하지 않으셨습니다.");
-			b.title.focus();
-			return false;
-		}
-		if (b.content.value=="") {
-			alert("내용을 입력하지 않으셨습니다.");
-			b.content.focus();
-			return false;
-		}
-		b.action = "qna_board_write_action.jsp";
-		b.method='POST';
-		b.submit();
-	}
-	function qbList() {
-		b.action = "qna_board_list.jsp";
-		b.submit();
-	}
-
-</script>
+<script type="text/javascript" src="js/qna.js"></script>
 </head>
 <body>
 <table>
@@ -62,8 +40,8 @@ String userId =(String)session.getAttribute("sM_id");
 <table>
 	<tr>
 		<td>
-			<input type="button" value="글쓰기" onclick= "qbCreate()">
-			<input type="button" value="목록" onclick="qbList()">
+			<input type="button" value="글쓰기" onclick= "writeCreate()">
+			<input type="button" value="목록" onclick="writeList()">
 		</td>
 	</tr>
 </table>

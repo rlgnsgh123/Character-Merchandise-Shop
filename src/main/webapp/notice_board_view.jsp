@@ -46,26 +46,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<script type="text/javascript">
-// 수정 메쏘드
-	function qbUpdate() {
-		document.b.action = "notice_board_modify.jsp";
-		document.b.submit();
-	}
-	function qbList() {
+<script type="text/javascript" >	
+	function viewList() {
 		b.action = "notice_board_list.jsp?pageno="+<%=pageno%>;
 		b.submit();
 	}
-	function qbRemove() {
-		b.action = "notice_board_remove_action.jsp";
-		b.submit();
-	}
-	function qbInsert() {
-		
-		b.action = "notice_board_reply_write.jsp";
-		b.submit();
-	}
 </script>
+<script type="text/javascript" src="js/notice.js"></script>	
 <form name="b">
 	<!-- 돌아가기 눌렀을때 해당 페이지로 로 돌아가기위해 얻어온다 데이타를 -->
 	<input type="hidden" name="boardno" value="<%=board.getNb_no()%>">
@@ -94,12 +81,12 @@
 		<tr>
 			<td>
 				<%if(isEqual) { %>
-			<input type="button"  value="수정" onclick= "qbUpdate()">
-			<input type="button"  value="삭제" onclick= "qbRemove()"> 
-			<input type="button"  value="목록" onclick= "qbList()"> 
-			<input type="button"  value="답장" onclick="qbInsert()">
+			<input type="button"  value="수정" onclick= "viewUpdate()">
+			<input type="button"  value="삭제" onclick= "viewRemove()"> 
+			<input type="button"  value="목록" onclick= "viewList()"> 
+			<input type="button"  value="답장" onclick="viewInsert()">
 			<% }else{ %>
-			<input type="button"  value="목록" onclick= "qbList()"> 
+			<input type="button"  value="목록" onclick= "viewList()"> 
 			<%} %> 
 			</td>
 		</tr>

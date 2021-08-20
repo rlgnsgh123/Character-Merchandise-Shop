@@ -71,11 +71,7 @@ public String getTitleString(NoticeBoard board) {
 <title>Insert title here</title>
 
 
-<script type="text/javascript">
-	function nbWrite() {
-		location.href = "notice_board_write.jsp";
-	}
-</script>
+<script type="text/javascript" src="js/notice.js"></script>
 </head>
 <body>
 <ol>
@@ -143,7 +139,7 @@ for (NoticeBoard board : boardListPage.getList()) {
 </table>
 <table>
 	<tr>
-		<td><input type="button" value="글쓰기" onclick="nbWrite();"/> </td>
+		<td><input type="button" value="글쓰기" onclick="ListWrite();"/> </td>
 	</tr>
 </table>
 							

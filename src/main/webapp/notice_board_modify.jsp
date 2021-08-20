@@ -29,28 +29,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript">
-	function nbList() {
-		b.action = "notice_board_list.jsp";
-		b.submit();	
-	}
-	function nbModify() {
-		if (b.title.value=="") {
-			alert("제목을 입력하세요")
-			b.title.focus();
-			
-		}
-		if (b.content.value=="") {
-			alert("내용을 입력하세요")
-			b.title.focus();
-		}
-		
-		b.action = "notice_board_modify_action.jsp";
-		b.submit();
-	}
-
-
-</script>
+<script type="text/javascript" src="js/notice.js"></script>
 
 </head>
 <body>
