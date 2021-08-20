@@ -75,25 +75,25 @@
 			</div> 	
 </div>
 <body>
-<div id =contetnt style="width:30%; margin: 0 auto">
+<div id =contetnt style="width:45%; margin: 0 auto">
 	<form name="b" method="post">
 		<input type="hidden" name="pageno" value="<%=pageno%>" /> 
 		<input type="hidden" name="boardno" value="<%=board.getNb_no()%>" />
-		<table border="0" cellpadding="0" cellspacing="1" width="1000" bgcolor="BBBBBB">
+		<table border="0" cellpadding="0" cellspacing="1" width="" bgcolor="BBBBBB">
 			<tr>
-				<td width=500 align=center bgcolor="E6ECDE" height="22">작성자 </td>
-				<td width=700 bgcolor="ffffff" style="padding-left: 10px" align="left"><%=board.getM_id()%></td>
+				<td width=300 align=center bgcolor="E6ECDE" height="22">작성자 </td>
+				<td width=600 bgcolor="ffffff" style="padding-left: 10px" align="left"><%=board.getM_id()%></td>
 			</tr>
 			<tr>
-				<td width= 500 align=center bgcolor="E6ECDE" height="22">제목</td>
+				<td width=300 align=center bgcolor="E6ECDE" height="22">제목</td>
 				<td width=490 bgcolor="ffffff" style="padding-left: 10px" align="left">
 					<input type="text" style="width: 150" name="title" value="<%=board.getNb_title()%>"><br>
 				</td>
 			</tr>
 			<tr>
-				<td width=500 align=center bgcolor="E6ECDE" height="22">내용:</td>
-				<td width=4900 bgcolor="ffffff" style="padding-left: 10px" align="left"> 
-				<textarea name="content" style="width: 500px" rows="20"><%=board.getNb_content().replace("\n", ">>").trim()%>
+				<td width=300 align=center bgcolor="E6ECDE" height="22">내용:</td>
+				<td width=490 bgcolor="ffffff" style="padding-left: 10px" align="left"> 
+				<textarea name="content" style="width: 535px" rows="20"><%=board.getNb_content().replace("\n", ">>").trim()%>
 				</textarea></td>
 		</tr>	
 		</table>

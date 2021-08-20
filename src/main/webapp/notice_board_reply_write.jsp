@@ -76,25 +76,25 @@ if(request.getParameter("pageno")!=null){
 			</div> 	
 </div>
 <body>
-<div id =contetnt style="width:30%; margin: 0 auto">
+<div id =contetnt style="width:45%; margin: 0 auto">
 	<form name="b" method="post">
 		<input type="hidden" name="pageno"  value="<%=pageno%>" />
 		<input type="hidden" name="boardno" value="<%=board.getNb_no()%>"/>
 		<input type="hidden" name="id" value="<%=userId%>"/>
-		<table border="0" cellpadding="0" cellspacing="1" width="500" bgcolor="BBBBBB">
+		<table border="0" cellpadding="0" cellspacing="1" width="1500" bgcolor="BBBBBB">
 		<tr>
-				<td width=100 align=center bgcolor="E6ECDE" height="22">작성자 </td>
+				<td width=300 align=center bgcolor="E6ECDE" height="22">작성자 </td>
 				<td width=600 bgcolor="ffffff" style="padding-left: 10px" align="left"><%=userId%></td>
 			</tr>
 		<tr>
-			<td width=100 align=center bgcolor="E6ECDE" height="22">제목 </td>
+			<td width=300 align=center bgcolor="E6ECDE" height="22">제목 </td>
 			<td width=490 bgcolor="ffffff" style="padding-left: 10px" align="left">
 			<input style="width: 150" type="text" name="title" value="RE:<%=board.getNb_title()%>"></td>
 		</tr>
 		<tr>
-			<td width=100 align=center bgcolor="E6ECDE" height="22">내용</td>
+			<td width=300 align=center bgcolor="E6ECDE" height="22">내용</td>
 			<td width=490 bgcolor="ffffff" style="padding-left: 10px" align="left">
-			<textarea name="content" class="textarea" style="width: 500px" rows="20">[원글] <%=board.getNb_content().replace("\n","[원글] : ").trim()%></textarea>
+			<textarea name="content" class="textarea" style="width: 535px" rows="20">[원글] <%=board.getNb_content().replace("\n","[원글] : ").trim()%></textarea>
 			</td>
 		</tr>
 		</table>
