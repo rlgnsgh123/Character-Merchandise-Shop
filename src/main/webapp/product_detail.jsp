@@ -11,7 +11,6 @@ if (p_no == null || p_no.equals("")) {
 
 boolean login = false;
 if (session.getAttribute("sM_id") != null) {
-	//sUserId인 이유??
 	login = true;
 }
 
@@ -42,10 +41,11 @@ if (product == null) {
 				alert('로그인후 이용가능합니다');
 				location.href = 'member_login_form.jsp';
 			}else{
-				var win = window.open('cart_add_pop_action.jsp','popup','width=300,height=150,top=150,left=150 ')
-				document.product_detail_form.method = 'POST';
-				document.product_detail_form.action = 'cart_add_pop_action.jsp';
-				document.product_detail_form.submit();
+				var win = window.open('cart_add_pop.jsp','popup','width=300,height=150,top=150,left=150 ')
+				document.add_cart_form.method = 'POST';
+				document.add_cart_form.action = 'cart_add_pop.jsp';
+				document.add_cart_form.target = 'popup';
+				document.add_cart_form.submit();
 			}
 		}
 	</script>
@@ -63,7 +63,7 @@ if (product == null) {
 		</tr>
 		<tr width=100%>
 			<td width=30% height=200 align=center class=t1>
-				<form name="add_cart_form" method="post" action="cart_add_action.jsp">
+				<form name="add_cart_form" method="post" action="cart_add_pop.jsp">
 					수량 :
 					<select name="cart_qty">
 						<option value="1">1
@@ -73,9 +73,10 @@ if (product == null) {
 						<option value="5">5
 					</select> 개 주문<br>
 					(1인당 최대 5개 주문가능)<br>
-					<br> <input type=submit value="장바구니에담기[장바구니보여주기]" /><br>
+					<br> 
 					<br> <input type=button onclick="addCart();" value="장바구니에담기[계속쇼핑팝업]" /> 
 						<input type="hidden" name=p_no value="<%=product.getP_no()%>">
+						
 				</form>
 			</td>
 			<td width=40% height=200 align=center><img border=0

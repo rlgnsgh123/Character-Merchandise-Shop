@@ -7,9 +7,9 @@
     pageEncoding="UTF-8"%>
 
 <%
-	String m_id = (String)session.getAttribute("sM_id");
+	String sM_id = (String)session.getAttribute("sM_id");
 	OrderService orderService = new OrderService();
-	ArrayList<Order> orderList = orderService.list(m_id);
+	ArrayList<Order> orderList = orderService.list(sM_id);
 
 %>
 <!DOCTYPE html>

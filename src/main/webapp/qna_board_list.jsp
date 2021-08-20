@@ -2,6 +2,7 @@
 <%@page import="com.itwill.shopping.qna_board.util.PageInputDto"%>
 <%@page import="com.itwill.shopping.qna_board.QnaBoardService"%>
 <%@page import="com.itwill.shopping.qna_board.QnaBoard"%>
+<%@ include file="login_check.jspf" %> 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
  <%!
@@ -53,7 +54,7 @@ public String getTitleString(QnaBoard board) {
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
-	function nbWrite() {
+	function qbWrite() {
 		location.href = "qna_board_write.jsp";
 	}
 </script>
@@ -108,7 +109,7 @@ for (QnaBoard board : boardListPage.getList()) {
 		<%}%>
 		<%for (int i = boardListPage.getStartPageNo(); i <= boardListPage.getEndPageNo(); i++) {
 			if (boardListPage.getSelectPageNo() == i) {%>
-			<font color='red'><strong><%=i%></strong></font>&nbsp;
+			<font color='blue'><strong><%=i%></strong></font>&nbsp;
 			<%} else {%>
 			<a href="./qna_board_list.jsp?pageno=<%=i%>"><strong><%=i%></strong></a>&nbsp;
 				<% }
@@ -124,7 +125,7 @@ for (QnaBoard board : boardListPage.getList()) {
 </table>
 <table>
 	<tr>
-		<td><input type="button" value="글쓰기" onclick="nbWrite();"/> </td>
+		<td><input type="button" value="글쓰기" onclick="qbWrite();"/> </td>
 	</tr>
 </table>
 							

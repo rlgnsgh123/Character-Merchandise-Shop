@@ -1,6 +1,7 @@
 <%@page import="com.itwill.shopping.notice_board.NoticeBoardService"%>
 <%@page import="com.itwill.shopping.notice_board.NoticeBoard"%>
 <%@page import="org.apache.jasper.tagplugins.jstl.core.If"%>
+<%@ include file="login_check.jspf" %> 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
@@ -26,6 +27,7 @@
 		response.sendRedirect("notice_board_list.jsp?pageno="+pageno);
 		return;
 	}
+	
 	NoticeBoardService.getInstance().updateViewCount(boardno);
 	
 	boolean isEqual = false;
@@ -94,10 +96,10 @@
 				<%if(isEqual) { %>
 			<input type="button"  value="수정" onclick= "qbUpdate()">
 			<input type="button"  value="삭제" onclick= "qbRemove()"> 
-			<input type="button"  value="돌아가기" onclick= "qbList()"> 
+			<input type="button"  value="목록" onclick= "qbList()"> 
 			<input type="button"  value="답장" onclick="qbInsert()">
 			<% }else{ %>
-			<input type="button"  value="돌아가기" onclick= "qbList()"> 
+			<input type="button"  value="목록" onclick= "qbList()"> 
 			<%} %> 
 			</td>
 		</tr>
