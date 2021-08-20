@@ -18,7 +18,6 @@ ArrayList<Product> productList = productService.getProductListDesc();
 <body>
 <jsp:include page="common_top.jsp" />
 <jsp:include page="common_left.jsp" />
-<jsp:include page="common_bottom.jsp" />
 
 상품 리스트<br>
 <%
@@ -40,5 +39,6 @@ for(Product product : productList){
 <%}%>
 
 
+<jsp:include page="common_bottom.jsp" />
 </body>
 </html>

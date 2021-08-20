@@ -7,33 +7,12 @@
 	if(msg1==null) msg1="";
 	if(msg2==null) msg2="";
 %>    
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>로그인</title>
-<script type="text/javascript">
-	function memberInsert() {
-		f.action = "member_insert_form.jsp"
-		f.submit();
-	}
-	
-	function login() {
-		if(f.m_id.value==""){
-			alert("아이디를 입력하세요.");
-			f.m_id.focus();
-			return false;
-		}
-		if(f.m_password.value==""){
-			alert("비밀번호를 입력하세요.");
-			f.m_password.focus();
-			return false;
-		}
-	
-		f.action = "member_login_action.jsp"
-		f.submit();
-	}
+<script type="text/javascript" src="js/member.js">
 </script>
 </head>
 <body>
@@ -62,7 +41,7 @@
 					<tr>
 						<td align="center">
 						<input type="button" value="로그인" onclick="login();">
-						<input type="button" value="회원가입" onclick="memberInsert()">
+						<input type="button" value="회원가입" onclick="memberInsertPage();">
 						</td>
 					</tr>
 				</table>
@@ -73,6 +52,7 @@
 		</div>
 	</div>
 </body>
+<<<<<<< HEAD
 </html>
 
 
@@ -83,3 +63,6 @@
 
 
 
+=======
+</html>
+>>>>>>> branch 'master' of https://github.com/2021-05-JAVA-DEVELOPER/web-project-team2-shopping.git
