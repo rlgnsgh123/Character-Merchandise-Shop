@@ -10,9 +10,7 @@
     pageEncoding="UTF-8"%>
 <%@ include file="login_check.jspf"%>
 <%
-
 //주문생성 - 카트에서 주문, 카트에서 선택 주문, 상품에서 주문
-
 /*
 if(request.getMethod().equalsIgnoreCase("GET")){
 	response.sendRedirect("order_list.jsp");
@@ -23,18 +21,15 @@ String buyType = request.getParameter("buyType");
 String p_noStr = request.getParameter("p_no");
 String p_qtyStr = request.getParameter("p_qty");
 String[] cart_item_noStr_array = request.getParameterValues("cart_item_no");
-
 if(buyType==null)buyType="";
 if(p_noStr==null)p_noStr="";
 if(p_qtyStr==null)p_qtyStr="";
 if(cart_item_noStr_array==null)cart_item_noStr_array=new String[]{};
-
 CartService cartService = new CartService();
 MemberService memberService = new MemberService();
 ProductService productService = new ProductService();
 ArrayList<CartItem> cartItemList = new ArrayList<CartItem>();
 Member member = memberService.findMember(sM_id);
-
 if(buyType.equals("cart")){
 	cartItemList = cartService.getCartList(sM_id);
 } 
@@ -49,14 +44,6 @@ else if (buyType.equals("direct")){
 	Product product = productService.getProduct(Integer.parseInt(p_noStr));
 	cartItemList.add(new CartItem(0,Integer.parseInt(p_qtyStr) ,member, product));
 }
-
-
-
-
-
-
-
-
 %>
 <!DOCTYPE html>
 <html>
