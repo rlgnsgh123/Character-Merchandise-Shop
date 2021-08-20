@@ -1,5 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
-<p align="center">Copyright (&copy;) By Java Class 5. All
-	rights reserved.</p>
+    <div class="copyright text-center">
+
+        <div class="container">
+
+            <div class="row">
+
+                <p class="copyright"> Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a>
+				</p>
+
+            </div>
+
+        </div>
+
+    </div>

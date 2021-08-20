@@ -34,125 +34,12 @@
 
 <body>
 
-    <div class="top-bar">
+	<!-- top bar start -->
+	<jsp:include page="common_top.jsp"/>
+	<!-- top bar end -->
 
-        <div class="container">
-
-            <div class="row">
-
-                <div class="col-md-6">
-
-                    <div class="social pull-left">
-
-                        <ul>
-
-                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-
-                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-
-                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-
-                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-
-                        </ul>
-
-                    </div>
-
-                </div>
-
-                <div class="col-md-6">
-
-                    <div class="action pull-right">
-
-                        <ul>
-
-                            <li><a href="member_login_form.jsp"><i class="fa fa-user"></i> 로그인</a></li>
-
-                            <li><a href="member_insert_form.jsp"><i class="fa fa-lock"></i> 회원가입</a></li>
-
-                        </ul>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="header">
-
-        <div class="container">
-
-            <div class="row">
-
-                <div class="col-md-3 col-sm-4">
-
-                    <div class="logo">
-
-                        <a href="index.html">
-
-                            <img src="images/logo.png" alt="Orani E-shop">
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-                <div class="col-md-7 col-sm-5">
-
-                    <div class="search-form">
-
-                        <form class="navbar-form" role="search">
-
-                            <div class="form-group">
-
-                              <input type="text" class="form-control" placeholder="What do you need...">
-
-                            </div>
-
-                            <button type="submit" class="btn"><i class="fa fa-search"></i></button>
-
-                        </form>
-
-                    </div>
-
-                </div>
-
-                <div class="col-md-2 col-sm-3">
-
-                    <div class="cart">
-
-                        <div class="cart-icon">
-
-                            <a href=""><i class="fa fa-shopping-cart"></i></a>
-
-                        </div>
-
-                        <div class="cart-text">
-
-                            SHOPPING CART
-
-                            <br>
-
-                            0 items - $0.00
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
     <!-- nav_bar start -->
-	<jsp:include page="common_nav_bar.jsp"/>
+	<jsp:include page="common_left.jsp"/>
  	<!-- nav_bar end -->
 
     <div class="slider">
@@ -252,7 +139,7 @@
     </div>
 
     <div class="banner">
-
+   
         <div class="container">
 
             <div class="row">
@@ -312,6 +199,23 @@
     </div>
 
     <div class="shopping-process text-center">
+   		<div class="container">
+
+            <div class="row">
+
+                <ul class="nav nav-tabs nav-product-tabs">
+
+                    <li class="active"><a href="" data-toggle="tab">Process</a></li>
+
+                    <li><a href="#" data-toggle="tab">Best Service</a></li>
+
+                    
+
+                    <li class=""><a href=""> <i class=""></i></a></li>
+
+                </ul>
+				</div>
+			</div> 	
 
         <div class="container">
 
@@ -325,7 +229,7 @@
 
                         <h3>Choose a Product</h3>
 
-                        <p>The European languages are members the same family. Their separate existence science </p>
+                    
 
                     </div>
 
@@ -339,7 +243,7 @@
 
                         <h3>Add to Cart</h3>
 
-                        <p>The European languages are members the same family. Their separate existence science </p>
+                   
 
                     </div>
 
@@ -353,7 +257,7 @@
 
                         <h3>Make Order</h3>
 
-                        <p>The European languages are members the same family. Their separate existence science </p>
+                  
 
                     </div>
 
@@ -367,8 +271,7 @@
 
                         <h3>Deliver For Free</h3>
 
-                        <p>The European languages are members the same family. Their separate existence science </p>
-
+                  
                     </div>
 
                 </div>
@@ -1700,141 +1603,9 @@
         </div>
 
     </div>
-
-    <div class="footer">
-
-        <div class="container">
-
-            <div class="row">
-
-                <div class="col-md-3 col-sm-3">
-
-                    <div class="single-widget">
-
-                        <h2 class="widget-title">About Us</h2>
-
-                        <div class="widget-inner">
-
-                            <p>Office: 868 Fake Street, New York</p>
-
-                            <p>Phone: (08) 8827 633354</p>
-
-                            <p>Fax: 08) 08 4752 1499</p>
-
-                            <p>Email: mail@yourdomain.com</p>
-
-                            <img src="images/payment.png" alt="we accept">
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="col-md-3 col-sm-3">
-
-                    <div class="single-widget">
-
-                        <h2 class="widget-title">Information</h2>
-
-                        <div class="widget-inner">
-
-                            <ul>
-
-                                <li><a href="">Frequently Asked Question</a></li>
-
-                                <li><a href="">Terms and Condition</a></li>
-
-                                <li><a href="">Privacy Policy</a></li>
-
-                                <li><a href="">Customer Service</a></li>
-
-                                <li><a href="">Delivery Information</a></li>
-
-                                <li><a href="">Manufacturers</a></li>
-
-                            </ul>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="col-md-3 col-sm-3">
-
-                    <div class="single-widget">
-
-                        <h2 class="widget-title">Customer Care</h2>
-
-                        <div class="widget-inner">
-
-                            <ul>
-
-                                <li><a href="">Contact Us</a></li>
-
-                                <li><a href="">Sitemap</a></li>
-
-                                <li><a href="">Gift Vouchers</a></li>
-
-                                <li><a href="">Live Chat 24x7</a></li>
-
-                            </ul>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="col-md-3 col-sm-3">
-
-                    <div class="single-widget">
-
-                        <h2 class="widget-title">Our Services</h2>
-
-                        <div class="widget-inner">
-
-                            <ul>
-
-                                <li><a href="">Shipping & Returns</a></li>
-
-                                <li><a href="">Secure Shopping</a></li>
-
-                                <li><a href="">International Shipping</a></li>
-
-                                <li><a href="">Affiliates</a></li>
-
-                                <li><a href="">Contact</a></li>
-
-                            </ul>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="copyright text-center">
-
-        <div class="container">
-
-            <div class="row">
-
-                <p class="copyright"> Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a>
-</p>
-
-            </div>
-
-        </div>
-
-    </div>
+	<!-- common_bottom start -->
+	<jsp:include page="common_bottom.jsp"/>
+	<!-- common_bottom end -->
 
 	<!-- jQuery Library -->
 
