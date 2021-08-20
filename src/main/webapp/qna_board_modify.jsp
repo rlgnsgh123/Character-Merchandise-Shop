@@ -27,28 +27,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript">
-	function qbList() {
-		b.action = "qna_board_list.jsp";
-		b.submit();	
-	}
-	function qbModify() {
-		if (b.title.value=="") {
-			alert("제목을 입력하세요")
-			b.title.focus();
-			
-		}
-		if (b.content.value=="") {
-			alert("내용을 입력하세요")
-			b.title.focus();
-		}
-		
-		b.action = "qna_board_modify_action.jsp";
-		b.submit();
-	}
+<script type="text/javascript" src="js/qna.js"></script>
 
-
-</script>
 
 </head>
 <body>
@@ -77,7 +57,7 @@
 		<table>
 			<tr>
 				<td>
-					<input type="button" value="목록" onclick="qbList()">
+					<input type="button" value="목록" onclick="modifyList()">
 					<input type="button" value="수정" onclick="qbModify()">
 				</td>
 			</tr>

@@ -30,28 +30,8 @@ if(request.getParameter("pageno")!=null){
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript">
-	function nbCreate() {
-		if (b.title.value=="") {
-			alert("제목을 입력하지 않으셨습니다.");
-			b.title.focus();
-			return false;
-		}
-		if (b.content.value=="") {
-			alert("내용을 입력하지 않으셨습니다.");
-			b.content.focus();
-			return false;
-		}
-		b.action = "notice_board_reply_write_action.jsp";
-		b.method='POST';
-		b.submit();
-	}
-	function nbList() {
-		b.action = "notice_board_list.jsp";
-		b.submit();
-	}
+<script type="text/javascript" src="js/notice.js"></script>
 
-</script>
 </head>
 <body>
 <form name="b" method="post">
@@ -78,7 +58,7 @@ if(request.getParameter("pageno")!=null){
 <table>
 	<tr>
 		<td>
-			<input type="button" value="답장" onclick= "nbCreate()">
+			<input type="button" value="답장" onclick= "replyCreate()">
 			<input type="button" value="목록" onclick="nbList()">
 		</td>
 	</tr>
