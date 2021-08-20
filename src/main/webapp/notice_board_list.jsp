@@ -61,6 +61,7 @@ public String getTitleString(NoticeBoard board) {
 
 %>
 <%
+	// 관리자만 수정 및 글쓰기 가능하게제한
 	boolean isEqual = false;
 	String userId =(String)session.getAttribute("sM_id");
 	if(userId.equals("admin1")) {
@@ -106,6 +107,12 @@ public String getTitleString(NoticeBoard board) {
     <!-- left(nav_bar) start -->
 	<jsp:include page="common_left.jsp"/>
  	<!-- left(nav_bar) end -->
+ 	
+ 	
+ 	
+ <!-- 이거는 깔끔하게 생겨서 넣었습니다. -->
+ 
+ 
 <div class="shopping-process text-center">
    		<div class="container">
 
@@ -124,7 +131,10 @@ public String getTitleString(NoticeBoard board) {
                 </ul>
 				</div>
 			</div> 	
-</div>
+	</div>
+
+
+<!-- 위에 게시글 갯수및 총수 나타내주는거 -->
 
 <div id="content"style="width:74%; margin: 0 auto">
 	<table border=0 cellpadding=20 cellspacing="0" >
@@ -142,6 +152,9 @@ public String getTitleString(NoticeBoard board) {
 				</tr>
 			</table> 
 	</table> <br />
+	
+	
+	<!--  컬럼표시 -->
 	<form name="b" method="post" action="">
 	<table border="0" cellpadding="0" cellspacing="10" width="1150"
 	bgcolor="BBBBBB">
@@ -157,6 +170,7 @@ public String getTitleString(NoticeBoard board) {
 			%>
 			<tr>
 				<td width=100 align=center bgcolor="ffffff"><%=board.getNb_no() %></td>				
+				<!-- 페이징 작업으로 query를 밑에와 같이 받아서 이렇게 나타냄  -->
 				<td width=500 bgcolor="ffffff" style="padding-left: 20px" align="left">
 					<a href='notice_board_view.jsp?boardno=<%=board.getNb_no()%>&pageno=<%=boardListPage.getSelectPageNo()%>'>
 					<%=this.getTitleString(board)%></a>
@@ -173,6 +187,8 @@ public String getTitleString(NoticeBoard board) {
 	<div id="content"style="width:74%; margin: 0 auto">
 		<table border="0" cellpadding="0" cellspacing="1" width="590">
 			<tr>
+			
+			<!-- 강사님 코드에 설명 되있습니다. 아래코드는 페이징 해주는 것입니다 1페이지로가 다음페이지로 가기등등 -->
 				<td align="center">
 				<%if (boardListPage.isShowFirst()) {%> 
 				<a href="./notice_board_list.jsp?pageno=1">◀◀</a>&nbsp; 
