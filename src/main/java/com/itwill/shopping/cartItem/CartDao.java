@@ -72,7 +72,7 @@ public class CartDao {
 	
 	// UPDATE :; 장바구니 상품 수정
 	public int updateCart(String m_id, int p_no, int p_cart_qty) throws Exception{
-		String updateSQL = "update cart set p_no = ?, c_item_qty = ? where m_id = '?'";
+		String updateSQL = "update cart set p_no = ?, c_item_qty = ? where m_id = ?";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		int count = 0;
