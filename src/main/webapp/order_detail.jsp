@@ -5,10 +5,9 @@
 <%@page import="com.itwill.shopping.order.OrderService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+<%@ include file="login_check.jspf"%>
 <%
 
-	String sM_id = (String)session.getAttribute("sM_id");
 	String o_noStr = request.getParameter("o_no");
 	if(o_noStr==null|| o_noStr.equals("")){
 		response.sendRedirect("order_list.jsp");
@@ -20,10 +19,20 @@
 %>
 
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>주문상세정보</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<!-- Google Font -->
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Raleway:400,300,500,700,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" type="text/css">
+    <!-- Theme Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 	<div id="container">
@@ -39,15 +48,14 @@
 			<!-- content start -->
 
 			<!-- include_content.jsp start-->
-			<div id="content">
+			<div id="content" style="width:60%; margin: 0 auto">
 				<table border=0 cellpadding=0 cellspacing=0>
 					<tr>
 						<td><br />
-							<table style="padding-left: 10px" border=0 cellpadding=0
-								cellspacing=0>
+							<table align="center" width=80% \border="0" cellpadding="0" cellspacing="1" bgcolor="BBBBBB">
 								<tr>
-									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>쇼핑몰 -
-											주문상세조회</b></td>
+							<td height="22">&nbsp;&nbsp;<h3>주문 상세조회</h3></td>
+								</tr>
 								</tr>
 							</table> <!--form-->
 							<form name="f" method="post" action="order_delete_action.jsp">
@@ -125,24 +133,22 @@
 							<table border="0" cellpadding="0" cellspacing="1" width="590">
 								<tr>
 									<td align=center> 
-										&nbsp;&nbsp;<a href=order_list.jsp
-										class=m1>주문목록</a>
-										&nbsp;&nbsp;<a href=product_list.jsp
-										class=m1>계속 쇼핑하기</a>
+										&nbsp;&nbsp;<a href=order_list.jsp class=m1>주문목록</a>
+										&nbsp;&nbsp;<a href=product_list.jsp class=m1>계속 쇼핑하기</a>
 
 									</td>
 								</tr>
 							</table></td>
 					</tr>
 				</table>
-			</div>
+			</div><br /><br />
 			<!-- include_content.jsp end-->
 			<!-- content end -->
 		</div>
 		<!--wrapper end-->
 		<div id="footer">
 			<jsp:include page="common_bottom.jsp"/>
-		</div>
-	</div>
+		</div><br />
+	</div><br /><br />
 </body>
 </html>
