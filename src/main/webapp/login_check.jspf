@@ -5,7 +5,7 @@
 	String sM_id=(String)session.getAttribute("sM_id");
 	Member sMember=(Member)session.getAttribute("sMember");
 	if(sM_id==null){
-		response.sendRedirect("shop_main.jsp");
+		response.sendRedirect("shopping_main.jsp");
 		return;
 	}
 %>  
