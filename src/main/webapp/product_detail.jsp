@@ -8,12 +8,10 @@ if (p_no == null || p_no.equals("")) {
 	response.sendRedirect("product_list.jsp");
 	return;
 }
-
 boolean login = false;
 if (session.getAttribute("sM_id") != null) {
 	login = true;
 }
-
 ProductService productService = new ProductService();
 Product product = productService.getProduct(Integer.parseInt(p_no));
 if (product == null) {
@@ -24,6 +22,7 @@ if (product == null) {
 	return;
 }
 %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -111,10 +110,19 @@ if (product == null) {
 			<td colSpan=3 height=21><hr color=red></td>
 		</tr>
 	</table>
+<% 
+int buyNum;
+String buyNo = request.getParameter("cart_qty");
+if(buyNo != null){
+buyNum = Integer.parseInt(buyNo);
+}else{
+	buyNum = 1;
+}
+%>
 
 	<form name="product_detail_form">
 		<input type="hidden" name="p_no" value="<%=product.getP_no()%>">
-		<!-- input type="hidden" name="p_qty" value="<%--Integer.parseInt(request.getParameter("cart_qty")) %>"--%>  --> 
+		<input type="hidden" name="p_qty" value="<%=buyNum%>">   
 	</form>
 
 	<tr>
