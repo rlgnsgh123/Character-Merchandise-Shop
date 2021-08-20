@@ -11,7 +11,6 @@ if (p_no == null || p_no.equals("")) {
 
 boolean login = false;
 if (session.getAttribute("sM_id") != null) {
-	//sUserId인 이유??
 	login = true;
 }
 
@@ -42,9 +41,9 @@ if (product == null) {
 				alert('로그인후 이용가능합니다');
 				location.href = 'member_login_form.jsp';
 			}else{
-				var win = window.open('cart_add_pop_action.jsp','popup','width=300,height=150,top=150,left=150 ')
+				var win = window.open('cart_add_pop.jsp','popup','width=300,height=150,top=150,left=150 ')
 				document.add_cart_form.method = 'POST';
-				document.add_cart_form.action = 'cart_add_pop_action.jsp';
+				document.add_cart_form.action = 'cart_add_pop.jsp';
 				document.add_cart_form.target = 'popup';
 				document.add_cart_form.submit();
 			}
@@ -64,7 +63,7 @@ if (product == null) {
 		</tr>
 		<tr width=100%>
 			<td width=30% height=200 align=center class=t1>
-				<form name="add_cart_form" method="post" action="cart_add_pop_action.jsp">
+				<form name="add_cart_form" method="post" action="cart_add_pop.jsp">
 					수량 :
 					<select name="cart_qty">
 						<option value="1">1
