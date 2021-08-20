@@ -5,22 +5,19 @@
 <%@page import="com.itwill.shopping.order.OrderService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
 <%
-	String m_id = (String)session.getAttribute("sM_id");
+
+	String sM_id = (String)session.getAttribute("sM_id");
 	String o_noStr = request.getParameter("o_no");
 	if(o_noStr==null|| o_noStr.equals("")){
 		response.sendRedirect("order_list.jsp");
 		return;
 	}
 	OrderService orderService = new OrderService();
-	Order order = orderService.detail(m_id, Integer.parseInt(o_noStr));
-
-	
+	Order order = orderService.detail(sM_id, Integer.parseInt(o_noStr));
 
 %>
-
-
-
 
 <!DOCTYPE html>
 <html>
@@ -54,18 +51,18 @@
 								</tr>
 							</table> <!--form-->
 							<form name="f" method="post" action="order_delete_action.jsp">
-								<input type="hidden" name="j_no" value="<%=order.getO_no()%>">
+								<input type="hidden" name="o_no" value="<%=order.getO_no()%>">
 								<table align="center" width="80%"  border="0" cellpadding="0" cellspacing="1"  bgcolor="BBBBBB" >
 									<caption style="text-align: left;">주문상세정보</caption>
 									<tr>
-										<td width=290 height=25 bgcolor="E6ECDE" align=center class=t1><font
-											>주문번호</font></td>
-										<td width=112 height=25 bgcolor="E6ECDE" align=center class=t1><font
-											>주문일</font></td>
-										<td width=166 height=25 bgcolor="E6ECDE" align=center class=t1><font
-											>주문자</font></td>
-										<td width=50 height=25 bgcolor="E6ECDE" align=center class=t1><font
-											>비 고</font></td>
+										<td width=290 height=25 bgcolor="E6ECDE" align=center class=t1>
+										<font>주문번호</font></td>
+										<td width=112 height=25 bgcolor="E6ECDE" align=center class=t1>
+										<font>주문일</font></td>
+										<td width=166 height=25 bgcolor="E6ECDE" align=center class=t1>
+										<font>주문자</font></td>
+										<td width=50 height=25 bgcolor="E6ECDE" align=center class=t1>
+										<font>비 고</font></td>
 									</tr>
 									
 									
