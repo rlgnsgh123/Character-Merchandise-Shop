@@ -20,7 +20,7 @@ public class QnaBoardDao {
 	private DataSource dataSource;
 	public QnaBoardDao() throws Exception {
 		Properties properties=new Properties();
-		properties.load(this.getClass().getResourceAsStream("jdbc.properties"));
+		properties.load(this.getClass().getResourceAsStream("/com/itwill/shopping/jdbc.properties"));
 		/*****Apache DataSource[commons-dbcp2]***/
 		BasicDataSource basicDataSource=new BasicDataSource();
 		basicDataSource.setDriverClassName(properties.getProperty("driverClassName"));
