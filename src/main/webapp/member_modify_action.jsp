@@ -1,3 +1,4 @@
+<%@page import="java.net.URLEncoder"%>
 <%@page import="com.itwill.shopping.member.MemberService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -19,7 +20,8 @@
 		
 		response.sendRedirect("member_myinfo_view.jsp");	
 	} catch(Exception e){
-		e.printStackTrace();
-		response.sendRedirect("member_error.jsp");
+		response.sendRedirect("member_insert_form.jsp?msg="+URLEncoder.encode(e.getMessage(),"UTF-8"));
+		//e.printStackTrace();
+		//response.sendRedirect("member_error.jsp");
 	}
 %> 
