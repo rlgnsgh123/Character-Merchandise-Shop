@@ -2,9 +2,26 @@
 <%@page import="com.itwill.shopping.notice_board.NoticeBoardService"%>
 <%@page import="com.itwill.shopping.notice_board.util.PageInputDto"%>
 <%@page import="com.itwill.shopping.notice_board.NoticeBoard"%>
-<%@ include file="login_check.jspf" %> 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ 
+ <%
+ 	String id = (String)session.getAttribute("sM_id");
+ %>
+ <% 
+ 		if(id==null) {
+ 		out.println("<script>");
+ 		out.println("alert('로그인하세요');");
+ 		out.println("location.href='member_login_form.jsp';");
+ 		out.println("</script>");
+ 		return;
+ 		
+ 		}
+ %>
+ 
+
+ 
+ 
  <%!
 // 답글공백 및 그림 추가
 public String getTitleString(NoticeBoard board) {
@@ -52,6 +69,8 @@ public String getTitleString(NoticeBoard board) {
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+
 <script type="text/javascript">
 	function nbWrite() {
 		location.href = "notice_board_write.jsp";
