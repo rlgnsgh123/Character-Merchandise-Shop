@@ -2,9 +2,24 @@
 <%@page import="com.itwill.shopping.qna_board.util.PageInputDto"%>
 <%@page import="com.itwill.shopping.qna_board.QnaBoardService"%>
 <%@page import="com.itwill.shopping.qna_board.QnaBoard"%>
-<%@ include file="login_check.jspf" %> 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+  <%
+ 	String id = (String)session.getAttribute("sM_id");
+ %>
+ <% 
+ 		if(id==null) {
+ 		out.println("<script>");
+ 		out.println("alert('로그인하세요');");
+ 		out.println("location.href='member_login_form.jsp';");
+ 		out.println("</script>");
+ 		return;
+ 		
+ 		}
+ %>
+ 
+ 
+ 
  <%!
 // 답글공백 및 그림 추가
 public String getTitleString(QnaBoard board) {
