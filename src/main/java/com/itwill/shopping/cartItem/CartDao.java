@@ -24,7 +24,7 @@ import com.itwill.shopping.member.Member;
 import com.itwill.shopping.product.Product;
 
 public class CartDao {
-	
+		
 	private DataSource dataSource;
 	
 	// DAO 객체 생성
@@ -35,7 +35,7 @@ public class CartDao {
 		BasicDataSource basicDataSource = new BasicDataSource();
 		basicDataSource.setDriverClassName(properties.getProperty("driverClassName"));
 		basicDataSource.setUrl(properties.getProperty("url"));
-		basicDataSource.setUsername(properties.getProperty("username"));
+		basicDataSource.setUsername(properties.getProperty("usetname"));
 		basicDataSource.setPassword(properties.getProperty("password"));
 		this.dataSource = basicDataSource;
 		
@@ -72,7 +72,7 @@ public class CartDao {
 	
 	// UPDATE :; 장바구니 상품 수정
 	public int updateCart(String m_id, int p_no, int p_cart_qty) throws Exception{
-		String updateSQL = "update cart set p_no = ?, c_item_qty = ? where m_id = ?";
+		String updateSQL = "update cart set p_no = ?, c_item_qty = ? where m_id = '?'";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		int count = 0;
@@ -91,7 +91,7 @@ public class CartDao {
 		return count;
 	}
 	
-	// DELETE :: 장바구니 상품 선택 삭제
+	// DELETE :: 장바구니 상품 선택 삭제 /**/
 	public int deleteCart(int c_item_no) throws Exception{
 		String deleteSQL = "delete from cart where c_item_no = ?";
 		Connection con = null;
@@ -131,7 +131,7 @@ public class CartDao {
 	
 	// SELECT BY MEMBER :: 장바구니 상품 (m_id 기준) 출력
 	public ArrayList<CartItem> selectCart(String m_id) throws Exception {
-		ArrayList<CartItem> cartList = new ArrayList();
+		ArrayList<CartItem> cartList = new ArrayList<CartItem>();
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
