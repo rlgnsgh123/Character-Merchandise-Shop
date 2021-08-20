@@ -71,7 +71,7 @@ public class CartDao {
 	
 	// UPDATE :; 장바구니 상품 수정.
 	public int updateCart(String m_id, int p_no, int p_cart_qty) throws Exception{
-		String updateSQL = "update cart set p_no = ?, c_item_qty = ? where m_id = '?'";
+		String updateSQL = "update cart set p_no = ?, c_item_qty = ? where m_id = ?";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		int count = 0;
@@ -111,7 +111,7 @@ public class CartDao {
 	
 	// DELETE ALL :: 장바구니 상품 전체 삭제.
 	public int deleteCartAll(String m_id) throws Exception {
-		String deleteAllSQL = "delete from cart where m_id = '?'";
+		String deleteAllSQL = "delete from cart where m_id = ?";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		int count = 0;
