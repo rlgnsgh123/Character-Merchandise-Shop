@@ -139,7 +139,7 @@
     </div>
 
     <div class="banner">
-
+   
         <div class="container">
 
             <div class="row">
@@ -199,6 +199,23 @@
     </div>
 
     <div class="shopping-process text-center">
+   		<div class="container">
+
+            <div class="row">
+
+                <ul class="nav nav-tabs nav-product-tabs">
+
+                    <li class="active"><a href="" data-toggle="tab">Process</a></li>
+
+                    <li><a href="#" data-toggle="tab">Best Service</a></li>
+
+                    
+
+                    <li class=""><a href=""> <i class=""></i></a></li>
+
+                </ul>
+				</div>
+			</div> 	
 
         <div class="container">
 
@@ -212,7 +229,7 @@
 
                         <h3>Choose a Product</h3>
 
-                        <p>The European languages are members the same family. Their separate existence science </p>
+                    
 
                     </div>
 
@@ -226,7 +243,7 @@
 
                         <h3>Add to Cart</h3>
 
-                        <p>The European languages are members the same family. Their separate existence science </p>
+                   
 
                     </div>
 
@@ -240,7 +257,7 @@
 
                         <h3>Make Order</h3>
 
-                        <p>The European languages are members the same family. Their separate existence science </p>
+                  
 
                     </div>
 
@@ -254,8 +271,7 @@
 
                         <h3>Deliver For Free</h3>
 
-                        <p>The European languages are members the same family. Their separate existence science </p>
-
+                  
                     </div>
 
                 </div>
