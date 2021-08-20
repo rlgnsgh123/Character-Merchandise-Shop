@@ -66,9 +66,9 @@
 
                         <ul>
 
-                            <li><a href=""><i class="fa fa-user"></i> Login</a></li>
+                            <li><a href="member_login_form.jsp"><i class="fa fa-user"></i> 로그인</a></li>
 
-                            <li><a href=""><i class="fa fa-lock"></i> Register</a></li>
+                            <li><a href="member_insert_form.jsp"><i class="fa fa-lock"></i> 회원가입</a></li>
 
                         </ul>
 

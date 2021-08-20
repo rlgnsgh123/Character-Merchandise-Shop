@@ -23,17 +23,17 @@
 
               <ul class="nav navbar-nav navbar-right">
 
-                <li><a href="#">Home</a></li>
+                <li><a href="member_login_form.jsp"> 로그인</a></li>
 
-                <li><a href="#">Blog</a></li>
+                <li><a href="member_insert_form.jsp"> 회원가입</a></li>
 
-                <li><a href="#">Shortcode</a></li>
+               <li><a href="cart_view.jsp"> 장바구니</a></li>
 
-                <li><a href="#">Features</a></li>
+                 <li><a href="notice_board_list.jsp"> 게시판</a></li>
 
-                <li><a href="#">Media</a></li>
+                 <li><a href="qna_board_list.jsp"> 공지사항</a></li>
 
-                <li><a href="#">About Us</a></li>
+                <li><a href="product_list.jsp"> 상품리스트</a></li>
 
                 <li><a href="#">Contact Us</a></li>
 
