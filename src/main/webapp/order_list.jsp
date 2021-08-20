@@ -18,22 +18,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript">
-	function order_delete_all_action(){
-		document.order_delete_all_form.action='order_delete_all_action.jsp';
-		document.order_delete_all_form.method='POST';
-		document.order_delete_all_form.submit();
-	}
-</script>
+<script type="text/javascript" src="js/order.js"></script>
 </head>
-<body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0
-	marginwidth=0 marginheight=0>
-<form name="order_delete_all_form">
-</form>	
+<body>
 	<div id="container">
 		<div id="header">
 			<jsp:include page="common_top.jsp"/>
-		</div>			
+		</div>		
 		<div id="navigation">
 			<jsp:include page="common_left.jsp"/>
 		</div>			
@@ -81,13 +72,9 @@
 							</form> <br />
 							<table border="0" cellpadding="0" cellspacing="1" width="590">
 								<tr>
-									<td align=center>&nbsp;&nbsp;
-									<a href=product_list.jsp
-										class=m1>계속 구경하기</a>
-									<a href='javascript:order_delete_all_action();'
-										class=m1>주문전체삭제</a>
-									</td>
-									
+									<td align=center>
+									<input type ="button" value="계속 구경하기" onclick ="product_search_action()"> &nbsp;
+									<input type ="button" value = "주문전체삭제" onclick="order_delete_all_action()"></td>
 								</tr>
 							</table></td>
 					</tr>

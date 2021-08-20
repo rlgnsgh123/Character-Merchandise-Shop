@@ -1,5 +1,5 @@
 //list
-function ListWrite() {
+function listWrite() {
 		location.href = "notice_board_write.jsp";
 	}
 //modify
