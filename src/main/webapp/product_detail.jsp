@@ -48,8 +48,24 @@ if (product == null) {
 				document.add_cart_form.submit();
 			}
 		}
+		
+		function goList(){
+			location.href="product_list.jsp";
+		}
+		
+		function buyNow() {
+			if(<%= !login %>){
+				alert('로그인후 이용가능합니다');
+				location.href = "member_login_form.jsp"
+			}else{
+				document.product_detail_form.method="POST";
+				document.product_detail_form.action = 'order_create_form.jsp';
+				document.product_detail_form.submit();
+			}
+		}
 	</script>
 
+	
 	<div>제품상세보기</div>
 	<table style="margin-left: 10px" border=0 width=80% height=376
 		align=center>
@@ -96,9 +112,15 @@ if (product == null) {
 		</tr>
 	</table>
 
+	<form name="product_detail_form">
+		<input type="hidden" name="p_no" value="<%=product.getP_no()%>">
+		<!-- input type="hidden" name="p_qty" value="<%--Integer.parseInt(request.getParameter("cart_qty")) %>"--%>  --> 
+	</form>
 
-
-
+	<tr>
+	<td align=center><input type="button" value="즉시 구매하기" onclick="buyNow();" >
+					<input type="button" value="다른상품 둘러보기" onclick="goList();" >
+	</tr>
 
 
 
