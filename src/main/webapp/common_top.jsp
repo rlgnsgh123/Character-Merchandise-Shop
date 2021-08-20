@@ -19,6 +19,7 @@
             <div class="col-md-6">
                 <div class="action pull-right">
                     <ul>
+                    	<li><a href="shopping_main.jsp"><h3>Home</h3><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     	<%if(sM_id==null){ %>
                         <li><a href="member_login_form.jsp"><i class="fa fa-user"></i> 로그인</a></li>
                         <li><a href="member_insert_form.jsp"><i class="fa fa-lock"></i> 회원가입</a></li>
