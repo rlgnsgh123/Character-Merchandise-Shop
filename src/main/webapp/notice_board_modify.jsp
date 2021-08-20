@@ -62,9 +62,9 @@
 
                 <ul class="nav nav-tabs nav-product-tabs">
 
-                    <li class="active"><a href="" data-toggle="tab">커뮤니티</a></li>
+                    <li class="active"><a href="" data-toggle="tab">고객센터</a></li>
 
-                    <li><a href="#" data-toggle="tab">공지사항 수정</a></li>
+                    <li><a href="#" data-toggle="tab">Q&A 수정</a></li>
 
                     
 
@@ -74,30 +74,32 @@
 				</div>
 			</div> 	
 </div>
+<body>
 <div id =contetnt style="width:30%; margin: 0 auto">
-
-	<form name="b" action='notice_board_modify_action.jsp'>
+	<form name="b" method="post">
 		<input type="hidden" name="pageno" value="<%=pageno%>" /> 
 		<input type="hidden" name="boardno" value="<%=board.getNb_no()%>" />
-		<table border="0" cellpadding="0" cellspacing="1" width="590" bgcolor="BBBBBB">
+		<table border="0" cellpadding="0" cellspacing="1" width="1000" bgcolor="BBBBBB">
 			<tr>
-				<td width=100 align=center bgcolor="E6ECDE" height="22">작성자 </td>
+				<td width=500 align=center bgcolor="E6ECDE" height="22">작성자 </td>
 				<td width=700 bgcolor="ffffff" style="padding-left: 10px" align="left"><%=board.getM_id()%></td>
 			</tr>
 			<tr>
-				<td width=100 align=center bgcolor="E6ECDE" height="22">제목</td>
+				<td width= 500 align=center bgcolor="E6ECDE" height="22">제목</td>
 				<td width=490 bgcolor="ffffff" style="padding-left: 10px" align="left">
 					<input type="text" style="width: 150" name="title" value="<%=board.getNb_title()%>"><br>
 				</td>
 			</tr>
 			<tr>
-				<td width=100 align=center bgcolor="E6ECDE" height="22">내용:</td>
-				<td width=200 bgcolor="ffffff" style="padding-left: 10px" align="left"> 
-				<textarea name="content" style="width: 350px" rows="14"><%=board.getNb_content().replace("\n", ">>").trim()%></textarea></td>
+				<td width=500 align=center bgcolor="E6ECDE" height="22">내용:</td>
+				<td width=4900 bgcolor="ffffff" style="padding-left: 10px" align="left"> 
+				<textarea name="content" style="width: 500px" rows="20"><%=board.getNb_content().replace("\n", ">>").trim()%>
+				</textarea></td>
+		</tr>	
 		</table>
 		</form>
-		
-</div><br>	
+</div><br>
+	
 	<div style="width:10%; margin: 0 auto">
 			<table border="0" cellpadding="0" cellspacing="1" width="100">
 			<tr>
@@ -107,7 +109,7 @@
 				</td>
 			</tr>
 			</table>
-		</div >
+		</div ><br><br><br><br><br><br><br>
 	    	<!-- common_bottom start -->
 	<jsp:include page="common_bottom.jsp"/>
 	<!-- common_bottom end -->
