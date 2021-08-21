@@ -1,0 +1,44 @@
+<%@page import="com.itwill.shopping.product.Product"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.itwill.shopping.product.ProductService"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+ProductService productService = new ProductService();
+ArrayList<Product> productList = productService.getProductListDesc();
+%>
+ 
+    
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>전체 상품 리스트</title>
+</head>
+<body>
+<jsp:include page="common_top.jsp" />
+<jsp:include page="common_left.jsp" />
+
+상품 리스트<br>
+<%
+for(Product product : productList){
+%>
+<a href="single-product.jsp?p_no=<%=product.getP_no()%>"><%=product.getP_name() %></a>
+<%}%>
+<br>
+<%
+for(Product product : productList){
+%>
+<a href="single-product.jsp?p_no=<%=product.getP_no()%>"><img src="image/<%=product.getP_image()%>" border="0"></a>
+<%}%>
+<br>
+<%
+for(Product product : productList){
+%>
+<%= product.getP_price() %>
+<%}%>
+
+
+<jsp:include page="common_bottom.jsp" />
+</body>
+</html>
