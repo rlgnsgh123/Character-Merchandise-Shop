@@ -77,6 +77,19 @@ if (product == null) {
 </head>
 <body>
 
+
+<!-- projectShop꺼 보고 buyType direct 똑같이 추가 -->
+<form name="product_detail_form">
+		<input type="hidden" name="p_no" value="<%=product.getP_no()%>">
+		<input type="hidden" name="p_qty" value="1"> 
+		<input type="hidden" name="buyType" value="direct">
+	</form>
+	
+	<!-- 여기까지 -->
+	
+	
+	
+
 	<!-- top_bar start -->
 	<jsp:include page="common_top.jsp"/>
 	<!-- top_bar end -->
