@@ -78,14 +78,6 @@ if (product == null) {
 <body>
 
 
-<!-- projectShop꺼 보고 buyType direct 똑같이 추가 -->
-<form name="product_detail_form">
-		<input type="hidden" name="p_no" value="<%=product.getP_no()%>">
-		<input type="hidden" name="p_qty" value="1"> 
-		<input type="hidden" name="buyType" value="direct">
-	</form>
-	
-	<!-- 여기까지 -->
 	
 	
 	
