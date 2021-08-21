@@ -8,8 +8,8 @@
 		response.sendRedirect("shopping_main.jsp");
 		return;
 	}
-	try {
-		request.setCharacterEncoding("UTF-8");
+	request.setCharacterEncoding("UTF-8");
+	try {		
 		String m_password=request.getParameter("m_password");
 		String m_name=request.getParameter("m_name");
 		String m_address=request.getParameter("m_address");

@@ -60,13 +60,13 @@ Member member = memberService.findMember(sM_id);
 							<td width=150 align=center bgcolor="E6ECDE" height="22">비밀번호</td>
 							<td width=600 bgcolor="ffffff" style="padding-left: 10px"
 								align="left"><input type="password" style="width: 150px"
-								name="password" value="<%=member.getM_password()%>"></td>
+								name="m_password" value="<%=member.getM_password()%>"></td>
 						</tr>
 						<tr>
-							<td width=150 align=center bgcolor="E6ECDE" height="22">비밀번호 확인</td>							
+							<td width=150 align=center bgcolor="E6ECDE" height="22">비밀번호 확인</td>
 							<td width=600 bgcolor="ffffff" style="padding-left: 10px"
 								align="left"><input type="password" style="width: 150px"
-								name="password2" value="<%=member.getM_password()%>"></td>
+								name="m_password2" value="<%=member.getM_password()%>"></td>
 						</tr>
 						<tr>
 							<td width=150 align=center bgcolor="E6ECDE" height="22">이름</td>
@@ -92,10 +92,10 @@ Member member = memberService.findMember(sM_id);
 				<table width=200 border=5 style="margin: 0 auto" cellpadding=5
 					cellspacing=5>
 					<tr>
-						<td align=center><input type="button" value="정보수정"
+						<td align=center><input type="button" value="수정 완료"
 							onClick="memberModifyAction()"></td>
-						<td align=center><input type="button" value="홈으로"
-							onclick="shopping_main()"></td>
+						<td align=center><input type="button" value="이전으로"
+							onclick="member_myinfo_view()"></td>
 					</tr>
 				</table>
 			</div>
