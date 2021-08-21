@@ -90,6 +90,7 @@ public class CartDao {
 		return count;
 	}
 	
+	
 	// DELETE :: 장바구니 상품 선택 삭제 /**/.
 	public int deleteCart(int c_item_no) throws Exception{
 		String deleteSQL = "delete from cart where c_item_no = ?";
@@ -108,6 +109,7 @@ public class CartDao {
 		}
 		return count;
 	}
+	
 	
 	// !!! DELETE TEST !!! (수정중)
 	public int deleteCartTest(String m_id, int c_item_no) throws Exception {
@@ -128,6 +130,7 @@ public class CartDao {
 		}
 		return count;
 	}
+	
 	
 	// DELETE ALL :: 장바구니 상품 전체 삭제.
 	public int deleteCartAll(String m_id) throws Exception {
@@ -184,6 +187,7 @@ public class CartDao {
 		}
 		return cartList;
 	}
+	
 	
 	// SelectByProduct :: 장바구니 상품 (상품 기준) 출력 -- 관리자 메뉴?.
 	public CartItem selectCartItemByNo(int c_item_no) throws Exception {
@@ -254,6 +258,35 @@ public class CartDao {
 			}
 		}
 		return isExist;
+	}
+	
+	
+	// Select existingQty (Test)
+	public int getExistingQty(String m_id, int p_no) throws Exception {
+		String selectSQL = "select * from cart where p_no = ? and m_id = ?";
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int existingQty = 0;
+		
+		try {
+			con = dataSource.getConnection();
+			pstmt = con.prepareStatement(selectSQL);
+			pstmt.setInt(1, p_no);
+			pstmt.setString(2, m_id);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				existingQty += rs.getInt("c_item_no");
+			}
+			
+		} finally {
+			if (con != null) {
+				con.close();
+			}
+		}
+		return existingQty;
 	}
 	
 }

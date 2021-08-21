@@ -56,4 +56,14 @@ public class CartService {
 		return cartDao.deleteCartAll(m_id);
 	}
 	
+	
+	// UpdateAddQty
+	// 장바구니 목록의 개수를 update로 덮어쓰기식 수정하는게 아니라 기존 값+신규값을 받아서 더해서 update하는 과정~
+	public int updateAddQtyTest(String m_id, int p_no, int addQty) throws Exception {
+		int existingQty = cartDao.getExistingQty(m_id, p_no);
+		int addFinQty = existingQty+addQty;
+		return cartDao.updateCart(m_id, p_no, addFinQty);
+		
+	}
+	
 }
