@@ -21,18 +21,7 @@
 			<style type="text/css" media="screen">
 				</style>
 		<script type="text/javascript">
-			function cart_delete(){
-				document.cart_view_form.method='POST';
-				document.cart_view_form.action='cart_delete_action.jsp';
-				document.cart_view_form.submit();
-			}
 			
-			function cart_view_form_order_submit(){
-				document.cart_view_form.method='POST';
-				document.cart_view_form.buyType.value='cart';
-				document.cart_view_form.action='order_create_form.jsp';
-				document.cart_view_form.submit();
-				}
 			</script>
 		</head>
 	<body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0 marginwidth=0 marginheight=0>
@@ -83,7 +72,7 @@
 										<td width=112 height=26 align=center bgcolor="ffffff" class=t1><%=cartItem.getC_item_qty()%></td>
 										<td width=146 height=26 align=center bgcolor="ffffff" class=t1><%=new DecimalFormat("#,##0").format(cartItem.getProduct().getP_price()*cartItem.getC_item_qty())%></td>
 										<td width=50 height=26 align=center bgcolor="ffffff" class=t1>
-											<form action="cart_delete_item_action.jsp" method="post">
+											<form action="cart_delete_item_action.jsp" method="POST">
 												<input type="hidden" name="c_item_no" value="<%=cartItem.getC_item_no()%>">
 												<input type="submit" value="삭제">
 												<!-- ★★★★★ :: 삭제 버튼 안 됨 (404) -->
@@ -129,5 +118,8 @@
 				<jsp:include page="common_bottom.jsp"/>
 				</div>
 			</div> <!-- Container end -->
+			
+			<script src="js/cart.js"></script>
+			
 		</body>
 	</html>
