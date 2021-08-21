@@ -6,6 +6,7 @@
 <%
 ProductService productService = new ProductService();
 ArrayList<Product> productList = productService.getProductListDesc();
+ArrayList<Product> productList2 = productService.getProductListDesc();
 %>
  
     
@@ -47,6 +48,42 @@ for(Product product : productList){
 %>
 <%= product.getP_price() %>
 <%}%>
+
+
+
+							<div id ='f'>
+								<table align = center width = 80% border = 0 cellpadding = 0 cellspacing = 1 bgcorlor = "BBBBBB">
+									<tr>
+										<td width=40 height=25 align="center" bgcolor="E6ECDE" class=t1><font>이미지</font></td>
+										<td width=210 height=25 align="center" bgcolor="E6ECDE" class=t1><font>상품명</font></td>
+										<td width=146 height=25 align="center" bgcolor="E6ECDE" class=t1><font>가 격</font></td>
+										</tr>
+									
+									<%
+									int priceSum = 0;
+									for (Product product2 : productList2){
+									
+									%>
+									
+									<tr>
+										<td width=60 height=26 align=center bgcolor="ffffff" class=t1></td>
+										<td width=40 height=26 align=center bgcolor="ffffff" class=t1><img src='image/<%=product2.getP_image()%>' width="34" height="28"/></td>
+										<td width=210 height=26 align=center bgcolor="ffffff" class=t1><a href='product_detail.jsp?p_no=<%=product2.getP_no()%>'><%=product2.getP_name()%></a></td>
+										<td width=146 height=26 align=center bgcolor="ffffff" class=t1><%=product2.getP_price()%></td>
+										<td width=50 height=26 align=center bgcolor="ffffff" class=t1>
+										</td>
+									</tr>
+									
+									<% } %>
+
+
+
+
+
+
+
+
+
 
 
 <jsp:include page="common_bottom.jsp" />
