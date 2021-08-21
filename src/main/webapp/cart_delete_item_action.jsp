@@ -17,4 +17,4 @@
 	cartService.deleteCartItem(Integer.parseInt(c_item_no_Str));
 	
 	response.sendRedirect("cart_view.jsp");
-	%>
+%>
