@@ -2,13 +2,13 @@
 /* 
 	<< cart_view.jsp >> function
 */
-function cart_delete(){
+function cart_delete(){ // duplicate fin
 				document.cart_view_form.method='POST';
 				document.cart_view_form.action='cart_delete_action.jsp';
 				document.cart_view_form.submit();
 			}
 			
-function cart_view_form_order_submit(){
+function cart_view_form_order_submit(){ // duplicate fin
 				document.cart_view_form.method='POST';
 				document.cart_view_form.buyType.value='cart';
 				document.cart_view_form.action='order_create_form.jsp';
@@ -18,7 +18,7 @@ function cart_view_form_order_submit(){
 /*
 	<< cart_view_update_qty.jsp
 */
-function changeNumber(desc, formId) {
+function changeNumber(desc, formId) { // duplicate fin
 			console.log(formId);
 			var form = document.getElementById(formId);
 			if (desc == '+') {
@@ -40,14 +40,16 @@ function cart_delete() {
 		}
 */
 
+/*
 function cart_view_form_order_submit() {
 			document.cart_view_form.method = 'POST';
 			document.cart_view_form.buyType.value = 'cart';
 			document.cart_view_form.action = 'order_create_form.jsp';
 			document.cart_view_form.submit();
 		}
+*/
 
-function cart_view_form_select_order_submit() {
+function cart_view_form_select_order_submit() { // duplicate fin
 			var cart_item_no_check_list = document.getElementsByName("cart_item_no_check");
 			var isChecked = false;
 			for (var i = 0; i < cart_item_no_check_list.length; i++){
@@ -67,7 +69,7 @@ function cart_view_form_select_order_submit() {
 			document.cart_view_form.submit();
 		}
 
-function cart_item_select_count(){
+function cart_item_select_count(){ // duplicate fin
 			
 			var cart_item_no_check_list = document.getElementsByName("cart_item_no_check");
 			var cart_item_check_selected_count = 0;
@@ -92,13 +94,16 @@ function cart_delete(){
 			}
 */
 
+/*
 function cart_view_form_order_submit(){
 				document.cart_view_form.method='POST';
 				document.cart_view_form.buyType.value='cart';
 				document.cart_view_form.action='order_create_form.jsp';
 				document.cart_view_form.submit();
 			}
+*/
 
+/*
 function cart_view_form_select_order_submit() {
 				var cart_item_no_check_list = document.getElementsByName("cart_item_no_check");
 				var isChecked = false;
@@ -117,7 +122,9 @@ function cart_view_form_select_order_submit() {
 				document.cart_view_form.action='order_create_form.jsp';
 				document.cart_view_form.submit();
 			} // function cart_view_form_select_order_submit() end
+*/
 
+/*
 function cart_item_select_count(){
 				var cart_item_no_check_list = document.getElementsByName("cart_item_no_check");
 				var cart_item_check_selected_count = 0;
@@ -128,11 +135,12 @@ function cart_item_select_count(){
 				} // for end
 				document.getElementById('cart_item_select_count').innerHTML = cart_item_check_selected_count;
 			}// function cart_item_selected_count() end
-
+/*
 
 /*
 	<< cart_view_icon.jsp >>
 */
+/*
 function changeNumber(desc, formId){
 				console.log(formId);
 				var form = document.getElementById(formId);
@@ -147,8 +155,9 @@ function changeNumber(desc, formId){
 				form.action = 'cart_update_item_action.jsp';
 				form.submit();
 			}
+*/
 
-function cart_delete_item_action(formId){
+function cart_delete_item_action(formId){ // fin
 				if(window.confirm('해당 상품을 장바구니에서 삭제하시겠습니까?')){
 					var form = document.getElementById(formId);
 					form.method = 'POST';
@@ -164,14 +173,14 @@ function cart_delete(){
 			}
 */
 
-function cart_view_form_submit(){
+function cart_view_form_submit(){ // fin
 				document.cart_view_form.method = 'POST';
 				document.cart_view_form.buyType.value = 'cart';
 				document.cart_view_form.action = 'order_create_form.jsp';
 				document.cart_view_form.submit();
 			}
 
-function cart_view_form_select_submit(){
+function cart_view_form_select_submit() { // fin
 				var cart_item_no_check_list = document.getElementsByName("cart_item_no_check");
 				var isChecked = false;
 				for (var i = 0; i < cart_item_no_check_list.length; i++) {
@@ -190,6 +199,7 @@ function cart_view_form_select_submit(){
 				document.cart_view_form.submit();
 			}
 
+/*
 function cart_item_select_count(){
 				var cart_item_no_check_list = document.getElementsByName("cart_item_no_check");
 				var cart_item_check_selected_count = 0;
@@ -200,5 +210,6 @@ function cart_item_select_count(){
 				}
 				document.getElementById('cart_item_select_count').innerHTML = cart_item_check_selected_count;
 			}
+*/
 
 

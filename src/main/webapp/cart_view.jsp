@@ -72,7 +72,7 @@
 										<td width=112 height=26 align=center bgcolor="ffffff" class=t1><%=cartItem.getC_item_qty()%></td>
 										<td width=146 height=26 align=center bgcolor="ffffff" class=t1><%=new DecimalFormat("#,##0").format(cartItem.getProduct().getP_price()*cartItem.getC_item_qty())%></td>
 										<td width=50 height=26 align=center bgcolor="ffffff" class=t1>
-											<form action="cart_delete_item_action.jsp" method="post">
+											<form action="cart_delete_item_action.jsp" method="POST">
 												<input type="hidden" name="c_item_no" value="<%=cartItem.getC_item_no()%>">
 												<input type="submit" value="삭제">
 												<!-- ★★★★★ :: 삭제 버튼 안 됨 (404) -->
