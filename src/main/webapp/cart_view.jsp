@@ -86,6 +86,7 @@
 											<form action="cart_delete_item_action.jsp" method="post">
 												<input type="hidden" name="c_item_no" value="<%=cartItem.getC_item_no()%>">
 												<input type="submit" value="삭제">
+												<!-- ★★★★★ :: 삭제 버튼 안 됨 (404) -->
 											</form>
 										</td>
 									</tr>
@@ -113,6 +114,7 @@
 											<%if(cartList.size()>=1){ %>
 											<a href="javascript:cart_view_form_order_submit();" class=m1>총 <span style="font-weight: bold;" id="cart_item_select_count"><%=cartList.size() %></span>개 주문하기[주문폼]</a>
 											<a href="javascript:cart_delete();" class=m1>장바구니 비우기</a>&nbsp;&nbsp;
+											<!-- ★★★★★ :: 장바구니 비우기 안 됨(아예 답이 없음...) -->
 											<% } %>
 											</td>
 										</tr>
