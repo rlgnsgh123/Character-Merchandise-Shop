@@ -27,9 +27,9 @@ ArrayList<Product> productList2 = productService.getProductListDesc();
     <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-<jsp:include page="common_top.jsp" />
-<jsp:include page="common_left.jsp" />
 
+
+<%--   
 상품 리스트<br>
 <%
 for(Product product : productList){
@@ -49,6 +49,9 @@ for(Product product : productList){
 <%= product.getP_price() %>
 <%}%>
 
+--%>
+<jsp:include page="common_top.jsp"/>
+<jsp:include page="common_left.jsp"/>
 
 
 							<div id ='f'>
@@ -67,7 +70,7 @@ for(Product product : productList){
 									
 									<tr>
 										<td width=60 height=26 align=center bgcolor="ffffff" class=t1></td>
-										<td width=40 height=26 align=center bgcolor="ffffff" class=t1><img src='image/<%=product2.getP_image()%>' width="34" height="28"/></td>
+										<td width=40 height=26 align=center bgcolor="ffffff" class=t1><img src='images/<%=product2.getP_image()%>' width="150" height="150"/></td>
 										<td width=210 height=26 align=center bgcolor="ffffff" class=t1><a href='product_detail.jsp?p_no=<%=product2.getP_no()%>'><%=product2.getP_name()%></a></td>
 										<td width=146 height=26 align=center bgcolor="ffffff" class=t1><%=product2.getP_price()%></td>
 										<td width=50 height=26 align=center bgcolor="ffffff" class=t1>
@@ -75,6 +78,7 @@ for(Product product : productList){
 									</tr>
 									
 									<% } %>
+									
 
 
 

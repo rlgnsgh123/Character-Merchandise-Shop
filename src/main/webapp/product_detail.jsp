@@ -116,7 +116,7 @@ if (product == null) {
 
                         <div class="col-md-10 col-sm-10 col-xs-10">
 
-                            <div class="thumb-main-image"><a href=""><img src="images/single-product-1.jpg" alt=""></a></div>
+                            <div class="thumb-main-image"><a href=""><img src='images/<%=product.getP_image()%>' alt=""></a></div>
 
                         </div>
 
@@ -267,7 +267,7 @@ int moveNo = product2.getP_no();
 
                                 <div class="product-block">
 
-                                    <img src="images/product-1.jpg" alt="" class="thumbnail">
+                                    <img src="images/<%=product2.getP_image() %>" alt="" class="thumbnail">
 
                                     <div class="product-description text-center">
 
@@ -304,7 +304,7 @@ int moveNo = product3.getP_no();
 
                                 <div class="product-block">
 
-                                    <img src="images/product-2.jpg" alt="" class="thumbnail">
+                                    <img src="images//<%=product3.getP_image() %>" alt="" class="thumbnail">
 
                                     <div class="product-description text-center">
 
@@ -342,7 +342,7 @@ int moveNo = product4.getP_no();
 
                                 <div class="product-block">
 
-                                    <img src="images/product-2.jpg" alt="" class="thumbnail">
+                                    <img src="images//<%=product4.getP_image() %>" alt="" class="thumbnail">
 
                                     <div class="product-description text-center">
 
@@ -380,7 +380,7 @@ int moveNo = product5.getP_no();
 
                                 <div class="product-block">
 
-                                    <img src="images/product-2.jpg" alt="" class="thumbnail">
+                                    <img src="images//<%=product5.getP_image() %>" alt="" class="thumbnail">
 
                                     <div class="product-description text-center">
 
