@@ -31,7 +31,7 @@
 			</script>
 		</head>
 	<body>
-		<div id="container">
+		<div id="container"> <!-- div id check! :: view_*는 body onload=~ -->
 			<div id="header">
 				<jsp:include page="common_top.jsp"/>
 				</div>		
@@ -55,7 +55,7 @@
 									<tr>
 										<td width=60 height=25  align="center" bgcolor="E6ECDE" class=t1><font>선택</font></td>
 										<td width=40 height=25 align="center" bgcolor="E6ECDE" class=t1><font>이미지</font></td>
-										<td width=210 height=25 align="center" bgcolor="E6ECDE" class=t1><font>강아지 이름</font></td>
+										<td width=210 height=25 align="center" bgcolor="E6ECDE" class=t1><font>이름</font></td>
 										<td width=112 height=25 align="center" bgcolor="E6ECDE" class=t1><font>수 량</font></td>
 										<td width=146 height=25 align="center" bgcolor="E6ECDE" class=t1><font>가 격</font></td>
 										<td width=50 height=25 align="center" bgcolor="E6ECDE" class=t1><font>비 고</font></td>
