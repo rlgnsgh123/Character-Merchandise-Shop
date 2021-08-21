@@ -11,21 +11,22 @@ CartService cartService = new CartService();
 ArrayList<CartItem> cartList = cartService.getCartList(sM_id);
 %>
 
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html lang="en-US">
 <head>
 	<meta charset="UTF-8">
-	<title>쇼핑몰 관리</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<link rel=stylesheet href="css/styles.css" type="text/css">
-		<link rel=stylesheet href="css/shop.css" type="text/css">
-		<link rel=stylesheet href="css/cart.css" type="text/css">
-		<style type="text/css" media="screen">
-		</style>
-	<script type="text/javascript">
-		
-		</script>
-	</head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>shopping</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<!-- Google Font -->
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Raleway:400,300,500,700,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" type="text/css">
+    <!-- Theme Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
 	
 	
 <body onload="cart_item_select_count();" bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0 marginwidth=0 marginheight=0>
