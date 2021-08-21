@@ -18,5 +18,5 @@ if(c_item_no_qty.equals("0")){
 } else {
 	cartService.updateCart(sM_id, Integer.parseInt(c_item_no_Str), Integer.parseInt(c_item_no_qty));
 }
-response.sendRedirect("cart_view.jsp"); /**/
+response.sendRedirect("cart_view_update_qty.jsp"); /**/
 	%>
