@@ -16,6 +16,12 @@ ArrayList<CartItem> cartList = cartService.getCartList(sM_id);
 	<head>
 		<meta charset="UTF-8">
 		<title>쇼핑몰 관리</title>
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+			<link rel=stylesheet href="css/styles.css" type="text/css">
+			<link rel=stylesheet href="css/shop.css" type="text/css">
+			<link rel=stylesheet href="css/cart.css" type="text/css">
+			<style type="text/css" media="screen">
+				</style>
 		<script type="text/javascript">
 		
 			// js로 빼기

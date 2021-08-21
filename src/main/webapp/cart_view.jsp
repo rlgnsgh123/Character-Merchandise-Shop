@@ -13,24 +13,32 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>장바구니 목록</title>
+		<title>장바구니</title>
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+			<link rel=stylesheet href="css/styles.css" type="text/css">
+			<link rel=stylesheet href="css/shop.css" type="text/css">
+			<link rel=stylesheet href="css/cart.css" type="text/css">
+			<style type="text/css" media="screen">
+				</style>
 		<script type="text/javascript">
 			function cart_delete(){
-				document.cart_view_form.method = "POST";
-				document.cart_view_form.action = "cart_delete_action.jsp";
+				document.cart_view_form.method='POST';
+				document.cart_view_form.action='cart_delete_action.jsp';
 				document.cart_view_form.submit();
 			}
 			
-			function cart_view_form_order_submit() {
-				document.cart_view_form.method = "POST";
-				document.cart_view_form.buytype.value = "cart";
-				document.cart_view_form.action = "order_create_form.jsp";
+			function cart_view_form_order_submit(){
+				document.cart_view_form.method='POST';
+				document.cart_view_form.buyType.value='cart';
+				document.cart_view_form.action='order_create_form.jsp';
 				document.cart_view_form.submit();
-			}
-			
+				}
 			</script>
 		</head>
-	<body>
+	<body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0 marginwidth=0 marginheight=0>
+		<form name="cart_view_form">
+			<input type="hidden" name="buyType">
+			</form>
 		<div id="container"> <!-- div id check! :: view_*는 body onload=~ -->
 			<div id="header">
 				<jsp:include page="common_top.jsp"/>
