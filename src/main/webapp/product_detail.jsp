@@ -36,6 +36,8 @@ if (product == null) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>제품 상세 페이지</title>
 	
+	
+	
 	<script type="text/javascript">
 		function addCart() {
 			if (<%=!login%>) {
@@ -184,6 +186,7 @@ buyNum = Integer.parseInt(buyNo);
 	<form name="product_detail_form">
 		<input type="hidden" name="p_no" value="<%=product.getP_no()%>" >
 		<input type="hidden" name="p_qty" value="<%=buyNum%>" >   
+		<input type="hidden" name="buyType" value="direct">
 	</form>
 
 	<tr>
