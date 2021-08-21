@@ -279,7 +279,7 @@ int moveNo = product2.getP_no();
 
                                     <div class="product-description text-center">
 
-                                        <p class="title"><a href="single-product.jsp?p_no=<%=moveNo%>"><%=product2.getP_name() %></a></p>
+                                        <p class="title"><a href="product_detail.jsp?p_no=<%=moveNo%>"><%=product2.getP_name() %></a></p>
 
                                         <p class="price">$ <%=product2.getP_price() %></p>
 
@@ -316,7 +316,7 @@ int moveNo = product3.getP_no();
 
                                     <div class="product-description text-center">
 
-                                        <p class="title"><a href="single-product.jsp?p_no=<%=moveNo%>"><%=product3.getP_name() %></a></p>
+                                        <p class="title"><a href="product_detail.jsp?p_no=<%=moveNo%>"><%=product3.getP_name() %></a></p>
 
                                         <p class="price"><%=product3.getP_price() %></p>
 
@@ -354,7 +354,7 @@ int moveNo = product4.getP_no();
 
                                     <div class="product-description text-center">
 
-                                        <p class="title"><a href="single-product.jsp?p_no=<%=moveNo%>"><%=product4.getP_name() %></a></p>
+                                        <p class="title"><a href="product_detail.jsp?p_no=<%=moveNo%>"><%=product4.getP_name() %></a></p>
 
                                         <p class="price"><%=product4.getP_price() %></p>
 
@@ -392,7 +392,7 @@ int moveNo = product5.getP_no();
 
                                     <div class="product-description text-center">
 
-                                        <p class="title"><a href="single-product.jsp?p_no=<%=moveNo%>"><%=product5.getP_name() %></a></p>
+                                        <p class="title"><a href="product_detail.jsp?p_no=<%=moveNo%>"><%=product5.getP_name() %></a></p>
 
                                         <p class="price"><%=product5.getP_price() %></p>
 
