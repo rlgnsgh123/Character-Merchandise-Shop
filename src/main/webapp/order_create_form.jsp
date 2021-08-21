@@ -52,13 +52,6 @@ else if (buyType.equals("direct")){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>orderList</title>
-<script type="text/javascript">
-	function order_create_form_submit() {
-		document.order_create_form.method = 'POST';
-		document.order_create_form.action = 'order_create_action.jsp';
-		document.order_create_form.submit();
-	}
-</script>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<!-- Google Font -->
@@ -186,5 +179,6 @@ else if (buyType.equals("direct")){
 			<jsp:include page="common_bottom.jsp"/>
 		</div>
 	</div>
+	<script src="js/order.js"></script>
 </body>
 </html>
