@@ -11,6 +11,7 @@
 <%@ include file="login_check.jspf"%>
 <%
 //주문생성 - 카트에서 주문, 카트에서 선택 주문, 상품에서 주문
+
 /*
 if(request.getMethod().equalsIgnoreCase("GET")){
 	response.sendRedirect("order_list.jsp");
@@ -32,15 +33,11 @@ ArrayList<CartItem> cartItemList = new ArrayList<CartItem>();
 Member member = memberService.findMember(sM_id);
 if(buyType.equals("cart")){
 	cartItemList = cartService.getCartList(sM_id);
-} 
-//cartService.getCartListItem 받아서 카트 선택주문 구현해야 함...
-/*else if (buyType.equals("cart_select")){
-	
+} else if (buyType.equals("cart_select")){
 	for(String cart_item_noStr : cart_item_noStr_array){
 		cartItemList.add(cartService.getCartListItem(Integer.parseInt(cart_item_noStr)));
 	}
-}*/
-else if (buyType.equals("direct")){
+}else if (buyType.equals("direct")){
 	Product product = productService.getProduct(Integer.parseInt(p_noStr));
 	cartItemList.add(new CartItem(0,Integer.parseInt(p_qtyStr) ,member, product));
 }
@@ -52,6 +49,13 @@ else if (buyType.equals("direct")){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>orderList</title>
+<script type="text/javascript">
+	function order_create_form_submit() {
+		document.order_create_form.method = 'POST';
+		document.order_create_form.action = 'order_create_action.jsp';
+		document.order_create_form.submit();
+	}
+</script>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<!-- Google Font -->
@@ -179,6 +183,5 @@ else if (buyType.equals("direct")){
 			<jsp:include page="common_bottom.jsp"/>
 		</div>
 	</div>
-	<script src="js/order.js"></script>
 </body>
 </html>

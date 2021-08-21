@@ -23,10 +23,9 @@
 	
 	if(buyType.equals("cart")){
 		orderService.create(sM_id);
-	}
-	/*else if(buyType.equals("cart_select")){
-		orderService.create(sM_id, cart_item_noStr_array);
-	}*/else if(buyType.equals("direct")){
+	}else if(buyType.equals("cart_select")){
+		orderService.create(sM_id, cart_item_no_strArray);
+	}else if(buyType.equals("direct")){
 		orderService.create(sM_id, Integer.parseInt(p_noStr), Integer.parseInt(p_qtyStr));
 	}
 	response.sendRedirect("order_list.jsp");
