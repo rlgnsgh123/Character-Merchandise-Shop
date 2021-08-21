@@ -13,6 +13,11 @@
 
 // Action
 CartService cartService = new CartService();
+
 cartService.deleteCartAll(sM_id);
+
+// int c_item_no=(int)session.getAttribute("c_item_no"); // ???
+// cartService.deleteCartItem (c_item_no);
+
 response.sendRedirect("cart_view.jsp");
 	%>

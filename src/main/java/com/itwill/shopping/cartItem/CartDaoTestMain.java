@@ -7,12 +7,18 @@ public class CartDaoTestMain {
 		
 		System.out.println("INSERT");
 		System.out.println(cartDao.addCart("customer2", 3, 1));
+		System.out.println(cartDao.addCart("test1", 1, 5));
+		
+		
 		
 		System.out.println("UPDATE");
 		System.out.println(cartDao.updateCart("customer2", 2, 2));
 		
 		System.out.println("DELETE");
 		System.out.println(cartDao.deleteCart(5));
+		
+		// System.out.println("DELETE TEST");
+		// System.out.println(cartDao.deleteCartTest("test1", 5));
 		
 		System.out.println("DELETE ALL");
 		System.out.println(cartDao.deleteCartAll("customer3"));

@@ -109,6 +109,26 @@ public class CartDao {
 		return count;
 	}
 	
+	// !!! DELETE TEST !!! (수정중)
+	public int deleteCartTest(String m_id, int c_item_no) throws Exception {
+		String deleteSQL = "delete from cart where m_id = ? and c_item_no = ?";
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		int count = 0 ;
+		try {
+			con = dataSource.getConnection();
+			pstmt = con.prepareStatement(deleteSQL);
+			pstmt.setString(1, m_id);
+			pstmt.setInt(2, c_item_no);
+			count = pstmt.executeUpdate();
+		} finally {
+			if (con != null) {
+				con.close();
+			}
+		}
+		return count;
+	}
+	
 	// DELETE ALL :: 장바구니 상품 전체 삭제.
 	public int deleteCartAll(String m_id) throws Exception {
 		String deleteAllSQL = "delete from cart where m_id = ?";
