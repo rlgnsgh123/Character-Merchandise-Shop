@@ -46,17 +46,21 @@ else if (buyType.equals("direct")){
 }
 %>
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<script type="text/javascript">
-	function order_create_form_submit() {
-		document.order_create_form.method = 'POST';
-		document.order_create_form.action = 'order_create_action.jsp';
-		document.order_create_form.submit();
-	}
-</script>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>orderList</title>
+<script type="text/javascript" src="js/order.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<!-- Google Font -->
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Raleway:400,300,500,700,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" type="text/css">
+    <!-- Theme Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0
 	marginwidth=0 marginheight=0>
@@ -85,46 +89,46 @@ else if (buyType.equals("direct")){
 			<!-- content start -->
 
 			<!-- include_content.jsp start-->
-			<div id="content">
+			<div id="content" style="width:60%; margin: 0 auto">
 				<table border=0 cellpadding=0 cellspacing=0>
 					<tr>
 						<td><br />
 							<table style="padding-left: 10px" border=0 cellpadding=0
 								cellspacing=0>
 								<tr>
-									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>쇼핑몰 -주문/결제폼</b></td>
+									<td height="22">&nbsp;&nbsp;<h3>주문/결제폼</h3></td>
 								</tr>
 							</table> <!--form-->
 							<form>
-								<table align=center width=80% border="0" cellpadding="0"
+								<table align="left" width=80% border="0" cellpadding="0"
 									cellspacing="1" bgcolor="BBBBBB">
 									<caption style="text-align: left;">구매자정보</caption>
 									<tr>
-										<td width=290 height=25 align=center bgcolor="E6ECDE" class=t1>아이디</td>
-										<td width=112 height=25 align=center bgcolor="E6ECDE" class=t1>이름</td>
-										<td width=166 height=25 align=center bgcolor="E6ECDE" class=t1>연락처</td>
-										<td width=166 height=25 align=center bgcolor="E6ECDE" class=t1>주소</td>
-										<td width=50 height=25 align=center bgcolor="E6ECDE" class=t1>비고</td>
+										<td width=290 height=25 align="center" bgcolor="E6ECDE" class=t1>아이디</td>
+										<td width=130 height=25 align="left" bgcolor="E6ECDE" class=t1>이름</td>
+										<td width=180 height=25 align="left" bgcolor="E6ECDE" class=t1>연락처</td>
+										<td width=170 height=25 align="left" bgcolor="E6ECDE" class=t1>주소</td>
+										<td width=50 height=25 align="left" bgcolor="E6ECDE" class=t1>비고</td>
 									</tr>
 									<tr>
-										<td width=290 height=26 align=center bgcolor="ffffff" class=t1><%=member.getM_id()%></td>
-										<td width=112 height=26 align=center bgcolor="ffffff" class=t1><%=member.getM_name()%></td>
-										<td width=166 height=26 align=center bgcolor="ffffff" class=t1><%=member.getM_phone()%></td>
-										<td width=166 height=26 align=center bgcolor="ffffff" class=t1><%=member.getM_address()%></td>
-										<td width=50 height=26 align=center bgcolor="ffffff" class=t1></td>
+										<td width=290 height=26 align="center" bgcolor="ffffff" class=t1><%=member.getM_id()%></td>
+										<td width=130 height=26 align="left" bgcolor="ffffff" class=t1><%=member.getM_name()%></td>
+										<td width=180 height=26 align="left" bgcolor="ffffff" class=t1><%=member.getM_phone()%></td>
+										<td width=170 height=26 align="left" bgcolor="ffffff" class=t1><%=member.getM_address()%></td>
+										<td width=50 height=26 align="left" bgcolor="ffffff" class=t1></td>
 									</tr>
 								</table>
 
 								<br />
 
-								<table align=center width=80% border="0" cellpadding="0"
+								<table align="left" width=80% border="0" cellpadding="0"
 									cellspacing="1" bgcolor="BBBBBB">
 									<caption style="text-align: left;">주문제품목록</caption>
-									<tr style="border: 0.1px solid">
-										<td width=290 height=25 bgcolor="E6ECDE" align=center class=t1>제품명</td>
-										<td width=112 height=25 bgcolor="E6ECDE" align=center class=t1>수량</td>
-										<td width=166 height=25 bgcolor="E6ECDE" align=center class=t1>가격</td>
-										<td width=50 height=25 bgcolor="E6ECDE" align=center class=t1>비고</td>
+									
+										<td width=290 height=25 bgcolor="E6ECDE" align="center" class=t1>제품명</td>
+										<td width=112 height=25 bgcolor="E6ECDE" align="left" class=t1>수량</td>
+										<td width=166 height=25 bgcolor="E6ECDE" align="left" class=t1>가격</td>
+										<td width=50 height=25 bgcolor="E6ECDE" align="left" class=t1>비고</td>
 									</tr>
 									<%
 									int tot_price = 0;
@@ -137,11 +141,11 @@ else if (buyType.equals("direct")){
 											<a
 											href='product_detail.jsp?p_no=<%=cart.getProduct().getP_no()%>'><%=cart.getProduct().getP_name()%></a>
 										</td>
-										<td width=112 height=26 align=center bgcolor="ffffff" class=t1><%=cart.getC_item_qty()%></td>
-										<td width=166 height=26 align=center bgcolor="ffffff" class=t1>
+										<td width=112 height=26 align="left" bgcolor="ffffff" class=t1><%=cart.getC_item_qty()%></td>
+										<td width=166 height=26 align="left" bgcolor="ffffff" class=t1>
 											<%=new DecimalFormat("#,###").format(cart.getC_item_qty()* cart.getProduct().getP_price())%>
 										</td>
-										<td width=50 height=26 align=center bgcolor="ffffff" class=t1></td>
+										<td width=50 height=26 align="left" bgcolor="ffffff" class=t1></td>
 									</tr>
 									<!-- cart item end -->
 									<%}%>
@@ -167,7 +171,7 @@ else if (buyType.equals("direct")){
 							</table></td>
 					</tr>
 				</table>
-			</div>
+			</div><br/><br/><br/><br/>
 			<!-- include_content.jsp end-->
 			<!-- content end -->
 		</div>
