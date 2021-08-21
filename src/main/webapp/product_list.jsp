@@ -59,24 +59,21 @@ for(Product product : productList){
 											<td width=250 height=25 align="center" bgcolor="E6ECDE" class=t1><font>이미지</font></td>
 											<td width=250 height=25 align="center" bgcolor="E6ECDE" class=t1><font>상품명</font></td>
 											<td width=250 height=25 align="center" bgcolor="E6ECDE" class=t1><font>가 격</font></td>
-											</tr>
-										
+										</tr>				
 										<%
 										int priceSum = 0;
 										for (Product product2 : productList2){						
 										%>					
 										<tr>
-											<td width=40 height=26 align=center bgcolor="ffffff" class=t1><img src='images/<%=product2.getP_image()%>' width="150" height="150"/></td>
-											<td width=210 height=26 align=center bgcolor="ffffff" class=t1><a href='product_detail.jsp?p_no=<%=product2.getP_no()%>'><%=product2.getP_name()%></a></td>
-											<td width=146 height=26 align=center bgcolor="ffffff" class=t1><%=product2.getP_price()%></td>
-											<td width=50 height=26 align=center bgcolor="ffffff" class=t1>
-											</td>
+											<td align=center bgcolor="ffffff" class=t1><img src='images/<%=product2.getP_image()%>' width="150" height="150"/></td>
+											<td align=center bgcolor="ffffff" class=t1><a href='product_detail.jsp?p_no=<%=product2.getP_no()%>'><%=product2.getP_name()%></a></td>
+											<td align=center bgcolor="ffffff" class=t1><%=product2.getP_price()%></td>		
 										</tr>
 										
 										<% } %>
 									</table>		
-								</div>
-	
+								</div><br/><br/>
+		
 	<jsp:include page="common_bottom.jsp" />
 </body>
 </html>
