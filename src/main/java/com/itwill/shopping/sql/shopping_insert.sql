@@ -47,6 +47,10 @@ insert into product(p_no,p_name,p_price,p_desc,p_stock,p_regdate,p_image) values
 insert into product(p_no,p_name,p_price,p_desc,p_stock,p_regdate,p_image) values(product_p_no_seq.nextval,'스누피',15000,'스마일 머그컵',100,sysdate,'024.jpg');
 insert into product(p_no,p_name,p_price,p_desc,p_stock,p_regdate,p_image) values(product_p_no_seq.nextval,'스누피',7000,'피너츠 손잡이 옥수수컵머그',100,sysdate,'025.jpg');
 insert into product(p_no,p_name,p_price,p_desc,p_stock,p_regdate,p_image) values(product_p_no_seq.nextval,'스누피',22000,'빈티지 자수 파우치',100,sysdate,'026.jpg');
+insert into product(p_no,p_name,p_price,p_desc,p_stock,p_regdate,p_image) values(product_p_no_seq.nextval,'스누피',18000,'레트로라벨 스타일리시 보틀500ML',500,sysdate,'027.jpg');
+insert into product(p_no,p_name,p_price,p_desc,p_stock,p_regdate,p_image) values(product_p_no_seq.nextval,'스누피',11900,'피너츠 필통파우치',300,sysdate,'028.jpg');
+insert into product(p_no,p_name,p_price,p_desc,p_stock,p_regdate,p_image) values(product_p_no_seq.nextval,'스누피',9000,'원형페이스 동전지갑',700,sysdate,'029.jpg');
+insert into product(p_no,p_name,p_price,p_desc,p_stock,p_regdate,p_image) values(product_p_no_seq.nextval,'스누피',24000,'미니파우치(티슈 파우치)',100,sysdate,'030.jpg');
 
 
 
