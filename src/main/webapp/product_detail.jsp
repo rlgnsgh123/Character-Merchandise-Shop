@@ -289,7 +289,6 @@ int moveNo = product2.getP_no();
 
                                         <ul>
 
-                                            <li><a href=""><i class="fa fa-cart-arrow-down"></i></a></li>
 											<!-- 이거는 카트에 담기랑 연결 -->
 
                                         </ul>
@@ -312,7 +311,7 @@ int moveNo = product3.getP_no();
 
                                 <div class="product-block">
 
-                                    <img src="images//<%=product3.getP_image() %>" alt="" class="thumbnail">
+                                    <img src="images/<%=product3.getP_image() %>" alt="" class="thumbnail">
 
                                     <div class="product-description text-center">
 
@@ -326,7 +325,6 @@ int moveNo = product3.getP_no();
 
                                         <ul>
 
-                                            <li><a href=""><i class="fa fa-cart-arrow-down"></i></a></li>
 
 
                                         </ul>
@@ -350,7 +348,7 @@ int moveNo = product4.getP_no();
 
                                 <div class="product-block">
 
-                                    <img src="images//<%=product4.getP_image() %>" alt="" class="thumbnail">
+                                    <img src="images/<%=product4.getP_image() %>" alt="" class="thumbnail">
 
                                     <div class="product-description text-center">
 
@@ -363,8 +361,6 @@ int moveNo = product4.getP_no();
                                     <div class="product-hover">
 
                                         <ul>
-
-                                            <li><a href=""><i class="fa fa-cart-arrow-down"></i></a></li>
 
 
                                         </ul>
