@@ -44,53 +44,52 @@
 
 			<!-- include_content.jsp start-->
 			<div id="content" style="width:60%; margin: 0 auto">
-				<table border=0 cellpadding=0 cellspacing=0>
+				<table style="width:60%; margin: 0 auto" border=0 cellpadding=0 cellspacing=0>
 					<tr>
-						<td><br />
-							<table style="padding-left: 10px" border=0 cellpadding=0 cellspacing=0>
+						<td><br/>
+							<table border=0 cellpadding=0 cellspacing=0>
 								<tr>
-							<td width=250 height=26 align="center">&nbsp;&nbsp;<h3>주문 목록</h3>
-									
+									<td width=250 height=26 align="center">&nbsp;&nbsp;<h3>주문 목록</h3></td>						
 								</tr>
 							</table> <!--form-->
 							<form name="f" method="post">
 								<table align="center" width=80% \border="0" cellpadding="0" cellspacing="1" bgcolor="BBBBBB">
 									<tr>
 										<td width=200 bgcolor="E6ECDE" align=center ><font>주문번호</font></td>
-										<td width=150 bgcolor="E6ECDE" align=center ><font>제품명</font></td>
 										<td width=150 bgcolor="E6ECDE" align=center ><font>주문날짜</font></td>
+										<td width=150 bgcolor="E6ECDE" align=center ><font>제품명</font></td>
 										<td width=140 bgcolor="E6ECDE" align=center ><font>주문가격</font></td>
 										<td width=100 bgcolor="E6ECDE" align=center ><font>비고</font></td>
 									</tr>
-													</table>		
-			</form>
-			<table align="center" width=80% \border="0" cellpadding="0" cellspacing="1" bgcolor="BBBBBB">
-		
-			<!-- order start -->
-			<%
-			for (Order order : orderList) {
-			%>
-			<tr>
-			<td width=200 height=26 align= "center" bgcolor="ffffff" class=t1><%=order.getO_no()%></td>
-			<td width=145 height=26 align="center" bgcolor="ffffff" class=t1><%=order.getO_desc()%></td>
-			<td width=112 height=26 align="center" bgcolor="ffffff" class=t1><%=new SimpleDateFormat("yyyy/MM/dd").format(order.getO_date())%></td>
-			<td width=136 height=26 align= "center" bgcolor="ffffff" class=t1><%=new DecimalFormat("#,###").format(order.getO_price())%></td>
-			<td width=80 height=26 align="center" bgcolor="ffffff" class=t1>
-			<a href="order_detail.jsp?o_no=<%=order.getO_no()%>" class=m1>주문상세</a></td>
-			</tr>
-			<%
-			}
-			%>
-		<!-- order end -->
-								</table>
-							</form> <br/><br/>
+								</table>		
+							</form>
+							<table align="center" width=80% \border="0" cellpadding="0" cellspacing="1" bgcolor="BBBBBB">			
+								<!-- order start -->
+								<%
+								for (Order order : orderList) {
+								%>
+								<tr>
+								<td width=200 height=26 align= "center" bgcolor="ffffff" class=t1><%=order.getO_no()%></td>
+								<td width=112 height=26 align="center" bgcolor="ffffff" class=t1><%=new SimpleDateFormat("yyyy/MM/dd").format(order.getO_date())%></td>
+								<td width=145 height=26 align="center" bgcolor="ffffff" class=t1><%=order.getO_desc()%></td>								
+								<td width=136 height=26 align= "center" bgcolor="ffffff" class=t1><%=new DecimalFormat("#,###").format(order.getO_price())%></td>
+								<td width=80 height=26 align="center" bgcolor="ffffff" class=t1>
+								<a href="order_detail.jsp?o_no=<%=order.getO_no()%>" class=m1>주문상세</a></td>
+								</tr>
+								<%
+								}
+								%>
+							<!-- order end -->
+							</table>
+							<br/><br/>
 							<table border="0" cellpadding="0" cellspacing="1" width="700" >
 								<tr>
 									<td align="center">
 									<input type ="button" value="계속 구경하기" onclick ="product_search_action()"> &nbsp;
 									<input type ="button" value = "주문전체삭제" onclick="order_delete_all_action()"></td>
 								</tr>
-							</table></td>
+							</table>
+						</td>
 					</tr>
 				</table>
 			</div><br/><br/><br/><br/>
