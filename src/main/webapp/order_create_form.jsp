@@ -11,13 +11,10 @@
 <%@ include file="login_check.jspf"%>
 <%
 //주문생성 - 카트에서 주문, 카트에서 선택 주문, 상품에서 주문
-
-
 if(request.getMethod().equalsIgnoreCase("GET")){
 	response.sendRedirect("order_list.jsp");
 	return;
 }
-
 String buyType = request.getParameter("buyType");
 String p_noStr = request.getParameter("p_no");
 String p_qtyStr = request.getParameter("p_qty");
@@ -35,7 +32,6 @@ MemberService memberService = new MemberService();
 ProductService productService = new ProductService();
 ArrayList<CartItem> cartItemList = new ArrayList<CartItem>();
 Member member = memberService.findMember(sM_id);
-
 if (buyType.equals("cart")) {
 	cartItemList = cartService.getCartList(sM_id);
 } else if (buyType.equals("cart_select")) {
@@ -94,12 +90,9 @@ if (buyType.equals("cart")) {
 				<table border=0 cellpadding=0 cellspacing=0>
 					<tr>
 						<td><br />
-							<table style="padding-left: 10px" border=0 cellpadding=0
-								cellspacing=0>
+					<table style="padding-left: 10px" border=0 cellpadding=0 cellspacing=0>
 								<tr>
-									<td height="22">&nbsp;&nbsp;
-										<h3>주문/결제폼</h3>
-									</td>
+							<td width=250 height=26 align="center">&nbsp;&nbsp;<h3>주문/결제폼</h3>
 								</tr>
 							</table> <!--form-->
 							<form name="order_create_form" method="post">
@@ -115,36 +108,36 @@ if (buyType.equals("cart")) {
 								}
 								%>
 								
-								<table align="left" width=80% border="0" cellpadding="0"
+								<table align="center" width=80% border="0" cellpadding="0"
 									cellspacing="1" bgcolor="BBBBBB">
 									<caption style="text-align: left;">구매자정보</caption>
 									<tr>
 										<td width=290 height=25 align="center" bgcolor="E6ECDE"
 											class=t1>아이디</td>
-										<td width=130 height=25 align="left" bgcolor="E6ECDE" class=t1>이름</td>
-										<td width=180 height=25 align="left" bgcolor="E6ECDE" class=t1>연락처</td>
-										<td width=170 height=25 align="left" bgcolor="E6ECDE" class=t1>주소</td>
-										<td width=50 height=25 align="left" bgcolor="E6ECDE" class=t1>비고</td>
+										<td width=130 height=25 align="center" bgcolor="E6ECDE" class=t1>이름</td>
+										<td width=180 height=25 align="center" bgcolor="E6ECDE" class=t1>연락처</td>
+										<td width=170 height=25 align="center" bgcolor="E6ECDE" class=t1>주소</td>
+										<td width=50 height=25 align="center" bgcolor="E6ECDE" class=t1>비고</td>
 									</tr>
 									<tr>
 										<td width=290 height=26 align="center" bgcolor="ffffff" class=t1><%=member.getM_id()%></td>
-										<td width=130 height=26 align="left" bgcolor="ffffff" class=t1><%=member.getM_name()%></td>
-										<td width=180 height=26 align="left" bgcolor="ffffff" class=t1><%=member.getM_phone()%></td>
-										<td width=170 height=26 align="left" bgcolor="ffffff" class=t1><%=member.getM_address()%></td>
-										<td width=50 height=26 align="left" bgcolor="ffffff" class=t1></td>
+										<td width=130 height=26 align="center" bgcolor="ffffff" class=t1><%=member.getM_name()%></td>
+										<td width=180 height=26 align="center" bgcolor="ffffff" class=t1><%=member.getM_phone()%></td>
+										<td width=170 height=26 align="center" bgcolor="ffffff" class=t1><%=member.getM_address()%></td>
+										<td width=50 height=26 align="center" bgcolor="ffffff" class=t1></td>
 									</tr>
 								</table>
 
 								<br />
 
-								<table align="left" width=80% border="0" cellpadding="0"
+								<table align="center" width=80% border="0" cellpadding="0"
 									cellspacing="1" bgcolor="BBBBBB">
 									<caption style="text-align: left;">주문제품목록</caption>
 									<tr>
 										<td width=290 height=25 bgcolor="E6ECDE" align="center" class=t1>제품명</td>
-										<td width=112 height=25 bgcolor="E6ECDE" align="left" class=t1>수량</td>
-										<td width=166 height=25 bgcolor="E6ECDE" align="left" class=t1>가격</td>
-										<td width=50 height=25 bgcolor="E6ECDE" align="left" class=t1>비고</td>
+										<td width=112 height=25 bgcolor="E6ECDE" align="center" class=t1>수량</td>
+										<td width=166 height=25 bgcolor="E6ECDE" align="center" class=t1>가격</td>
+										<td width=50 height=25 bgcolor="E6ECDE" align="center" class=t1>비고</td>
 									</tr>
 									<%
 									int tot_price = 0;
@@ -157,11 +150,11 @@ if (buyType.equals("cart")) {
 											<a
 											href='product_detail.jsp?p_no=<%=cart.getProduct().getP_no()%>'><%=cart.getProduct().getP_name()%></a>
 										</td>
-										<td width=112 height=26 align="left" bgcolor="ffffff" class=t1><%=cart.getC_item_qty()%></td>
-										<td width=166 height=26 align="left" bgcolor="ffffff" class=t1>
+										<td width=112 height=26 align="center" bgcolor="ffffff" class=t1><%=cart.getC_item_qty()%></td>
+										<td width=166 height=26 align="center" bgcolor="ffffff" class=t1>
 											<%=new DecimalFormat("#,###").format(cart.getC_item_qty() * cart.getProduct().getP_price())%>
 										</td>
-										<td width=50 height=26 align="left" bgcolor="ffffff" class=t1></td>
+										<td width=50 height=26 align="center" bgcolor="ffffff" class=t1></td>
 									</tr>
 									<!-- cart item end -->
 									<%}%>					
@@ -174,7 +167,7 @@ if (buyType.equals("cart")) {
 										</td>
 									</tr>
 								</table>
-							</form> <br />
+							</form> <br/><br/><br/>
 							<table border="0" cellpadding="0" cellspacing="1" width="590">
 								<tr>
 									<td align=center>&nbsp;&nbsp; <a

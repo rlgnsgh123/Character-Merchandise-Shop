@@ -11,6 +11,7 @@
 	
 	OrderService orderService = new OrderService();
 	ArrayList<Order> orderList = orderService.list(sM_id);
+	
 
 %>
 <!DOCTYPE html>
@@ -48,12 +49,12 @@
 						<td><br />
 							<table style="padding-left: 10px" border=0 cellpadding=0 cellspacing=0>
 								<tr>
-							<td height="22">&nbsp;&nbsp;<h3>주문 목록</h3></td>
+							<td width=250 height=26 align="center">&nbsp;&nbsp;<h3>주문 목록</h3>
 									
 								</tr>
 							</table> <!--form-->
 							<form name="f" method="post">
-								<table align="left" width=80% \border="0" cellpadding="0" cellspacing="1" bgcolor="BBBBBB">
+								<table align="center" width=80% \border="0" cellpadding="0" cellspacing="1" bgcolor="BBBBBB">
 									<tr>
 										<td width=200 bgcolor="E6ECDE" align=center ><font>주문번호</font></td>
 										<td width=150 bgcolor="E6ECDE" align=center ><font>주문이름</font></td>
@@ -62,8 +63,8 @@
 										<td width=100 bgcolor="E6ECDE" align=center ><font>비고</font></td>
 									</tr>
 													</table>		
-			</form><br/>
-			<table align="left" width=80% \border="0" cellpadding="0" cellspacing="1" bgcolor="BBBBBB">
+			</form>
+			<table align="center" width=80% \border="0" cellpadding="0" cellspacing="1" bgcolor="BBBBBB">
 		
 			<!-- order start -->
 			<%
@@ -82,10 +83,10 @@
 			%>
 		<!-- order end -->
 								</table>
-							</form> <br/><br/><br/>
-							<table border="0" cellpadding="0" cellspacing="1" width="590" >
+							</form> <br/><br/>
+							<table border="0" cellpadding="0" cellspacing="1" width="700" >
 								<tr>
-									<td align=center>
+									<td align="center">
 									<input type ="button" value="계속 구경하기" onclick ="product_search_action()"> &nbsp;
 									<input type ="button" value = "주문전체삭제" onclick="order_delete_all_action()"></td>
 								</tr>

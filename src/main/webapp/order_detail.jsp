@@ -85,9 +85,9 @@
 								</table>
 									
 								<br/>	
-								<table align=center  width=80% border="0" cellpadding="0" cellspacing="1"  bgcolor="BBBBBB" >
+								<table align="center"  width=80% border="0" cellpadding="0" cellspacing="1"  bgcolor="BBBBBB" >
 									<caption style="text-align: left;">주문제품목록</caption>
-									<tr style="border: 0.1px solid">
+									
 										<td width=290 height=25 align=center bgcolor="E6ECDE" class=t1>제품명</td>
 										<td width=112 height=25 align=center bgcolor="E6ECDE" class=t1>수 량</td>
 										<td width=166 height=25  align=center bgcolor="E6ECDE" class=t1>가 격</td>
