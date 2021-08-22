@@ -15,7 +15,7 @@
 		<meta charset="UTF-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>shopping</title>
+		<title>장바구니 목록</title>
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 		<!-- Google Font -->
@@ -38,7 +38,7 @@
 				</div>			
 			
 			<div id = "content">
-				<table border = 0 cellpadding = 0 cellspacing = 0>
+				<table border = 0 cellpadding = 0 cellspacing = 0 style="margin: 0 auto">
 					<tr>
 						<td><br/>
 							
