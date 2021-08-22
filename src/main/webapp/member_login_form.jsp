@@ -34,18 +34,18 @@
 		</div>		
 		<br/><br/><br/><br/><br/>
 		<div id="wrapper">	
-			<form name="f" method="post" width="250">
-				<table width="300" border="3"  bgcolor="BBBBBB" style="margin: 0 auto">
+			<form name="f" method="post">
+				<table width="300" border="3" style="margin: 0 auto">
 					<tr>
 						<td width="200" height="25" bgcolor="E6ECDE" align="center">아이디</td>
 						<td align="left"><input type="text" name="m_id" value=""><%=msg1 %></td>
 					</tr>	
 					<tr>
-						<td width="200" height="25" bgcolor="E6ECDE" align="center">비밀번호</td>
+						<td bgcolor="E6ECDE" align="center">비밀번호</td>
 						<td align="left"><input type="password" name="m_password" value=""><%=msg2 %></td>						
 					</tr>	
 				</table><br/>
-				<table width="300" bgcolor="BBBBBB" style="margin: 0 auto">
+				<table width="300" style="margin: 0 auto">
 					<tr>
 						<td align="center">
 						<input type="button" value="로그인" onclick="login();">&nbsp;&nbsp;&nbsp;
