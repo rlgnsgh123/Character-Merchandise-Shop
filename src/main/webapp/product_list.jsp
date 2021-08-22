@@ -65,7 +65,7 @@ for(Product product : productList){
 										for (Product product2 : productList2){						
 										%>					
 										<tr>
-											<td align=center bgcolor="ffffff" class=t1><img src='images/<%=product2.getP_image()%>' width="150" height="150"/></td>
+											<td align=center bgcolor="ffffff" class=t1><a href='product_detail.jsp?p_no=<%=product2.getP_no()%>'><img src='images/<%=product2.getP_image()%>' width="150" height="150"/></a></td>
 											<td align=center bgcolor="ffffff" class=t1><a href='product_detail.jsp?p_no=<%=product2.getP_no()%>'><%=product2.getP_name()%></a></td>
 											<td align=center bgcolor="ffffff" class=t1><%=product2.getP_price()%></td>		
 										</tr>
