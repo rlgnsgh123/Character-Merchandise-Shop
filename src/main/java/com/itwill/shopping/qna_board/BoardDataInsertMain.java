@@ -35,12 +35,12 @@ public class BoardDataInsertMain {
 						 + "'배송은 얼마나 걸리나요?'||QNA_BOARD_QB_NO_SEQ.currval,"+ "QNA_BOARD_QB_NO_SEQ.currval,"+ "1,"
 						 + "'customer1')");
 						 
-				/*
+				
 				 stmt.addBatch("INSERT INTO notice_board (nb_no, nb_title, nb_content, nb_groupno, nb_step, m_id)" + " VALUES ("
 						+ "NOTICE_BOARD_NB_NO_SEQ.nextval," + "'공지합니다.'||NOTICE_BOARD_NB_NO_SEQ.currval ,"
 						 + "'배송사 사정에 따라 다르지만 배송은 대략 2~3일 정도 소요됩니다.'||NOTICE_BOARD_NB_NO_SEQ.currval,"+ "NOTICE_BOARD_NB_NO_SEQ.currval,"+ "1,"
 						 + "'admin1')");
-				*/
+				
 
 			}
 			int[] updateCounts = stmt.executeBatch();
