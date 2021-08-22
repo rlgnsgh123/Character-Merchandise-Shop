@@ -100,7 +100,7 @@ Member member = memberService.findMember(sM_id);
 				</table>
 			</div>
 		</div>
-		<br/><br/><br/><br/>
+		<br/><br/><br/><br/><br/><br/>
 		<div id="footer">
 			<jsp:include page="common_bottom.jsp" />
 		</div>

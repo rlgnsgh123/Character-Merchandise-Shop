@@ -8,6 +8,8 @@
 		response.sendRedirect("member_login_form.jsp");
 		return;
 	}
+	request.setCharacterEncoding("UTF-8");
+	
 	String m_id = null;
 	String m_password = null;
 	try{

@@ -2,6 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ include file="login_check.jspf" %> 
 <%
-session.invalidate(); //세션 무효(로그아웃)
-response.sendRedirect("shopping_main.jsp");
+	session.invalidate(); //세션 무효(로그아웃)
+	response.sendRedirect("shopping_main.jsp");
 %>
