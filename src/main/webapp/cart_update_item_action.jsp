@@ -9,7 +9,6 @@ if(request.getMethod().equalsIgnoreCase("GET")){
 	response.sendRedirect("product_list.jsp");
 	return;
 }
-
 String c_item_no_Str = request.getParameter("c_item_no");
 String c_item_no_qty = request.getParameter("c_item_qty");
 CartService cartService = new CartService();
