@@ -71,16 +71,16 @@ public class CartDao {
 	
 	// UPDATE :; 장바구니 상품 수정.
 	public int updateCart(String m_id, int p_no, int p_cart_qty) throws Exception{
-		String updateSQL = "update cart set p_no = ?, c_item_qty = ? where m_id = ?";
+		String updateSQL = "update cart set c_item_qty = ? where m_id = ? and p_no = ?";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		int count = 0;
 		try {
 			con = dataSource.getConnection();
 			pstmt = con.prepareStatement(updateSQL);
-			pstmt.setInt(1, p_no);
-			pstmt.setInt(2, p_cart_qty);
-			pstmt.setString(3, m_id);
+			pstmt.setInt(1, p_cart_qty);
+			pstmt.setString(2, m_id);
+			pstmt.setInt(3, p_no);
 			count = pstmt.executeUpdate();
 		} finally {
 			if (con != null) {
@@ -110,7 +110,7 @@ public class CartDao {
 		return count;
 	}
 	
-	
+	/*
 	// !!! DELETE TEST !!! (수정중)
 	public int deleteCartTest(String m_id, int c_item_no) throws Exception {
 		String deleteSQL = "delete from cart where m_id = ? and c_item_no = ?";
@@ -130,6 +130,7 @@ public class CartDao {
 		}
 		return count;
 	}
+	*/
 	
 	
 	// DELETE ALL :: 장바구니 상품 전체 삭제.
@@ -261,7 +262,8 @@ public class CartDao {
 	}
 	
 	
-	// Select existingQty (Test)
+	// Select existingQty :: Test
+	// m_id가 담은 p_no의 수량을 반환하는 메소드~
 	public int getExistingQty(String m_id, int p_no) throws Exception {
 		String selectSQL = "select * from cart where p_no = ? and m_id = ?";
 		
@@ -288,5 +290,7 @@ public class CartDao {
 		}
 		return existingQty;
 	}
+	
+	
 	
 }

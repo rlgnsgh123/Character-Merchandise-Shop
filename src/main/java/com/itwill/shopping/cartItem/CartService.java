@@ -44,10 +44,10 @@ public class CartService {
 		return cartDao.selectCartItemByNo(c_item_no);
 	}
 	
-	// Delete (c_item_no) :: 상품 번호를 기준으로 장바구니에서 상품을 삭제하는 메소드
+	// Delete (p_no) :: "상품 번호"를 기준으로 장바구니에서 상품을 삭제하는 메소드
 	// sM_id로 로그인 체크가 기존에 들어가서 m_id에 맞는 c_item_no의 상품이 장바구니에서 삭제됩니당~
-	public int deleteCartItem (int c_item_no) throws Exception {
-		return cartDao.deleteCart(c_item_no);
+	public int deleteCartItem (int p_no) throws Exception {
+		return cartDao.deleteCart(p_no);
 	}
 	
 	// Delete All :: 장바구니 비우기~
@@ -56,14 +56,14 @@ public class CartService {
 		return cartDao.deleteCartAll(m_id);
 	}
 	
-	
+	/*
 	// UpdateAddQty
 	// 장바구니 목록의 개수를 update로 덮어쓰기식 수정하는게 아니라 기존 값+신규값을 받아서 더해서 update하는 과정~
 	public int updateAddQtyTest(String m_id, int p_no, int addQty) throws Exception {
-		int existingQty = cartDao.getExistingQty(m_id, p_no);
-		int addFinQty = existingQty+addQty;
-		return cartDao.updateCart(m_id, p_no, addFinQty);
+		int existingQty = cartDao.getExistingQty(m_id, p_no); // m_id가 p_no을 기존에 담아둔 개수~
+		int addFinQty = existingQty+addQty; // 최종 update에 반영될 개수
 		
+		return cartDao.updateCart(m_id, p_no, addFinQty);
 	}
-	
+	*/
 }

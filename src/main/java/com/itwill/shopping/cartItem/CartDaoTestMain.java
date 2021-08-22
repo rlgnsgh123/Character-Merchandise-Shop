@@ -10,7 +10,6 @@ public class CartDaoTestMain {
 		System.out.println(cartDao.addCart("test1", 1, 5));
 		
 		
-		
 		System.out.println("UPDATE");
 		System.out.println(cartDao.updateCart("customer2", 2, 2));
 		
