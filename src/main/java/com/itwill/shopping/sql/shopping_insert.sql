@@ -14,6 +14,8 @@ insert into product(p_no,p_name,p_price,p_desc,p_stock,p_regdate,p_image) values
 insert into product(p_no,p_name,p_price,p_desc,p_stock,p_regdate,p_image) values(product_p_no_seq.nextval,'피가츄',35000,'따끔해요',100,sysdate,'사진2');
 insert into product(p_no,p_name,p_price,p_desc,p_stock,p_regdate,p_image) values(product_p_no_seq.nextval,'가카오',40000,'비싸요',100,sysdate,'사진3');
 
+
+
 /****************Notice Board Insert***********************/
 insert into notice_board(nb_no,nb_title,nb_content,nb_groupno,nb_step,m_id) values(notice_board_nb_no_seq.nextval,'타이틀 test','내용 test',notice_board_nb_no_seq.currval,1,'admin1');
 
