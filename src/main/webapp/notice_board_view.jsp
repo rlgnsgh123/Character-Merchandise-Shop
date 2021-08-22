@@ -30,6 +30,8 @@
 	
 	NoticeBoardService.getInstance().updateViewCount(boardno);
 	
+	
+	// 접근제한 을위함
 	boolean isEqual = false;
 	String userId =(String)session.getAttribute("sM_id");
 	if(userId.equals("admin1")) {
@@ -60,7 +62,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel=stylesheet href="css/styles.css" type="text/css">
 <link rel=stylesheet href="css/board.css" type="text/css">
+
 <script type="text/javascript" >	
+	// 이거는 변수땜에 어떻게 js 에넣을 지 모르겠습니다.
 	function viewList() {
 		b.action = "notice_board_list.jsp?pageno="+<%=pageno%>;
 		b.submit();
@@ -76,6 +80,8 @@
     <!-- left(nav_bar) start -->
 	<jsp:include page="common_left.jsp"/>
  	<!-- left(nav_bar) end -->
+ 	
+ 	
 <div class="shopping-process text-center">
    		<div class="container">
 
@@ -95,7 +101,15 @@
 				</div>
 			</div> 	
 </div>
+
+
+
 <body>
+
+
+
+
+
 <div id =contetnt style="width:75%; margin: 0 auto">
 	<form name="b">
 		<!-- 돌아가기 눌렀을때 해당 페이지로 로 돌아가기위해 얻어온다 데이타를 -->
@@ -126,12 +140,14 @@
 	<table>
 			<tr>
 				<td>
+				<!-- admin1 관리자면 수정,삭제,목록,답장 가능 -->
 					<%if(isEqual) { %>
 				<input type="button"  value="수정" onclick= "viewUpdate()">
 				<input type="button"  value="삭제" onclick= "viewRemove()"> 
 				<input type="button"  value="목록" onclick= "viewList()"> 
 				<input type="button"  value="답장" onclick="viewInsert()">
 				<% }else{ %>
+				<!-- 고객들은 목록으로만 -->
 				<input type="button"  value="목록" onclick= "viewList()"> 
 				<%} %> 
 				</td>

@@ -56,6 +56,9 @@ if(request.getParameter("pageno")!=null){
     <!-- left(nav_bar) start -->
 	<jsp:include page="common_left.jsp"/>
  	<!-- left(nav_bar) end -->
+ 	
+ 	
+ 	
 <div class="shopping-process text-center">
    		<div class="container">
 
@@ -76,6 +79,9 @@ if(request.getParameter("pageno")!=null){
 			</div> 	
 </div>
 <body>
+
+
+<!-- 본코드 -->
 <div id =contetnt style="width:45%; margin: 0 auto">
 	<form name="b" method="post">
 		<input type="hidden" name="pageno"  value="<%=pageno%>" />
@@ -102,6 +108,9 @@ if(request.getParameter("pageno")!=null){
 	
 	
 </div><br>
+
+
+
 	<div style="width:10%; margin: 0 auto">
 			<table border="0" cellpadding="0" cellspacing="1" width="100">
 			<tr>
@@ -112,6 +121,8 @@ if(request.getParameter("pageno")!=null){
 			</tr>
 			</table>
 		</div ><br><br><br><br>
+
+
 	
 	    	<!-- common_bottom start -->
 	<jsp:include page="common_bottom.jsp"/>

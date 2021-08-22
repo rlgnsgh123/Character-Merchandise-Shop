@@ -66,6 +66,10 @@ function shopping_main() {
 	f.action = "shopping_main.jsp"
 	f.submit();
 }
+function member_myinfo_view() {
+	f.action = "member_myinfo_view.jsp"
+	f.submit();
+}
 
 function memberModify() {
 	f.action = "member_modify_form.jsp"
@@ -82,6 +86,36 @@ function memberDelete() {
 }
 
 function memberModifyAction() {
+	if (f.m_password.value == "") {
+		alert("비밀번호를 입력하세요.");
+		f.m_password.focus();
+		return false;
+	}
+	if (f.m_password2.value == "") {
+		alert("비밀번호확인을 입력하세요.");
+		f.m_password2.focus();
+		return false;
+	}
+	if (f.m_name.value == "") {
+		alert("이름을 입력하세요.");
+		f.m_name.focus();
+		return false;
+	}
+	if (f.m_address.value == "") {
+		alert("주소를 입력하세요.");
+		f.m_address.focus();
+		return false;
+	}
+	if (f.m_phone.value == ""){
+		alert("전화번호를 입력하세요.");
+		f.m_phone.focus();
+	}
+	if (f.m_password.value != f.m_password2.value) {
+		alert("비밀번호와 비밀번호확인은 일치해야 합니다.");
+		f.m_password.focus();
+		f.m_password.select();
+		return false;
+	}
 	document.f.action = "member_modify_action.jsp";
 	document.f.method='POST';
 	document.f.submit();

@@ -29,6 +29,8 @@
 	}
 	QnaBoardService.getInstance().updateViewCount(boardno);
 	
+	
+	// 권한을 주기위해 접속한사람과 작성자 찾기위한작업
 	boolean isEqual = false;
 	String userId =(String)session.getAttribute("sM_id");
 	if(userId.equals(board.getM_id())||userId.equals("admin1")) {
@@ -125,6 +127,8 @@
 <div>
 	<table>
 		<tr>
+		
+			<!-- 작성자와 관리자는 수정,삭제,목록,답장 가능 -->
 			<td>
 			<%if(isEqual) { %>
 			<input type="button"  value="수정" onclick= "viewUpdate()">
@@ -132,6 +136,7 @@
 			<input type="button"  value="목록" onclick= "viewList()"> 
 			<input type="button"  value="답장" onclick="viewInsert()">
 			<% }else{ %>
+			<!-- 읽는사람은 목록 답장만 -->
 			<input type="button"  value="목록" onclick= "viewList()"> 
 			<input type="button"  value="답장" onclick="viewInsert()">
 			<%} %> 

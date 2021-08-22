@@ -16,7 +16,8 @@ CartService cartService = new CartService();
 if(c_item_no_qty.equals("0")){
 	cartService.deleteCartItem(Integer.parseInt(c_item_no_Str));
 } else {
-	cartService.updateCart(sM_id, Integer.parseInt(c_item_no_Str), Integer.parseInt(c_item_no_qty));
+	// cartService.updateCart(sM_id, Integer.parseInt(c_item_no_Str), Integer.parseInt(c_item_no_qty));
+	cartService.updateAddQtyTest(sM_id, p_no, addQty);
 }
-response.sendRedirect("cart_view.jsp"); /**/
+response.sendRedirect("cart_view_update_qty.jsp"); /**/
 	%>

@@ -31,36 +31,45 @@
 		<div id="navigation">
 				<jsp:include page="common_left.jsp"/>
 		</div>	
-		<div id="content" style="width:60%; margin: 0 auto" >		
-			<form name="f" method="post" width="300"  >
-				<table width="300" border="15"  bgcolor="BBBBBB" style="margin: 0 auto">
+		<br/><br/><br/><br/><br/>
+		<div id="wrapper">
+			<div id="content" style="width:60%; margin: 0 auto" >		
+				<form name="f" method="post" width="300"  >				
+					<table width="200" border="3"  bgcolor="BBBBBB" style="margin: 0 auto">
 					<tr>
-						<td width=100 align=center bgcolor="E6ECDE" height="22">아이디</td>
-						<td width=300 bgcolor="ffffff" style="padding-left: 10"><%=member.getM_id()%></td>
+						<td bgcolor="f4f4f4" height="22" align="center"><b>내 정보</b></td>
 					</tr>
+					</table>
+					<table width="300" border="5"  bgcolor="BBBBBB" style="margin: 0 auto">
+						<tr>
+							<td width=100 align=center bgcolor="E6ECDE" height="22">아이디</td>
+							<td width=300 bgcolor="ffffff" style="padding-left: 10"><%=member.getM_id()%></td>
+						</tr>
+						<tr>
+							<td width=100 align=center bgcolor="E6ECDE" height="22">이름</td>
+							<td width=300 bgcolor="ffffff" style="padding-left: 10"><%=member.getM_name()%></td>
+						</tr>
+						<tr>
+							<td width=100 align=center bgcolor="E6ECDE" height="22">주소</td>
+							<td width=300 bgcolor="ffffff" style="padding-left: 10"><%=member.getM_address()%>
+						</tr>
+						<tr>
+							<td width=100 align=center bgcolor="E6ECDE" height="22">전화번호</td>
+							<td width=300 bgcolor="ffffff" style="padding-left: 10"><%=member.getM_phone()%>
+						</tr>
+					</table>		
+				</form><br/>
+				<table width=200 border="5" style="margin: 0 auto" cellpadding=5 cellspacing=5>
 					<tr>
-						<td width=100 align=center bgcolor="E6ECDE" height="22">이름</td>
-						<td width=300 bgcolor="ffffff" style="padding-left: 10"><%=member.getM_name()%></td>
+						<td align="center">
+							<input type="button" value="정보 수정" onclick="memberModify()">&nbsp;
+							<input type="button" value="탈퇴" onclick="memberDelete()">
+						</td> 
 					</tr>
-					<tr>
-						<td width=100 align=center bgcolor="E6ECDE" height="22">주소</td>
-						<td width=300 bgcolor="ffffff" style="padding-left: 10"><%=member.getM_address()%>
-					</tr>
-					<tr>
-						<td width=100 align=center bgcolor="E6ECDE" height="22">전화번호</td>
-						<td width=300 bgcolor="ffffff" style="padding-left: 10"><%=member.getM_phone()%>
-					</tr>
-				</table>		
-			</form><br/>
-			<table width=300 border="15" style="margin: 0 auto">
-				<tr>
-					<td align="center">
-						<input type="button" value="정보 수정" onclick="memberModify()">&nbsp;
-						<input type="button" value="탈퇴" onclick="memberDelete()">
-					</td> 
-				</tr>
-			</table>
+				</table>
+			</div>
 		</div>	
+		<br/><br/><br/><br/><br/>
 		<div id="footer">
 			<jsp:include page="common_bottom.jsp"/>
 		</div>

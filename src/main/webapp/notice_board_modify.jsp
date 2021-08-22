@@ -3,7 +3,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-	Integer boardno = null;
+// 접근 제한 no가없을시 	
+Integer boardno = null;
+	
 	try {
 		boardno = Integer.valueOf(request.getParameter("boardno"));
 	} catch (Exception ex) {
@@ -14,11 +16,13 @@
 		response.sendRedirect("notice_board_list.jsp");
 		return;
 	}
+	// 삭제할 값 받아오기
 	NoticeBoard board = NoticeBoardService.getInstance().selectBoard(boardno);
 	if (board == null) {
 		response.sendRedirect("notice_board_list.jsp");
 		return;
 	}
+	// 페이징 작업으로 인해 pageno 값을 받아야 query 진행이됩니다.
 	String pageno = "1";
 	if (request.getParameter("pageno") != null) {
 		pageno = request.getParameter("pageno");
@@ -55,6 +59,11 @@
     <!-- left(nav_bar) start -->
 	<jsp:include page="common_left.jsp"/>
  	<!-- left(nav_bar) end -->
+
+
+
+
+
 <div class="shopping-process text-center">
    		<div class="container">
 
@@ -75,8 +84,14 @@
 			</div> 	
 </div>
 <body>
+
+
+
+
+<!-- 본코드 -->
 <div id =contetnt style="width:45%; margin: 0 auto">
 	<form name="b" method="post">
+	<!-- 아래값들은 query 사용을 위해 받아놓음 뿌릴필요가 없어 hidden -->
 		<input type="hidden" name="pageno" value="<%=pageno%>" /> 
 		<input type="hidden" name="boardno" value="<%=board.getNb_no()%>" />
 		<table border="0" cellpadding="0" cellspacing="1" width="" bgcolor="BBBBBB">
@@ -91,6 +106,7 @@
 				</td>
 			</tr>
 			<tr>
+			<!-- 수정잡업이기때문에 이전 값을 받아온다 -->
 				<td width=300 align=center bgcolor="E6ECDE" height="22">내용:</td>
 				<td width=490 bgcolor="ffffff" style="padding-left: 10px" align="left"> 
 				<textarea name="content" style="width: 535px" rows="20"><%=board.getNb_content().replace("\n", ">>").trim()%>
@@ -99,6 +115,9 @@
 		</table>
 		</form>
 </div><br>
+
+
+
 	
 	<div style="width:10%; margin: 0 auto">
 			<table border="0" cellpadding="0" cellspacing="1" width="100">

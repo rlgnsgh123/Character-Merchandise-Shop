@@ -9,29 +9,27 @@
 	ArrayList<CartItem> cartList = cartService.getCartList(sM_id);
 
 %>
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html lang="en-US">
 	<head>
 		<meta charset="UTF-8">
-		<title>장바구니 목록</title>
-		<script type="text/javascript">
-			function cart_delete(){
-				document.cart_view_form.method = "POST";
-				document.cart_view_form.action = "cart_delete_action.jsp";
-				document.cart_view_form.submit();
-			}
-			
-			function cart_view_form_order_submit() {
-				document.cart_view_form.method = "POST";
-				document.cart_view_form.buytype.value = "cart";
-				document.cart_view_form.action = "order_create_form.jsp";
-				document.cart_view_form.submit();
-			}
-			
-			</script>
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>shopping</title>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<!-- Google Font -->
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Raleway:400,300,500,700,600' rel='stylesheet' type='text/css'>
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" type="text/css">
+	    <!-- Theme Stylesheet -->
+	    <link rel="stylesheet" href="css/style.css">
+	    <link rel="stylesheet" href="css/responsive.css">
 		</head>
-	<body>
-		<div id="container">
+	<body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0 marginwidth=0 marginheight=0>
+		<form name="cart_view_form">
+			<input type="hidden" name="buyType">
+			</form>
+		<div id="container"> <!-- div id check! :: view_*는 body onload=~ -->
 			<div id="header">
 				<jsp:include page="common_top.jsp"/>
 				</div>		
@@ -55,7 +53,7 @@
 									<tr>
 										<td width=60 height=25  align="center" bgcolor="E6ECDE" class=t1><font>선택</font></td>
 										<td width=40 height=25 align="center" bgcolor="E6ECDE" class=t1><font>이미지</font></td>
-										<td width=210 height=25 align="center" bgcolor="E6ECDE" class=t1><font>강아지 이름</font></td>
+										<td width=210 height=25 align="center" bgcolor="E6ECDE" class=t1><font>이름</font></td>
 										<td width=112 height=25 align="center" bgcolor="E6ECDE" class=t1><font>수 량</font></td>
 										<td width=146 height=25 align="center" bgcolor="E6ECDE" class=t1><font>가 격</font></td>
 										<td width=50 height=25 align="center" bgcolor="E6ECDE" class=t1><font>비 고</font></td>
@@ -75,9 +73,10 @@
 										<td width=112 height=26 align=center bgcolor="ffffff" class=t1><%=cartItem.getC_item_qty()%></td>
 										<td width=146 height=26 align=center bgcolor="ffffff" class=t1><%=new DecimalFormat("#,##0").format(cartItem.getProduct().getP_price()*cartItem.getC_item_qty())%></td>
 										<td width=50 height=26 align=center bgcolor="ffffff" class=t1>
-											<form action="cart_delete_item_action.jsp" method="post">
-												<input type="hidden" name="cart_no" value="<%=cartItem.getC_item_no()%>">
+											<form action="cart_delete_item_action.jsp" method="POST">
+												<input type="hidden" name="c_item_no" value="<%=cartItem.getC_item_no()%>">
 												<input type="submit" value="삭제">
+												<!-- ★★★★★ :: 삭제 버튼 안 됨 (404) -->
 											</form>
 										</td>
 									</tr>
@@ -105,6 +104,7 @@
 											<%if(cartList.size()>=1){ %>
 											<a href="javascript:cart_view_form_order_submit();" class=m1>총 <span style="font-weight: bold;" id="cart_item_select_count"><%=cartList.size() %></span>개 주문하기[주문폼]</a>
 											<a href="javascript:cart_delete();" class=m1>장바구니 비우기</a>&nbsp;&nbsp;
+											<!-- ★★★★★ :: 장바구니 비우기 안 됨(아예 답이 없음...) -->
 											<% } %>
 											</td>
 										</tr>
@@ -119,5 +119,8 @@
 				<jsp:include page="common_bottom.jsp"/>
 				</div>
 			</div> <!-- Container end -->
+			
+			<script src="js/cart.js"></script>
+			
 		</body>
 	</html>

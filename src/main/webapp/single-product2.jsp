@@ -54,23 +54,6 @@
 
                     <div class="product-thumbnail">
 
-                        <div class="col-md-2 col-sm-2 col-xs-2">
-
-                            <ul class="thumb-image">
-
-                                <li class="active"><a href="images/single-product-1.jpg"><img src="images/single-product-1.jpg" alt=""></a></li>
-
-                                <li><a href="images/single-product-2.jpg"><img src="images/single-product-2.jpg" alt=""></a></li>
-
-                                <li><a href="images/single-product-3.jpg"><img src="images/single-product-3.jpg" alt=""></a></li>
-
-                                <li><a href=""><img src="images/single-product-4.jpg" alt=""></a></li>
-
-                                <li><a href=""><img src="images/single-product-5.jpg" alt=""></a></li>
-
-                            </ul>
-
-                        </div>
 
                         <div class="col-md-10 col-sm-10 col-xs-10">
 
@@ -90,19 +73,19 @@
 
                     <div class="product-info">
 
-                        <span class="product-id"><span class="strong-text">Product ID:</span> RST 4562</span>
+                        <span class="product-id"><span class="strong-text">제품번호:</span> get번호</span>
 
                         
 
-                        <span class="product-avilability"><span class="strong-text">Availability:</span> In Stock</span>
+                        <span class="product-avilability"><span class="strong-text">구매가능:</span> 재고있음</span>
 
                     </div>
 
-                    <p class="short-info">Lorem ipsum dolor sit amet, feugiat delicata liberavisse id cum, no quo maiorum intellegebat, liber regione eu sit. Mea cu case ludus integre, vide viderer eleifend ex mea. His at soluta regione diceret, cum et atqui placerat petentium. Lorem ipsum dolor sit amet, feugiat delicata liberavisse id cum, no quo maiorum intellegebat, lie diceret, cum et atqui placerat petentium.</p>
+                    <p class="short-info"> 제 품 설 명  제 품 설 명    제 품 설 명  제 품 설 명 </p>
 
                     <div class="price">
 
-                        <span>$522.00</span>
+                        <span>$ 제 품 가 격</span>
 
                     </div>
 
@@ -120,23 +103,7 @@
 
                         
 
-                        <button class="btn btn-theme" type="submit">Add to cart</button>
-
-                        <div class="social-share">
-
-                            <ul>
-
-                                <li><a href=""><i class="fa fa-facebook"></i></a></li>
-
-                                <li><a href=""><i class="fa fa-twitter"></i></a></li>
-
-                                <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-
-                                <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-
-                            </ul>
-
-                        </div>
+                        <button class="btn btn-theme" type="submit">카트에 제품담기</button>
 
                     </form>
 
@@ -170,9 +137,9 @@
 
                         <div class="product-desc">
 
-                            <h2>Product Description</h2>
+                            <h2>또 제품 설명</h2>
 
-                            <p>Ultricies et consectetur rhoncus lorem mattis, ligula interdum nibh dolor ipsum, venenatis ultrices sem nisl senectus phasellus lectus facilisis gravida curabitur interdum pretium et pellentesque nullam auctor vestibulum aenean ipsum placerat erat volutpat lectus mi est lacinia sociosqu, pretium habitasse aenean eros tristique augue a vivamus ac, sapien blandit nullam et neque curabitur varius nostra dui dictum cras orci congue.  Ultricies et consectetur rhoncus lorem mattis, ligula interdum nibh dolor ipsum, venenatis ultrices sem nisl senectus phasellus lectus facilisis gravida curabitur interdum pretium et pellentesque nullam auctor vestibulum aenean ipsum placerat</p>
+                            <p> 제품 설명 어쩌구 </p>
 
                         </div>
 
@@ -216,9 +183,9 @@
 
                                     <div class="product-description text-center">
 
-                                        <p class="title">Date Tiffany Torchiere</p>
+                                        <p class="title">2번제품 제품명</p>
 
-                                        <p class="price">$ 55.00</p>
+                                        <p class="price">$ 2번제품 제품가격</p>
 
                                     </div>
 
@@ -227,10 +194,7 @@
                                         <ul>
 
                                             <li><a href=""><i class="fa fa-cart-arrow-down"></i></a></li>
-
-                                            <li><a href=""><i class="fa fa-arrows-h"></i></a></li>
-
-                                            <li><a href=""><i class="fa fa-heart-o"></i></a></li>
+											<!-- 이거는 카트에 담기랑 연결 -->
 
                                         </ul>
 
@@ -252,9 +216,9 @@
 
                                     <div class="product-description text-center">
 
-                                        <p class="title">Date Tiffany Torchiere</p>
+                                        <p class="title">2번제품 제품명</p>
 
-                                        <p class="price">$ 55.00</p>
+                                        <p class="price">2번제품 제품가격</p>
 
                                     </div>
 
@@ -264,9 +228,6 @@
 
                                             <li><a href=""><i class="fa fa-cart-arrow-down"></i></a></li>
 
-                                            <li><a href=""><i class="fa fa-arrows-h"></i></a></li>
-
-                                            <li><a href=""><i class="fa fa-heart-o"></i></a></li>
 
                                         </ul>
 
@@ -288,9 +249,9 @@
 
                                     <div class="product-description text-center">
 
-                                        <p class="title">Date Tiffany Torchiere</p>
+                                        <p class="title">2번제품 제품명</p>
 
-                                        <p class="price">$ 55.00</p>
+                                        <p class="price">$ 2번제품 제품가격</p>
 
                                     </div>
 
@@ -299,10 +260,6 @@
                                         <ul>
 
                                             <li><a href=""><i class="fa fa-cart-arrow-down"></i></a></li>
-
-                                            <li><a href=""><i class="fa fa-arrows-h"></i></a></li>
-
-                                            <li><a href=""><i class="fa fa-heart-o"></i></a></li>
 
                                         </ul>
 
@@ -324,9 +281,9 @@
 
                                     <div class="product-description text-center">
 
-                                        <p class="title">Date Tiffany Torchiere</p>
+                                        <p class="title">2번제품 제품명</p>
 
-                                        <p class="price">$ 55.00</p>
+                                        <p class="price">2번제품 제품가격</p>
 
                                     </div>
 
@@ -335,10 +292,6 @@
                                         <ul>
 
                                             <li><a href=""><i class="fa fa-cart-arrow-down"></i></a></li>
-
-                                            <li><a href=""><i class="fa fa-arrows-h"></i></a></li>
-
-                                            <li><a href=""><i class="fa fa-heart-o"></i></a></li>
 
                                         </ul>
 
