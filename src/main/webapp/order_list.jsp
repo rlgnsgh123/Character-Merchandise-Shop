@@ -97,6 +97,7 @@
 			<!-- include_content.jsp end-->
 			<!-- content end -->
 		</div>
+		<br/><br/><br/><br/><br/><br/><br/><br/>
 		<!--wrapper end-->
 		<div id="footer">
 			<jsp:include page="common_bottom.jsp"/>
