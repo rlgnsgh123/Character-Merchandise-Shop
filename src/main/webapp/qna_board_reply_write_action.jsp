@@ -23,15 +23,4 @@ String pageno =request.getParameter("pageno");
 response.sendRedirect(
 		String.format("qna_board_list.jsp?pageno=%s",pageno));
 
-
-
 %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-</body>
-</html>
