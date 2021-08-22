@@ -12,12 +12,9 @@ insert into member(m_id,m_password,m_name,m_address,m_phone) values('customer6',
 insert into member(m_id,m_password,m_name,m_address,m_phone) values('admin1','1111','admin','admin','010-1111-1111');
 
 /****************Product Insert***********************/
-insert into product(p_no,p_name,p_price,p_desc,p_stock,p_regdate,p_image) values(product_p_no_seq.nextval,'펭슈',30000,'귀여워요',100,sysdate,'사진1');
-insert into product(p_no,p_name,p_price,p_desc,p_stock,p_regdate,p_image) values(product_p_no_seq.nextval,'피가츄',35000,'따끔해요',100,sysdate,'사진2');
-insert into product(p_no,p_name,p_price,p_desc,p_stock,p_regdate,p_image) values(product_p_no_seq.nextval,'가카오',40000,'비싸요',100,sysdate,'사진3');
-insert into product(p_no,p_name,p_price,p_desc,p_stock,p_regdate,p_image) values(product_p_no_seq.nextval,'리틀어피치',7500,'에어팟케이스',100,sysdate,'image1.jpg');
-insert into product(p_no,p_name,p_price,p_desc,p_stock,p_regdate,p_image) values(product_p_no_seq.nextval,'리틀어피치',16000,'에어팟케이스',120,sysdate,'image2.jpg');
-insert into product(p_no,p_name,p_price,p_desc,p_stock,p_regdate,p_image) values(product_p_no_seq.nextval,'라이언',9000,'안전벨트커버',300,sysdate,'image3.jpg');
+insert into product(p_no,p_name,p_price,p_desc,p_stock,p_regdate,p_image) values(product_p_no_seq.nextval,'미니헬로',30000,'귀여워요',100,sysdate,'image1.jpg');
+insert into product(p_no,p_name,p_price,p_desc,p_stock,p_regdate,p_image) values(product_p_no_seq.nextval,'헬로키티',35000,'아기자기해요',100,sysdate,'image2.jpg');
+insert into product(p_no,p_name,p_price,p_desc,p_stock,p_regdate,p_image) values(product_p_no_seq.nextval,'가카오',40000,'비싸요',100,sysdate,'image3.jpg');
 insert into product(p_no,p_name,p_price,p_desc,p_stock,p_regdate,p_image) values(product_p_no_seq.nextval,'카카오프렌즈',27550,'블루투스키보드',200,sysdate,'image4.jpg');
 insert into product(p_no,p_name,p_price,p_desc,p_stock,p_regdate,p_image) values(product_p_no_seq.nextval,'죠르디',35000,'미니테이블',220,sysdate,'image5.jpg');
 insert into product(p_no,p_name,p_price,p_desc,p_stock,p_regdate,p_image) values(product_p_no_seq.nextval,'춘식이',15000,'미니페이스쿠션',180,sysdate,'image6.jpg');

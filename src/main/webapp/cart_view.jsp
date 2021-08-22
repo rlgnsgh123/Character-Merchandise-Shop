@@ -42,11 +42,11 @@
 					<tr>
 						<td><br/>
 							
-							<table stype="padding-left:10px" border = 0 cellpadding = 0 cellspacing = 0>
+							<table style="margin:0 auto;" border = 0 cellpadding = 0 cellspacing = 0>
 								<tr>
 									<td height = "20">&nbsp;&nbsp;<b>쇼핑몰 - 장바구니 보기</b></td>
-									</tr>
-								</table>
+								</tr>
+							</table><br/><br/>
 							
 							<div id ='f'>
 								<table align = center width = 80% border = 0 cellpadding = 0 cellspacing = 1 bgcorlor = "BBBBBB">
@@ -97,13 +97,14 @@
 								</div>
 								<br/>
 								
-								<table style="padding-left: 10px" border="0" cellpadding="0" cellspacing="1" width="590">
+								<table style="margin:0 auto;" border="0" cellpadding="0" cellspacing="1" width="590">
 									<tr>
 										<td align=center>&nbsp;&nbsp;
-											<a href="product_list.jsp" class=m1>계속 구경하기</a>&nbsp;&nbsp;
+											<a href="product_list.jsp" class=m1>계속 구경하기</a>&nbsp;&nbsp;&nbsp;&nbsp;
 											<%if(cartList.size()>=1){ %>
 											<a href="javascript:cart_view_form_order_submit();" class=m1>총 <span style="font-weight: bold;" id="cart_item_select_count"><%=cartList.size() %></span>개 주문하기[주문폼]</a>
-											<a href="javascript:cart_delete();" class=m1>장바구니 비우기</a>&nbsp;&nbsp;
+											&nbsp;&nbsp;&nbsp;&nbsp;
+											<a href="javascript:cart_delete();" class=m1>장바구니 비우기</a>
 											<!-- ★★★★★ :: 장바구니 비우기 안 됨(아예 답이 없음...) -->
 											<% } %>
 											</td>
@@ -114,7 +115,7 @@
 						</tr>
 					</table>
 				</div>
-			
+			<br/><br/><br/>
 			<div id="footer">
 				<jsp:include page="common_bottom.jsp"/>
 				</div>
