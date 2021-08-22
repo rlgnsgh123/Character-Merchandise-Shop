@@ -1,9 +1,11 @@
 /****************Member Insert***********************/
 ---- 고객
-insert into member(m_id,m_password,m_name,m_address,m_phone) values('customer1','1111','김기훈','인천시','010-0000-0000');
-insert into member(m_id,m_password,m_name,m_address,m_phone) values('customer2','2222','심기훈','서울시','010-1111-0000');
-insert into member(m_id,m_password,m_name,m_address,m_phone) values('customer3','3333','팀기훈','경기도','010-0000-2222');
-insert into member(m_id,m_password,m_name,m_address,m_phone) values('customer4','4444','핌기훈','부산시','010-0000-3333');
+insert into member(m_id,m_password,m_name,m_address,m_phone) values('customer1','1111','강필준','인천시','010-1234-5678');
+insert into member(m_id,m_password,m_name,m_address,m_phone) values('customer2','2222','김기훈','서울시','010-2468-1359');
+insert into member(m_id,m_password,m_name,m_address,m_phone) values('customer3','3333','김동진','경기도','010-3728-1838');
+insert into member(m_id,m_password,m_name,m_address,m_phone) values('customer4','4444','김슬기','부산시','010-8192-3911');
+insert into member(m_id,m_password,m_name,m_address,m_phone) values('customer5','5555','성윤희','제주도','010-5291-8321');
+insert into member(m_id,m_password,m_name,m_address,m_phone) values('customer6','6666','전선우','광주시','010-8192-9129');
  
 
 ----- 관리자
@@ -53,11 +55,8 @@ insert into product(p_no,p_name,p_price,p_desc,p_stock,p_regdate,p_image) values
 insert into product(p_no,p_name,p_price,p_desc,p_stock,p_regdate,p_image) values(product_p_no_seq.nextval,'스누피',24000,'미니파우치(티슈 파우치)',100,sysdate,'030.jpg');
 
 
-
-
 /****************Notice Board Insert***********************/
 insert into notice_board(nb_no,nb_title,nb_content,nb_groupno,nb_step,m_id) values(notice_board_nb_no_seq.nextval,'타이틀 test','내용 test',notice_board_nb_no_seq.currval,1,'admin1');
-
 
 
 /****************QNA Board Insert***********************/

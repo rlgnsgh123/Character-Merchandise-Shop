@@ -29,16 +29,18 @@ public class BoardDataInsertMain {
 			stmt = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
 			con.setAutoCommit(false);
 			for (int i = 1; i <= 120; i++) {
+				
 				stmt.addBatch("INSERT INTO qna_board (qb_no, qb_title, qb_content, qb_groupno, qb_step, m_id)" + " VALUES ("
 						+ "QNA_BOARD_QB_NO_SEQ.nextval," + "'문의드립니다.'||QNA_BOARD_QB_NO_SEQ.currval ,"
-						 + "'배송얼마나걸리나요'||QNA_BOARD_QB_NO_SEQ.currval,"+ "QNA_BOARD_QB_NO_SEQ.currval,"+ "1,"
+						 + "'배송은 얼마나 걸리나요?'||QNA_BOARD_QB_NO_SEQ.currval,"+ "QNA_BOARD_QB_NO_SEQ.currval,"+ "1,"
 						 + "'customer1')");
+						 
 				/*
 				 stmt.addBatch("INSERT INTO notice_board (nb_no, nb_title, nb_content, nb_groupno, nb_step, m_id)" + " VALUES ("
-						+ "NOTICE_BOARD_NB_NO_SEQ.nextval," + "'문의드립니다.'||NOTICE_BOARD_NB_NO_SEQ.currval ,"
-						 + "'배송얼마나걸리나요'||NOTICE_BOARD_NB_NO_SEQ.currval,"+ "NOTICE_BOARD_NB_NO_SEQ.currval,"+ "1,"
+						+ "NOTICE_BOARD_NB_NO_SEQ.nextval," + "'공지합니다.'||NOTICE_BOARD_NB_NO_SEQ.currval ,"
+						 + "'배송사 사정에 따라 다르지만 배송은 대략 2~3일 정도 소요됩니다.'||NOTICE_BOARD_NB_NO_SEQ.currval,"+ "NOTICE_BOARD_NB_NO_SEQ.currval,"+ "1,"
 						 + "'admin1')");
-				 */
+				*/
 
 			}
 			int[] updateCounts = stmt.executeBatch();
