@@ -68,7 +68,7 @@
 									
 									<tr>
 										<td width=60 height=26 align=center bgcolor="ffffff" class=t1></td>
-										<td width=40 height=26 align=center bgcolor="ffffff" class=t1><img src='image/<%=cartItem.getProduct().getP_image()%>' width="34" height="28"/></td>
+										<td width=40 height=26 align=center bgcolor="ffffff" class=t1><img src='images/<%=cartItem.getProduct().getP_image()%>' width="300" height="100"/></td>
 										<td width=210 height=26 align=center bgcolor="ffffff" class=t1><a href='product_detail.jsp?p_no=<%=cartItem.getProduct().getP_no()%>'><%=cartItem.getProduct().getP_name()%></a></td>
 										<td width=112 height=26 align=center bgcolor="ffffff" class=t1><%=cartItem.getC_item_qty()%></td>
 										<td width=146 height=26 align=center bgcolor="ffffff" class=t1><%=new DecimalFormat("#,##0").format(cartItem.getProduct().getP_price()*cartItem.getC_item_qty())%></td>
