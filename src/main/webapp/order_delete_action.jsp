@@ -4,6 +4,7 @@
 <%@ include file="login_check.jspf" %>       
 <%
 
+	//주문 1개 삭제 
 	if(request.getMethod().equalsIgnoreCase("GET")){
 		response.sendRedirect("order_list.jsp");
 		return;
