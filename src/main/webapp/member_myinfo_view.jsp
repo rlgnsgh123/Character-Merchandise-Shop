@@ -12,7 +12,7 @@
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>shopping</title>
+	<title>내 정보</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<!-- Google Font -->
@@ -59,11 +59,12 @@
 						</tr>
 					</table>		
 				</form><br/>
-				<table width=200 style="margin: 0 auto" cellpadding=5 cellspacing=5>
+				<table width=400 style="margin: 0 auto" cellpadding=5 cellspacing=5>
 					<tr>
 						<td align="center">
 							<input type="button" value="정보 수정" onclick="memberModify()">&nbsp;&nbsp;
-							<input type="button" value="탈퇴" onclick="memberDelete()">
+							<input type="button" value="탈퇴" onclick="memberDelete()">&nbsp;&nbsp;&nbsp;&nbsp;
+							<input type="button" value="Home" onclick="shopping_main()">
 						</td> 
 					</tr>
 				</table>

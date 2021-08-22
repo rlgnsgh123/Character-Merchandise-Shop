@@ -53,43 +53,43 @@ Member member = memberService.findMember(sM_id);
 						cellpadding="0" cellspacing="1" bgcolor="BBBBBB">
 						<tr>
 							<td width=900 align=center bgcolor="E6ECDE" height="22">아이디</td>
-							<td width=600 bgcolor="ffffff" style="padding-left: 10px"
+							<td bgcolor="ffffff" style="padding-left: 10px"
 								align="left"><%=member.getM_id()%></td>
 						</tr>
 						<tr>
 							<td width=150 align=center bgcolor="E6ECDE" height="22">비밀번호</td>
-							<td width=600 bgcolor="ffffff" style="padding-left: 10px"
+							<td bgcolor="ffffff" style="padding-left: 10px"
 								align="left"><input type="password" style="width: 150px"
 								name="m_password" value="<%=member.getM_password()%>"></td>
 						</tr>
 						<tr>
 							<td width=150 align=center bgcolor="E6ECDE" height="22">비밀번호 확인</td>
-							<td width=600 bgcolor="ffffff" style="padding-left: 10px"
+							<td bgcolor="ffffff" style="padding-left: 10px"
 								align="left"><input type="password" style="width: 150px"
 								name="m_password2" value="<%=member.getM_password()%>"></td>
 						</tr>
 						<tr>
 							<td width=150 align=center bgcolor="E6ECDE" height="22">이름</td>
-							<td width=600 bgcolor="ffffff" style="padding-left: 10px"
+							<td bgcolor="ffffff" style="padding-left: 10px"
 								align="left"><input type="text" style="width: 150px"
 								name="m_name" value="<%=member.getM_name()%>"></td>
 						</tr>
 						<tr>
 							<td width=150 align=center bgcolor="E6ECDE" height="22">주소</td>
-							<td width=600 bgcolor="ffffff" style="padding-left: 10px"
+							<td bgcolor="ffffff" style="padding-left: 10px"
 								align="left"><input type="text" style="width: 150px"
 								name="m_address" value="<%=member.getM_address()%>"></td>
 						</tr>
 						<tr>
 							<td width=150 align=center bgcolor="E6ECDE" height="22">전화번호</td>
-							<td width=600 bgcolor="ffffff" style="padding-left: 10px"
+							<td bgcolor="ffffff" style="padding-left: 10px"
 								align="left"><input type="text" style="width: 150px"
 								name="m_phone" value="<%=member.getM_phone()%>"></td>
 						</tr>
 					</table>
 				</form>
 				<br>
-				<table width=200 border=5 style="margin: 0 auto" cellpadding=5
+				<table width=200 style="margin: 0 auto" cellpadding=5
 					cellspacing=5>
 					<tr>
 						<td align=center><input type="button" value="수정 완료"

@@ -17,7 +17,7 @@
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>shopping</title>
+	<title>회원가입</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<!-- Google Font -->
@@ -43,30 +43,31 @@
 						<tr>
 						<td bgcolor="f4f4f4" height="22" align="center"><b>회원가입</b></td>
 						</tr>
-					</table>
+					</table><br/>
 					<table width=300 border=3 style="margin: 0 auto;" cellpadding=0 cellspacing=0>
 						<tr>
-							<td width=250 align=center>아이디<td/>
+							<td width=250 align=center bgcolor="E6ECDE">아이디<td/>
 							<input type="text" name="m_id" value="<%=member.getM_id() %>">
 						</tr>
 						<tr>
-							<td align=center>비밀번호<td/>
-							<input type="password" name="m_password" value="<%=member.getM_password() %>"><br>
+							<td align=center bgcolor="E6ECDE">비밀번호<td/>
+							<input type="password" name="m_password" value="<%=member.getM_password() %>">
 						</tr>
 						<tr>
-							<td align=center>비밀번호 확인<td/>
-							<input type="password" name="m_password2" value="<%=member.getM_password() %>"><br>
+							<td align=center bgcolor="E6ECDE">비밀번호 확인<td/>
+							<input type="password" name="m_password2" value="<%=member.getM_password() %>">
 						</tr>
 						<tr>
-							<td align=center>이름<td/>
-							<input type="text" name="m_name" value="<%=member.getM_name() %>"><br>
+							<td align=center bgcolor="E6ECDE">이름<td/>
+							<input type="text" name="m_name" value="<%=member.getM_name() %>">
 						</tr>
 						<tr>
-							<td align=center>주소<td/>
-							<input type="text" name="m_address" value="<%=member.getM_address() %>"><br>
+							<td align=center bgcolor="E6ECDE">주소<td/>
+							<input type="text" name="m_address" value="<%=member.getM_address() %>">
 						</tr>
-							<td align=center>전화번호<td/>
-							<input type="text" name="m_phone" value="<%=member.getM_phone() %>"><br>
+						<tr>
+							<td align=center bgcolor="E6ECDE">전화번호<td/>
+							<input type="text" name="m_phone" value="<%=member.getM_phone() %>">
 						</tr>
 					</table>
 				</form><br>		
@@ -78,7 +79,7 @@
 					</tr>
 				</table>	
 			</div>	
-		</div><br/><br/><br/><br/><br/><br/>
+		</div><br/><br/><br/><br/><br/>
 		<div id="footer">
 			<jsp:include page="common_bottom.jsp"/>
 		</div>
