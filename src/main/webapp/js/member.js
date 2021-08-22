@@ -78,7 +78,7 @@ function memberModify() {
 }
 
 function memberDelete() {
-	if(confirm("정말 삭제하시겠습니까?")){
+	if(confirm("정말 탈퇴 하시겠습니까?")){
 		f.action = "member_delete_action.jsp";
 		f.method = "POST";
 		f.submit();
@@ -120,6 +120,3 @@ function memberModifyAction() {
 	document.f.method='POST';
 	document.f.submit();
 }
-
-
-

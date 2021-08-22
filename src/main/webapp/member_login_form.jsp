@@ -13,7 +13,7 @@
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>shopping</title>
+	<title>로그인 화면</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<!-- Google Font -->
@@ -31,47 +31,36 @@
 		
 		<div id="navigation">
 				<jsp:include page="common_left.jsp"/>
-		</div>			
-			<form name="f" method="post">
-				<table>
+		</div>		
+		<br/><br/><br/><br/><br/>
+		<div id="wrapper">	
+			<form name="f" method="post" width="250">
+				<table width="300" border="3"  bgcolor="BBBBBB" style="margin: 0 auto">
 					<tr>
-						<td width="100" height="25" align="center">아이디</td>
-						<td width="500" align="left" bgcolor='ffffff'>
-						<input type="text" name="m_id" value=""><%=msg1 %></td>
+						<td width="200" height="25" bgcolor="E6ECDE" align="center">아이디</td>
+						<td align="left"><input type="text" name="m_id" value=""><%=msg1 %></td>
 					</tr>	
 					<tr>
-						<td width="100" height="25" align="center">비밀번호</td>
-						<td width="500" align="left" >
-						<input type="password" name="m_password" value=""><%=msg2 %></td>	
+						<td width="200" height="25" bgcolor="E6ECDE" align="center">비밀번호</td>
+						<td align="left"><input type="password" name="m_password" value=""><%=msg2 %></td>						
 					</tr>	
 				</table><br/>
-				<table>
+				<table width="300" bgcolor="BBBBBB" style="margin: 0 auto">
 					<tr>
 						<td align="center">
-						<input type="button" value="로그인" onclick="login();">
+						<input type="button" value="로그인" onclick="login();">&nbsp;&nbsp;&nbsp;
 						<input type="button" value="회원가입" onclick="memberInsertPage();">
 						</td>
 					</tr>
 				</table>
 			
 			</form>
-		<div id="footer">
-			<jsp:include page="common_bottom.jsp"/>
 		</div>
 	</div>
+		<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<div id="footer">
+		<jsp:include page="common_bottom.jsp"/>
+	</div>	
 	<script src="js/member.js"></script>
 </body>
-<<<<<<< HEAD
 </html>
-
-
-
-
-
-
-
-
-
-=======
-</html>
->>>>>>> branch 'master' of https://github.com/2021-05-JAVA-DEVELOPER/web-project-team2-shopping.git

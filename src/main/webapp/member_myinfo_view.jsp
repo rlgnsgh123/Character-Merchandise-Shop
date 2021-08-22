@@ -12,7 +12,7 @@
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>shopping</title>
+	<title>내 정보</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<!-- Google Font -->
@@ -51,25 +51,26 @@
 						</tr>
 						<tr>
 							<td width=100 align=center bgcolor="E6ECDE" height="22">주소</td>
-							<td width=300 bgcolor="ffffff" style="padding-left: 10"><%=member.getM_address()%>
+							<td width=300 bgcolor="ffffff" style="padding-left: 10"><%=member.getM_address()%></td>
 						</tr>
 						<tr>
 							<td width=100 align=center bgcolor="E6ECDE" height="22">전화번호</td>
-							<td width=300 bgcolor="ffffff" style="padding-left: 10"><%=member.getM_phone()%>
+							<td width=300 bgcolor="ffffff" style="padding-left: 10"><%=member.getM_phone()%></td>
 						</tr>
 					</table>		
 				</form><br/>
-				<table width=200 border="5" style="margin: 0 auto" cellpadding=5 cellspacing=5>
+				<table width=400 style="margin: 0 auto" cellpadding=5 cellspacing=5>
 					<tr>
 						<td align="center">
-							<input type="button" value="정보 수정" onclick="memberModify()">&nbsp;
-							<input type="button" value="탈퇴" onclick="memberDelete()">
+							<input type="button" value="정보 수정" onclick="memberModify()">&nbsp;&nbsp;
+							<input type="button" value="탈퇴" onclick="memberDelete()">&nbsp;&nbsp;&nbsp;&nbsp;
+							<input type="button" value="Home" onclick="shopping_main()">
 						</td> 
 					</tr>
 				</table>
 			</div>
 		</div>	
-		<br/><br/><br/><br/><br/>
+		<br/><br/><br/><br/><br/><br/><br/><br/><br/>
 		<div id="footer">
 			<jsp:include page="common_bottom.jsp"/>
 		</div>

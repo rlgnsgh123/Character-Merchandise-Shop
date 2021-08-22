@@ -17,7 +17,7 @@
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>shopping</title>
+	<title>회원가입</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<!-- Google Font -->
@@ -35,28 +35,51 @@
 		
 		<div id="navigation">
 				<jsp:include page="common_left.jsp"/>
-		</div>	
+		</div><br/><br/><br/><br/>	
 		<div id="wrapper">
-			<div id="content">
-				<table width=000 border=000 cellpadding=0 cellspacing=0>
-					<form name="f" method="post">
-						아이디 : <input type="text" name="m_id" value="<%=member.getM_id() %>"><br>
-						비밀번호 : <input type="password" name="m_password" value="<%=member.getM_password() %>"><br>
-						비밀번호 확인 : <input type="password" name="m_password2" value="<%=member.getM_password() %>"><br>
-						이름 : <input type="text" name="m_name" value="<%=member.getM_name() %>"><br>
-						주소 : <input type="text" name="m_address" value="<%=member.getM_address() %>"><br>
-						전화번호 : <input type="text" name="m_phone" value="<%=member.getM_phone() %>"><br>
-					</form><br>
-					<table border=0 cellpadding=0 cellspacing=1>
+			<div id="content" style="margin: 0 auto; width: 60%">	
+				<form name="f" method="post">
+					<table width=200 border=3 style="margin: 0 auto;" cellpadding=0 cellspacing=0>
 						<tr>
-							<td align=center>
-							<input type="button" value="회원 가입" onclick="memberInsert()"> &nbsp; 
-							<input type="button" value="메인 화면" onClick="shopping_main()"></td>
+						<td bgcolor="f4f4f4" height="22" align="center"><b>회원가입</b></td>
 						</tr>
-					</table>	
-				</table>
+					</table><br/>
+					<table width=300 border=3 style="margin: 0 auto;" cellpadding=0 cellspacing=0>
+						<tr>
+							<td width=250 align=center bgcolor="E6ECDE">아이디<td/>
+							<input type="text" name="m_id" value="<%=member.getM_id() %>">
+						</tr>
+						<tr>
+							<td align=center bgcolor="E6ECDE">비밀번호<td/>
+							<input type="password" name="m_password" value="<%=member.getM_password() %>">
+						</tr>
+						<tr>
+							<td align=center bgcolor="E6ECDE">비밀번호 확인<td/>
+							<input type="password" name="m_password2" value="<%=member.getM_password() %>">
+						</tr>
+						<tr>
+							<td align=center bgcolor="E6ECDE">이름<td/>
+							<input type="text" name="m_name" value="<%=member.getM_name() %>">
+						</tr>
+						<tr>
+							<td align=center bgcolor="E6ECDE">주소<td/>
+							<input type="text" name="m_address" value="<%=member.getM_address() %>">
+						</tr>
+						<tr>
+							<td align=center bgcolor="E6ECDE">전화번호<td/>
+							<input type="text" name="m_phone" value="<%=member.getM_phone() %>">
+						</tr>
+					</table>
+				</form><br>		
+				<table width=200 style="margin: 0 auto;" cellpadding=0 cellspacing=0>
+					<tr>
+						<td align=center>
+						<input type="button" value="회원 가입" onclick="memberInsert()"> &nbsp; 
+						<input type="button" value="메인 화면" onClick="shopping_main()"></td>
+					</tr>
+				</table>	
 			</div>	
-		</div>
+		</div><br/><br/><br/><br/><br/>
 		<div id="footer">
 			<jsp:include page="common_bottom.jsp"/>
 		</div>
