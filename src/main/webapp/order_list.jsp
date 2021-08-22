@@ -57,7 +57,7 @@
 								<table align="center" width=80% \border="0" cellpadding="0" cellspacing="1" bgcolor="BBBBBB">
 									<tr>
 										<td width=200 bgcolor="E6ECDE" align=center ><font>주문번호</font></td>
-										<td width=150 bgcolor="E6ECDE" align=center ><font>주문이름</font></td>
+										<td width=150 bgcolor="E6ECDE" align=center ><font>제품명</font></td>
 										<td width=150 bgcolor="E6ECDE" align=center ><font>주문날짜</font></td>
 										<td width=140 bgcolor="E6ECDE" align=center ><font>주문가격</font></td>
 										<td width=100 bgcolor="E6ECDE" align=center ><font>비고</font></td>
@@ -72,8 +72,8 @@
 			%>
 			<tr>
 			<td width=200 height=26 align= "center" bgcolor="ffffff" class=t1><%=order.getO_no()%></td>
-			<td width=112 height=26 align="center" bgcolor="ffffff" class=t1><%=new SimpleDateFormat("yyyy/MM/dd").format(order.getO_date())%></td>
 			<td width=145 height=26 align="center" bgcolor="ffffff" class=t1><%=order.getO_desc()%></td>
+			<td width=112 height=26 align="center" bgcolor="ffffff" class=t1><%=new SimpleDateFormat("yyyy/MM/dd").format(order.getO_date())%></td>
 			<td width=136 height=26 align= "center" bgcolor="ffffff" class=t1><%=new DecimalFormat("#,###").format(order.getO_price())%></td>
 			<td width=80 height=26 align="center" bgcolor="ffffff" class=t1>
 			<a href="order_detail.jsp?o_no=<%=order.getO_no()%>" class=m1>주문상세</a></td>
