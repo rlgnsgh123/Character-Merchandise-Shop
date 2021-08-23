@@ -159,7 +159,7 @@ if (product == null) {
 
                     <form name="add_cart_form" method="post" action="cart_add_pop.jsp">
 					<h3>수량 :</h3>
-					<select name="cart_qty" style="WIDTH: 40pt; HEIGHT: 90t">
+					<select id="cart_qty" name="cart_qty" style="WIDTH: 40pt; HEIGHT: 90t">
 						<option value="1">1
 						<option value="2">2
 						<option value="3">3
