@@ -18,7 +18,6 @@ Product product2 = productService.getProduct(Integer.parseInt(p_no)+1);
 Product product3 = productService.getProduct(Integer.parseInt(p_no)+2);
 Product product4 = productService.getProduct(Integer.parseInt(p_no)+3);
 Product product5 = productService.getProduct(Integer.parseInt(p_no)+4);
-
 if (product == null) {
 	out.println("<script>");
 	out.println("alert('매진된 상품입니다')");
@@ -26,7 +25,6 @@ if (product == null) {
 	out.println("</script>");
 	return;
 }
-
 %>   
 <!DOCTYPE HTML>
 <html lang="en-US">
